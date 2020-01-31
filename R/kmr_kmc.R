@@ -1,3 +1,5 @@
+debug = FALSE
+
 kmr_kmc <- function(in_files, 
                     out_file, 
                     k = 11, 
@@ -21,7 +23,15 @@ kmr_kmc <- function(in_files,
   
   # check parameter values
   
-  # if more than input file use a temp archive to store the list
+  # if more than input file use a temp archive to store the list and change in_files to pointer
+  tmp <- file.path(tempdir(), "_kmer")
+  unlink(tmp)
+  #dir.create(tmp)
+  
+  # ptr_file <- file.path(tmp, "infile_list.txt")
+  # writeLines(in_files, ptr_file)
+  
+  # in_files <- paste0("@", ptr_file)
   
   # form parameter strings; omit the lesser used ones: use sprintf
   
@@ -33,6 +43,25 @@ kmr_kmc <- function(in_files,
   if(r) params <- paste(params, "-r")
   if(v) params <- paste(params, "-v")
   
-  # execute as promise!
+  cmd <- paste0(kmc(), params)
   
+
+  
+  # execute as promise!
+  cmd <- paste0(cmd, " ", in_files, " ", out_file, " ", tmp)
+  cat(cmd)  
+  if(debug) {
+    cat(cmd)  
+  } else {
+      
+  }
+  system(cmd)
+  unlink(tmp)
 }
+
+
+fa <- "D:/projects/julia/simpot/phix174-pe_w_err.fastq.gz"
+
+debug <- FALSE
+kmr_kmc(fa, "M:/packages/kmerize/phwei11")
+
