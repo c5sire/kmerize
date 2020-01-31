@@ -7,7 +7,7 @@ Authors@R: person("Reinhard", "Simon", email = "rsimon64@gmail.com",
                   comment = c(ORCID = "0000-0002-4608-9077")
                   )
 Description: Kmerize provides convenience tools for creating and analyzing k-mers.
-Imports: stringr
+Imports: parallel, stringr
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
