@@ -50,11 +50,7 @@ kmr_kmc <- function(in_files,
   # execute as promise!
   cmd <- paste0(cmd, " ", in_files, " ", out_file, " ", tmp)
   cat(cmd)  
-  if(debug) {
-    cat(cmd)  
-  } else {
-      
-  }
+  
   system(cmd)
   unlink(tmp)
 }
@@ -63,5 +59,5 @@ kmr_kmc <- function(in_files,
 fa <- "D:/projects/julia/simpot/phix174-pe_w_err.fastq.gz"
 
 debug <- FALSE
-kmr_kmc(fa, "M:/packages/kmerize/phwei11")
+kmr_kmc(fa, "M:/packages/kmerize/phwei11", k = 9, f = "q")
 
