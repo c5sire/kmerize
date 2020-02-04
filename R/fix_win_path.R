@@ -1,5 +1,5 @@
 fix_win_path <- function(path) {
-  fp <- sprintf('"%s"', fp)
+  fp <- sprintf('"%s"', path)
   
   return(fp)
 }

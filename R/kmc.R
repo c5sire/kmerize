@@ -5,6 +5,8 @@ kmc <- function() {
     fp <- file.path(get_kmc_base(), "kmc")
   }
   
+  fp <- fix_win_path(fp)
+  
   return(fp)
   
 }
