@@ -1,5 +1,5 @@
 
-#' kmr_cmp
+#' kmr_compare
 #' 
 #' Compare k-mer sets
 #' 
@@ -33,7 +33,7 @@
 #' 
 #' }
 #' 
-kmr_cmp <- function(in_files, cmp, ci = 2, cx = 1e9, cs = 255) {
+kmr_compare <- function(in_files, cmp, ci = 2, cx = 1e9, cs = 255) {
   
   lines <- character()
   lines[1] <- "INPUT:"
@@ -56,5 +56,5 @@ kmr_cmp <- function(in_files, cmp, ci = 2, cx = 1e9, cs = 255) {
   cmd <- paste(cmp(), tmp_cmp)
   
   system(cmd)
-  
+
 }

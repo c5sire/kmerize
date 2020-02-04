@@ -1,4 +1,4 @@
-#' kmr_kmc
+#' kmr_count
 #' 
 #' Count kmers.
 #' 
@@ -39,7 +39,7 @@
 #'  kmerize:::kmr_kmc(fa, out_file, k = k, f = "q")
 #' 
 #' }
-kmr_kmc <- function(in_files, 
+kmr_count <- function(in_files, 
                     out_file, 
                     k = 11, 
                     m = 12, # RAM

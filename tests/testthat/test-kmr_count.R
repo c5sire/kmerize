@@ -14,7 +14,7 @@ test_that("Test data exists", {
 test_that("kmer counter runs without error", {
   expect_true(length(
     capture.output(
-      kmr_kmc(fa, out_file, k = k, f = "q")
+      kmr_count(fa, out_file, k = k, f = "q")
     )
   ) == 0
     
@@ -40,7 +40,7 @@ context("kmer counting parameters")
 test_that("kmer counter runs without error", {
   expect_true(length(
     capture.output(
-      kmr_kmc(fa, out_file, k = k, f = "q", sm = TRUE, b = TRUE, r = TRUE, v = TRUE)
+      kmr_count(fa, out_file, k = k, f = "q", sm = TRUE, b = TRUE, r = TRUE, v = TRUE)
     )
   ) == 0
   
@@ -56,13 +56,13 @@ fa_e <- c(fa, errf)
 
 test_that("kmer counter with non-exist filename returns error", {
   expect_error(
-      kmr_kmc(fa_e, out_file, k = k, f = "q")
+      kmr_count(fa_e, out_file, k = k, f = "q")
   )
 })
 
 test_that("kmer counter with non-exist filename(s) lists them", {
   expect_true(
-    capture_message(kmr_kmc(fa_e, out_file, k = k, f = "q"))[[1]] == paste0(errf, "\n\n"), 
+    capture_message(kmr_count(fa_e, out_file, k = k, f = "q"))[[1]] == paste0(errf, "\n\n"), 
   )
 })
 
@@ -70,7 +70,7 @@ test_that("kmer counter runs ok with multiple files", {
   fa<- c(fa, fa)
   expect_true(length(
     capture.output(
-      kmr_kmc(fa, out_file, k = k, f = "q")
+      kmr_count(fa, out_file, k = k, f = "q")
     )
   ) == 0
   
