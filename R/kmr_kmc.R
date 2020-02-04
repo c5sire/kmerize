@@ -5,7 +5,7 @@
 #' @note Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the backend on Windows, Linux, and
 #' Mac. The parameter lists corresponds to the list of options of kmc3.
 #'
-#' @param in_files a single file or a name of file containing a list of file. If it is a file name it must start with an @.
+#' @param in_files a name of a single file or a vector of file names.
 #' @param out_file name of the output file
 #' @param k kmer size; default is 11.
 #' @param m RAM memory size; default is 12.
@@ -59,6 +59,11 @@ kmr_kmc <- function(in_files,
                     v = FALSE # verbose mode; use to turn off 
 ) {
   # check if files exists
+  if(!all(file.exists(in_files))) {
+    message(paste0(in_files[!file.exists(in_files)], "\n"))
+    stop("The listed file paths do not exist.")
+  }
+  #x <- file.exists(in_files)
   
   # check parameter values
   
@@ -87,7 +92,7 @@ kmr_kmc <- function(in_files,
 
   
   # execute as promise!
-  cmd <- paste0(cmd, " ", in_files, " ", out_file, " ", tmp)
+  cmd <- paste0(cmd, " ", in_files[1], " ", out_file, " ", tmp)
   # TODO cat(cmd)  
   system(cmd)
   unlink(tmp)

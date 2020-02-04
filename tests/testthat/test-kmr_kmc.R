@@ -1,4 +1,4 @@
-context("Kmer counting")
+context("Kmer counting with single file")
 fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", 
                   package = "kmerize")
 k <- 13
@@ -32,3 +32,22 @@ test_that("kmer counter produces output files with size > 0", {
     all(file.size(out_db) > 0)
   )
 })
+
+
+
+context("Kmer counting with multiple file names")
+errf <- "____x.fastq.gz"
+fa_e <- c(fa, errf)
+
+test_that("kmer counter with non-exist filename returns error", {
+  expect_error(
+      kmr_kmc(fa_e, out_file, k = k, f = "q")
+  )
+})
+
+test_that("kmer counter with non-exist filename(s) lists them", {
+  expect_true(
+    capture_message(kmr_kmc(fa_e, out_file, k = k, f = "q"))[[1]] == paste0(errf, "\n\n"), 
+  )
+})
+
