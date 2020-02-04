@@ -2,7 +2,7 @@
 #' 
 #' Count kmers.
 #' 
-#' @notes Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the backend on Windows, Linux, and
+#' @note Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the backend on Windows, Linux, and
 #' Mac. The parameter lists corresponds to the list of options of kmc3.
 #'
 #' @param in_files a single file or a name of file containing a list of file. If it is a file name it must start with an @.
