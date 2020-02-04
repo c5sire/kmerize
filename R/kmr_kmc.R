@@ -71,20 +71,12 @@ kmr_kmc <- function(in_files,
     in_files <- paste0("@", tmp_in_files)
   }
   
-  # check parameter values
+  # TODO check parameter values
   
   # if more than input file use a temp archive to store the list and change in_files to pointer
   tmp <- file.path(tempdir(), "_kmer")
   unlink(tmp)
-  #dir.create(tmp)
-  
-  # ptr_file <- file.path(tmp, "infile_list.txt")
-  # writeLines(in_files, ptr_file)
-  
-  # in_files <- paste0("@", ptr_file)
-  
-  # form parameter strings; omit the lesser used ones: use sprintf
-  
+
   params <- " -k%i -m%i -p%i -f%s -ci%i -cx%i -cs%i -n%i -t%i -sf%i -sp%i -sr%i"
   params <- sprintf(params, k, m, p, f, ci, cx, cs, n, t, sf, sp, sr)
   
