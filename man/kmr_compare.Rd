@@ -11,10 +11,14 @@ kmr_compare(in_files, cmp, ci = 2, cx = 1e+09, cs = 255)
 
 \item{cmp}{a list containing a single named string with the kmer operations using the file short names.}
 
-\item{out_prm}{a}
+\item{ci}{integer; min k cutoff value; default 2.}
+
+\item{cx}{integer; max k cutoff value; default 1e9.}
+
+\item{cs}{integer; max k count value; default 255.}
 }
 \value{
-
+out_file
 }
 \description{
 Compare k-mer sets

@@ -14,9 +14,9 @@ test_that("Test data exists", {
 test_that("kmer counter runs without error", {
   expect_true(length(
     capture.output(
-      kmr_count(fa, out_file, k = k, f = "q")
+      x = kmr_count(fa, out_file, k = k, f = "q")
     )
-  ) == 0
+  ) == 1
     
   )
 })
@@ -42,7 +42,7 @@ test_that("kmer counter runs without error", {
     capture.output(
       kmr_count(fa, out_file, k = k, f = "q", sm = TRUE, b = TRUE, r = TRUE, v = TRUE)
     )
-  ) == 0
+  ) == 1
   
   )
 })
@@ -72,7 +72,7 @@ test_that("kmer counter runs ok with multiple files", {
     capture.output(
       kmr_count(fa, out_file, k = k, f = "q")
     )
-  ) == 0
+  ) == 1
   
   )
 })

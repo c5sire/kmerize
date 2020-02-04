@@ -17,10 +17,12 @@
 #'  min, max, diff, sum, left, right
 #'
 #' @param in_files list of named file paths. The names are to be used in the comparison string.
+#' @param ci integer; min k cutoff value; default 2.
+#' @param cx integer; max k cutoff value; default 1e9.
+#' @param cs integer; max k count value; default 255.
 #' @param cmp a list containing a single named string with the kmer operations using the file short names.
-#' @param out_prm a 
 #'
-#' @return
+#' @return out_file
 #' @author Reinhard Simon
 #' @references Kokot M, Długosz M, Deorowicz S. KMC 3: counting and manipulating k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 #' @export
