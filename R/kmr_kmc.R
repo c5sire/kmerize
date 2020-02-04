@@ -63,7 +63,13 @@ kmr_kmc <- function(in_files,
     message(paste0(in_files[!file.exists(in_files)], "\n"))
     stop("The listed file paths do not exist.")
   }
-  #x <- file.exists(in_files)
+  
+  if (length(in_files) > 0) {
+    tmp_in_files <- file.path(tempdir(), "_tmp_kmc3_infiles.txt")
+    if(file.exists(tmp_in_files)) unlink(tmp_in_files)
+    writeLines(in_files, tmp_in_files)
+    in_files <- paste0("@", tmp_in_files)
+  }
   
   # check parameter values
   

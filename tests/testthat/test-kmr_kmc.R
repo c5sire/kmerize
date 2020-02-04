@@ -51,3 +51,14 @@ test_that("kmer counter with non-exist filename(s) lists them", {
   )
 })
 
+test_that("kmer counter runs ok with multiple files", {
+  fa<- c(fa, fa)
+  expect_true(length(
+    capture.output(
+      kmr_kmc(fa, out_file, k = k, f = "q")
+    )
+  ) == 0
+  
+  )
+})
+
