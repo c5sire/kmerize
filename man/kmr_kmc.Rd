@@ -26,7 +26,7 @@ kmr_kmc(
 )
 }
 \arguments{
-\item{in_files}{a single file or a name of file containing a list of file. If it is a file name it must start with an @.}
+\item{in_files}{a name of a single file or a vector of file names.}
 
 \item{out_file}{name of the output file}
 
@@ -67,6 +67,10 @@ kmr_kmc(
 }
 \description{
 Count kmers.
+}
+\note{
+Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the backend on Windows, Linux, and
+Mac. The parameter lists corresponds to the list of options of kmc3.
 }
 \examples{
 if( interactive()) {

@@ -18,5 +18,3 @@ Suggests:
     rmarkdown,
     covr
 VignetteBuilder: knitr
-URL: https://github.com/c5sire/kmerize
-BugReports: https://github.com/c5sire/kmerize/issues
