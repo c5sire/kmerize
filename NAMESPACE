@@ -2,5 +2,4 @@
 
 export(kmr_compare)
 export(kmr_count)
-export(kmr_kmc)
 export(run_kmc)
