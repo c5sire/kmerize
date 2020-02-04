@@ -35,6 +35,21 @@ test_that("kmer counter produces output files with size > 0", {
 
 
 
+context("kmer counting parameters")
+
+test_that("kmer counter runs without error", {
+  expect_true(length(
+    capture.output(
+      kmr_kmc(fa, out_file, k = k, f = "q", sm = TRUE, b = TRUE, r = TRUE, v = TRUE)
+    )
+  ) == 0
+  
+  )
+})
+
+
+
+
 context("Kmer counting with multiple file names")
 errf <- "____x.fastq.gz"
 fa_e <- c(fa, errf)

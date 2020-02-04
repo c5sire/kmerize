@@ -4,14 +4,14 @@
 \alias{kmr_cmp}
 \title{kmr_cmp}
 \usage{
-kmr_cmp(in_files, cmp, out_prm)
+kmr_cmp(in_files, cmp, ci = 2, cx = 1e+09, cs = 255)
 }
 \arguments{
 \item{in_files}{list of named file paths. The names are to be used in the comparison string.}
 
 \item{cmp}{a list containing a single named string with the kmer operations using the file short names.}
 
-\item{out_prm}{}
+\item{out_prm}{a}
 }
 \value{
 
@@ -21,6 +21,17 @@ Compare k-mer sets
 }
 \details{
 The in_files list strings may contain parameter values for each in_file after the path.
+
+Shorthand operator definitions:
+ * intersect
+ - subtract
+ ~ counters_subtract
+ + union
+ 
+ Highest priority: *. All other operators have equal priority.
+ 
+ Counter calculation modes are available for the oerators: *, ~,  +. They are:
+ min, max, diff, sum, left, right
 }
 \examples{
 

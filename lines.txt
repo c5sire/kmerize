@@ -1,0 +1,3 @@
+INPUT:
+x = x.gz
+y = y.gz
