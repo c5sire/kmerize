@@ -24,7 +24,7 @@
 #' @param sr Number of threads for second stage. Default is 4
 #' @param v Use verbose mode. Default is FALSE.
 #'
-#' @return
+#' @return out_file
 #' @author Reinhard Simon
 #' @references Kokot M, Długosz M, Deorowicz S. KMC 3: counting and manipulating k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 #' 
@@ -94,5 +94,7 @@ kmr_count <- function(in_files,
   # TODO cat(cmd)  
   system(cmd)
   unlink(tmp)
+  
+  return(path.expand(out_file))
 }
 
