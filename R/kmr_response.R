@@ -1,4 +1,4 @@
-#' kmer_response
+#' kmr_response
 #' 
 #' k should be an odd number.
 #' In case of fastq files the file can also be in compressted format (e.g. *.fastq.tar.gz).
@@ -10,7 +10,7 @@
 #'
 #' @return data.frame with results
 #' @export
-kmer_response <- function(fastx, k = seq(5, 11, 2), fmt = NULL) {
+kmr_response <- function(fastx, k = seq(5, 11, 2), fmt = NULL) {
   if (is.null(fmt)) {
     fmt <- ifelse(detect_str(fastx, "f[ast]*[q\\.]{1}"), "q", "m")
   }
