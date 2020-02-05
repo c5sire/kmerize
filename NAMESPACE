@@ -2,7 +2,9 @@
 
 export(kmr_compare)
 export(kmr_count)
-export(kmr_saveas)
-importFrom(arrow,write_parquet)
-importFrom(utils,read.csv)
-importFrom(utils,write.table)
+export(kmr_read_parquet)
+export(kmr_read_rds)
+export(kmr_read_tab)
+export(kmr_write_parquet)
+export(kmr_write_rds)
+export(kmr_write_tab)
