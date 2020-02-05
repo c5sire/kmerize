@@ -3,6 +3,7 @@
 export(kmer_response)
 export(kmr_compare)
 export(kmr_count)
+export(kmr_install_kmc)
 export(kmr_read_parquet)
 export(kmr_read_rds)
 export(kmr_read_tab)

@@ -1,5 +1,19 @@
 
 
+#' kmr_install_kmc
+#' 
+#' Installs a local version of kmc3.
+#'
+#' @param download_file ignored currently. Downloads file from original site.
+#'
+#' @return logical
+#' @export
+#'
+#' @examples
+#' 
+#' if(interactive()) {
+#'   kmr_install_kmc()
+#' }
 kmr_install_kmc <- function(download_file = NULL) {
   
   # get local OS ref
