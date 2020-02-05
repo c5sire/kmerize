@@ -2,3 +2,7 @@
 
 export(kmr_compare)
 export(kmr_count)
+export(kmr_saveas)
+importFrom(arrow,write_parquet)
+importFrom(utils,read.csv)
+importFrom(utils,write.table)

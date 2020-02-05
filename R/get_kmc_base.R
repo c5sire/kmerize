@@ -1,6 +1,5 @@
 get_kmc_base <- function() {
-  os <- get_os()
-  fp <- file.path(system.file("kmc3", package = "kmerize"), os)
+  fp <- get_kmc_dir()
  
   return(fp)
 }

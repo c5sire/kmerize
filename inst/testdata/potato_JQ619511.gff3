@@ -1,0 +1,154 @@
+##sequence-region JQ619511.1 1 128821
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4113
+JQ619511.1	Genbank	region	1	128821	.	+	.	ID=JQ619511.1:1..128821;Dbxref=taxon:4113;clone=BAC 14B;cultivar=2x(v2)7;gbkey=Src;genome=genomic;mol_type=genomic DNA
+JQ619511.1	Genbank	mRNA	5618	10325	.	+	.	ID=rna-JQ619511.1:5618..10325;end_range=10325,.;gbkey=mRNA;partial=true;product=N-like putative resistance gene 1;start_range=.,5618
+JQ619511.1	Genbank	exon	5618	6120	.	+	.	ID=exon-JQ619511.1:5618..10325-1;Parent=rna-JQ619511.1:5618..10325;gbkey=mRNA;partial=true;product=N-like putative resistance gene 1;start_range=.,5618
+JQ619511.1	Genbank	exon	6761	7493	.	+	.	ID=exon-JQ619511.1:5618..10325-2;Parent=rna-JQ619511.1:5618..10325;gbkey=mRNA;partial=true;product=N-like putative resistance gene 1
+JQ619511.1	Genbank	exon	8197	8487	.	+	.	ID=exon-JQ619511.1:5618..10325-3;Parent=rna-JQ619511.1:5618..10325;gbkey=mRNA;partial=true;product=N-like putative resistance gene 1
+JQ619511.1	Genbank	exon	8622	10325	.	+	.	ID=exon-JQ619511.1:5618..10325-4;Parent=rna-JQ619511.1:5618..10325;end_range=10325,.;gbkey=mRNA;partial=true;product=N-like putative resistance gene 1
+JQ619511.1	Genbank	CDS	5618	6120	.	+	0	ID=cds-AFA41486.1;Parent=rna-JQ619511.1:5618..10325;Dbxref=NCBI_GP:AFA41486.1;Name=AFA41486.1;gbkey=CDS;product=N-like putative resistance gene 1;protein_id=AFA41486.1
+JQ619511.1	Genbank	CDS	6761	7493	.	+	1	ID=cds-AFA41486.1;Parent=rna-JQ619511.1:5618..10325;Dbxref=NCBI_GP:AFA41486.1;Name=AFA41486.1;gbkey=CDS;product=N-like putative resistance gene 1;protein_id=AFA41486.1
+JQ619511.1	Genbank	CDS	8197	8487	.	+	0	ID=cds-AFA41486.1;Parent=rna-JQ619511.1:5618..10325;Dbxref=NCBI_GP:AFA41486.1;Name=AFA41486.1;gbkey=CDS;product=N-like putative resistance gene 1;protein_id=AFA41486.1
+JQ619511.1	Genbank	CDS	8622	10325	.	+	0	ID=cds-AFA41486.1;Parent=rna-JQ619511.1:5618..10325;Dbxref=NCBI_GP:AFA41486.1;Name=AFA41486.1;gbkey=CDS;product=N-like putative resistance gene 1;protein_id=AFA41486.1
+JQ619511.1	Genbank	mRNA	30009	34487	.	+	.	ID=rna-JQ619511.1:30009..34487;end_range=34487,.;gbkey=mRNA;partial=true;product=N-like putative resistance gene 2;start_range=.,30009
+JQ619511.1	Genbank	exon	30009	30517	.	+	.	ID=exon-JQ619511.1:30009..34487-1;Parent=rna-JQ619511.1:30009..34487;gbkey=mRNA;partial=true;product=N-like putative resistance gene 2;start_range=.,30009
+JQ619511.1	Genbank	exon	30694	31786	.	+	.	ID=exon-JQ619511.1:30009..34487-2;Parent=rna-JQ619511.1:30009..34487;gbkey=mRNA;partial=true;product=N-like putative resistance gene 2
+JQ619511.1	Genbank	exon	32346	32636	.	+	.	ID=exon-JQ619511.1:30009..34487-3;Parent=rna-JQ619511.1:30009..34487;gbkey=mRNA;partial=true;product=N-like putative resistance gene 2
+JQ619511.1	Genbank	exon	33051	34487	.	+	.	ID=exon-JQ619511.1:30009..34487-4;Parent=rna-JQ619511.1:30009..34487;end_range=34487,.;gbkey=mRNA;partial=true;product=N-like putative resistance gene 2
+JQ619511.1	Genbank	CDS	30009	30517	.	+	0	ID=cds-AFA41487.1;Parent=rna-JQ619511.1:30009..34487;Dbxref=NCBI_GP:AFA41487.1;Name=AFA41487.1;gbkey=CDS;product=N-like putative resistance gene 2;protein_id=AFA41487.1
+JQ619511.1	Genbank	CDS	30694	31786	.	+	1	ID=cds-AFA41487.1;Parent=rna-JQ619511.1:30009..34487;Dbxref=NCBI_GP:AFA41487.1;Name=AFA41487.1;gbkey=CDS;product=N-like putative resistance gene 2;protein_id=AFA41487.1
+JQ619511.1	Genbank	CDS	32346	32636	.	+	0	ID=cds-AFA41487.1;Parent=rna-JQ619511.1:30009..34487;Dbxref=NCBI_GP:AFA41487.1;Name=AFA41487.1;gbkey=CDS;product=N-like putative resistance gene 2;protein_id=AFA41487.1
+JQ619511.1	Genbank	CDS	33051	34487	.	+	0	ID=cds-AFA41487.1;Parent=rna-JQ619511.1:30009..34487;Dbxref=NCBI_GP:AFA41487.1;Name=AFA41487.1;gbkey=CDS;product=N-like putative resistance gene 2;protein_id=AFA41487.1
+JQ619511.1	Genbank	mRNA	56416	63084	.	+	.	ID=rna-JQ619511.1:56416..63084;end_range=63084,.;gbkey=mRNA;partial=true;product=N-like putative resistance gene 3;start_range=.,56416
+JQ619511.1	Genbank	exon	56416	56924	.	+	.	ID=exon-JQ619511.1:56416..63084-1;Parent=rna-JQ619511.1:56416..63084;gbkey=mRNA;partial=true;product=N-like putative resistance gene 3;start_range=.,56416
+JQ619511.1	Genbank	exon	57072	58149	.	+	.	ID=exon-JQ619511.1:56416..63084-2;Parent=rna-JQ619511.1:56416..63084;gbkey=mRNA;partial=true;product=N-like putative resistance gene 3
+JQ619511.1	Genbank	exon	61320	61616	.	+	.	ID=exon-JQ619511.1:56416..63084-3;Parent=rna-JQ619511.1:56416..63084;gbkey=mRNA;partial=true;product=N-like putative resistance gene 3
+JQ619511.1	Genbank	exon	62107	63084	.	+	.	ID=exon-JQ619511.1:56416..63084-4;Parent=rna-JQ619511.1:56416..63084;end_range=63084,.;gbkey=mRNA;partial=true;product=N-like putative resistance gene 3
+JQ619511.1	Genbank	CDS	56416	56924	.	+	0	ID=cds-AFA41488.1;Parent=rna-JQ619511.1:56416..63084;Dbxref=NCBI_GP:AFA41488.1;Name=AFA41488.1;gbkey=CDS;product=N-like putative resistance gene 3;protein_id=AFA41488.1
+JQ619511.1	Genbank	CDS	57072	58149	.	+	1	ID=cds-AFA41488.1;Parent=rna-JQ619511.1:56416..63084;Dbxref=NCBI_GP:AFA41488.1;Name=AFA41488.1;gbkey=CDS;product=N-like putative resistance gene 3;protein_id=AFA41488.1
+JQ619511.1	Genbank	CDS	61320	61616	.	+	0	ID=cds-AFA41488.1;Parent=rna-JQ619511.1:56416..63084;Dbxref=NCBI_GP:AFA41488.1;Name=AFA41488.1;gbkey=CDS;product=N-like putative resistance gene 3;protein_id=AFA41488.1
+JQ619511.1	Genbank	CDS	62107	63084	.	+	0	ID=cds-AFA41488.1;Parent=rna-JQ619511.1:56416..63084;Dbxref=NCBI_GP:AFA41488.1;Name=AFA41488.1;gbkey=CDS;product=N-like putative resistance gene 3;protein_id=AFA41488.1
+JQ619511.1	Genbank	sequence_feature	66603	66697	.	-	.	ID=id-JQ619511.1:64179..66697;Note=similar to alcohol NADP+ oxidoreductase;gbkey=misc_feature;part=1/5
+JQ619511.1	Genbank	sequence_feature	66110	66223	.	-	.	ID=id-JQ619511.1:64179..66697;Note=similar to alcohol NADP+ oxidoreductase;gbkey=misc_feature;part=2/5
+JQ619511.1	Genbank	sequence_feature	64980	65490	.	-	.	ID=id-JQ619511.1:64179..66697;Note=similar to alcohol NADP+ oxidoreductase;gbkey=misc_feature;part=3/5
+JQ619511.1	Genbank	sequence_feature	64530	64683	.	-	.	ID=id-JQ619511.1:64179..66697;Note=similar to alcohol NADP+ oxidoreductase;gbkey=misc_feature;part=4/5
+JQ619511.1	Genbank	sequence_feature	64179	64381	.	-	.	ID=id-JQ619511.1:64179..66697;Note=similar to alcohol NADP+ oxidoreductase;gbkey=misc_feature;part=5/5
+JQ619511.1	Genbank	mRNA	80936	86224	.	-	.	ID=rna-JQ619511.1:80936..86224;end_range=86224,.;gbkey=mRNA;partial=true;product=putative lyase;start_range=.,80936
+JQ619511.1	Genbank	exon	86202	86224	.	-	.	ID=exon-JQ619511.1:80936..86224-1;Parent=rna-JQ619511.1:80936..86224;end_range=86224,.;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	86006	86081	.	-	.	ID=exon-JQ619511.1:80936..86224-2;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	85759	85877	.	-	.	ID=exon-JQ619511.1:80936..86224-3;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	85628	85663	.	-	.	ID=exon-JQ619511.1:80936..86224-4;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	85417	85533	.	-	.	ID=exon-JQ619511.1:80936..86224-5;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	85090	85209	.	-	.	ID=exon-JQ619511.1:80936..86224-6;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	84619	84754	.	-	.	ID=exon-JQ619511.1:80936..86224-7;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	84177	84347	.	-	.	ID=exon-JQ619511.1:80936..86224-8;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	83379	83531	.	-	.	ID=exon-JQ619511.1:80936..86224-9;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	83176	83282	.	-	.	ID=exon-JQ619511.1:80936..86224-10;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	82715	82805	.	-	.	ID=exon-JQ619511.1:80936..86224-11;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	82470	82611	.	-	.	ID=exon-JQ619511.1:80936..86224-12;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	82081	82240	.	-	.	ID=exon-JQ619511.1:80936..86224-13;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	81808	81924	.	-	.	ID=exon-JQ619511.1:80936..86224-14;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	81584	81710	.	-	.	ID=exon-JQ619511.1:80936..86224-15;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	80936	81175	.	-	.	ID=exon-JQ619511.1:80936..86224-16;Parent=rna-JQ619511.1:80936..86224;gbkey=mRNA;partial=true;product=putative lyase;start_range=.,80936
+JQ619511.1	Genbank	CDS	86202	86224	.	-	0	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	86006	86081	.	-	1	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	85759	85877	.	-	0	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	85628	85663	.	-	1	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	85417	85533	.	-	1	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	85090	85209	.	-	1	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	84619	84754	.	-	1	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	84177	84347	.	-	0	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	83379	83531	.	-	0	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	83176	83282	.	-	0	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	82715	82805	.	-	1	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	82470	82611	.	-	0	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	82081	82240	.	-	2	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	81808	81924	.	-	1	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	81584	81710	.	-	1	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	CDS	80936	81175	.	-	0	ID=cds-AFA41489.1;Parent=rna-JQ619511.1:80936..86224;Dbxref=NCBI_GP:AFA41489.1;Name=AFA41489.1;gbkey=CDS;product=putative lyase;protein_id=AFA41489.1
+JQ619511.1	Genbank	mRNA	87900	93837	.	-	.	ID=rna-JQ619511.1:87900..93837;end_range=93837,.;gbkey=mRNA;partial=true;product=putative lyase;start_range=.,87900
+JQ619511.1	Genbank	exon	93830	93837	.	-	.	ID=exon-JQ619511.1:87900..93837-1;Parent=rna-JQ619511.1:87900..93837;end_range=93837,.;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	93375	93453	.	-	.	ID=exon-JQ619511.1:87900..93837-2;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	93025	93146	.	-	.	ID=exon-JQ619511.1:87900..93837-3;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	92875	92925	.	-	.	ID=exon-JQ619511.1:87900..93837-4;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	92464	92583	.	-	.	ID=exon-JQ619511.1:87900..93837-5;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	92246	92365	.	-	.	ID=exon-JQ619511.1:87900..93837-6;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	91646	91781	.	-	.	ID=exon-JQ619511.1:87900..93837-7;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	91281	91451	.	-	.	ID=exon-JQ619511.1:87900..93837-8;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	90752	90960	.	-	.	ID=exon-JQ619511.1:87900..93837-9;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	90579	90669	.	-	.	ID=exon-JQ619511.1:87900..93837-10;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	90306	90447	.	-	.	ID=exon-JQ619511.1:87900..93837-11;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	89545	89704	.	-	.	ID=exon-JQ619511.1:87900..93837-12;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	89041	89169	.	-	.	ID=exon-JQ619511.1:87900..93837-13;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	88371	88497	.	-	.	ID=exon-JQ619511.1:87900..93837-14;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	87900	88145	.	-	.	ID=exon-JQ619511.1:87900..93837-15;Parent=rna-JQ619511.1:87900..93837;gbkey=mRNA;partial=true;product=putative lyase;start_range=.,87900
+JQ619511.1	Genbank	CDS	93830	93837	.	-	0	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	93375	93453	.	-	1	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	93025	93146	.	-	0	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	92875	92925	.	-	1	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	92464	92583	.	-	1	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	92246	92365	.	-	1	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	91646	91781	.	-	1	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	91281	91451	.	-	0	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	90752	90960	.	-	0	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	90579	90669	.	-	1	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	90306	90447	.	-	0	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	89545	89704	.	-	2	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	89041	89169	.	-	1	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	88371	88497	.	-	1	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	CDS	87900	88145	.	-	0	ID=cds-AFA41490.1;Parent=rna-JQ619511.1:87900..93837;Dbxref=NCBI_GP:AFA41490.1;Name=AFA41490.1;gbkey=CDS;product=putative lyase;protein_id=AFA41490.1
+JQ619511.1	Genbank	mRNA	99961	104410	.	-	.	ID=rna-JQ619511.1:99961..104410;end_range=104410,.;gbkey=mRNA;partial=true;product=putative lyase;start_range=.,99961
+JQ619511.1	Genbank	exon	104366	104410	.	-	.	ID=exon-JQ619511.1:99961..104410-1;Parent=rna-JQ619511.1:99961..104410;end_range=104410,.;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	104207	104251	.	-	.	ID=exon-JQ619511.1:99961..104410-2;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	103651	103772	.	-	.	ID=exon-JQ619511.1:99961..104410-3;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	103379	103443	.	-	.	ID=exon-JQ619511.1:99961..104410-4;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	103124	103197	.	-	.	ID=exon-JQ619511.1:99961..104410-5;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	102848	103021	.	-	.	ID=exon-JQ619511.1:99961..104410-6;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	102593	102751	.	-	.	ID=exon-JQ619511.1:99961..104410-7;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	102246	102352	.	-	.	ID=exon-JQ619511.1:99961..104410-8;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	101858	101942	.	-	.	ID=exon-JQ619511.1:99961..104410-9;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	101626	101767	.	-	.	ID=exon-JQ619511.1:99961..104410-10;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	101255	101414	.	-	.	ID=exon-JQ619511.1:99961..104410-11;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	101047	101163	.	-	.	ID=exon-JQ619511.1:99961..104410-12;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	100301	100427	.	-	.	ID=exon-JQ619511.1:99961..104410-13;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	99961	100197	.	-	.	ID=exon-JQ619511.1:99961..104410-14;Parent=rna-JQ619511.1:99961..104410;gbkey=mRNA;partial=true;product=putative lyase;start_range=.,99961
+JQ619511.1	Genbank	CDS	104366	104410	.	-	0	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	104207	104251	.	-	0	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	103651	103772	.	-	0	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	103379	103443	.	-	1	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	103124	103197	.	-	2	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	102848	103021	.	-	0	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	102593	102751	.	-	0	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	102246	102352	.	-	0	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	101858	101942	.	-	1	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	101626	101767	.	-	0	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	101255	101414	.	-	2	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	101047	101163	.	-	1	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	100301	100427	.	-	1	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	CDS	99961	100197	.	-	0	ID=cds-AFA41491.1;Parent=rna-JQ619511.1:99961..104410;Dbxref=NCBI_GP:AFA41491.1;Name=AFA41491.1;gbkey=CDS;product=putative lyase;protein_id=AFA41491.1
+JQ619511.1	Genbank	mRNA	106167	111899	.	-	.	ID=rna-JQ619511.1:106167..111899;end_range=111899,.;gbkey=mRNA;partial=true;product=putative lyase;start_range=.,106167
+JQ619511.1	Genbank	exon	111802	111899	.	-	.	ID=exon-JQ619511.1:106167..111899-1;Parent=rna-JQ619511.1:106167..111899;end_range=111899,.;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	111264	111315	.	-	.	ID=exon-JQ619511.1:106167..111899-2;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	111020	111141	.	-	.	ID=exon-JQ619511.1:106167..111899-3;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	110870	110920	.	-	.	ID=exon-JQ619511.1:106167..111899-4;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	110206	110322	.	-	.	ID=exon-JQ619511.1:106167..111899-5;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	109644	109779	.	-	.	ID=exon-JQ619511.1:106167..111899-6;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	109057	109230	.	-	.	ID=exon-JQ619511.1:106167..111899-7;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	108859	108978	.	-	.	ID=exon-JQ619511.1:106167..111899-8;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	108324	108430	.	-	.	ID=exon-JQ619511.1:106167..111899-9;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	107686	107781	.	-	.	ID=exon-JQ619511.1:106167..111899-10;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	106668	106794	.	-	.	ID=exon-JQ619511.1:106167..111899-11;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase
+JQ619511.1	Genbank	exon	106167	106403	.	-	.	ID=exon-JQ619511.1:106167..111899-12;Parent=rna-JQ619511.1:106167..111899;gbkey=mRNA;partial=true;product=putative lyase;start_range=.,106167
+JQ619511.1	Genbank	CDS	111802	111899	.	-	0	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	111264	111315	.	-	1	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	111020	111141	.	-	0	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	110870	110920	.	-	1	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	110206	110322	.	-	1	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	109644	109779	.	-	1	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	109057	109230	.	-	0	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	108859	108978	.	-	0	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	108324	108430	.	-	0	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	107686	107781	.	-	1	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	106668	106794	.	-	1	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+JQ619511.1	Genbank	CDS	106167	106403	.	-	0	ID=cds-AFA41492.1;Parent=rna-JQ619511.1:106167..111899;Dbxref=NCBI_GP:AFA41492.1;Name=AFA41492.1;gbkey=CDS;product=putative lyase;protein_id=AFA41492.1
+

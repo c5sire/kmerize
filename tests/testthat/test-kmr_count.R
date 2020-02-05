@@ -40,13 +40,22 @@ context("kmer counting parameters")
 test_that("kmer counter runs without error", {
   expect_true(length(
     capture.output(
-      kmr_count(fa, out_file, k = k, f = "q", sm = TRUE, b = TRUE, r = TRUE, v = TRUE)
+      kmr_count(fa, out_file, k = k, f = "q", sm = TRUE, b = TRUE, r = FALSE, v = TRUE)
     )
   ) == 1
   
   )
 })
 
+test_that("kmer counter runs without error & invalid param comb", {
+  expect_true(length(
+    capture.output(
+      kmr_count(fa, out_file, k = k, f = "q", sm = TRUE, b = TRUE, r = TRUE, v = TRUE)
+    )
+  ) == 1
+  
+  )
+})
 
 
 
@@ -66,14 +75,22 @@ test_that("kmer counter with non-exist filename(s) lists them", {
   )
 })
 
+context("Kmer counter for fasta files with multiple lines: f = m, not compressed")
+
 test_that("kmer counter runs ok with multiple files", {
-  fa<- c(fa, fa)
+  fa <-  system.file("testdata/phix174.fasta", 
+                     package = "kmerize")
+  out_file <- file.path(tempdir(), "phi174")
+  k <- 6
+  
   expect_true(length(
     capture.output(
-      kmr_count(fa, out_file, k = k, f = "q")
+      kmr_count(fa, out_file, k = k, f = "m", ci = 0)
     )
   ) == 1
   
   )
 })
+
+
 

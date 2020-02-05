@@ -82,7 +82,7 @@ kmr_count <- function(in_files,
   
   if(sm) params <- paste(params, "-sm")
   if(b) params <- paste(params, "-b")
-  if(r) params <- paste(params, "-r")
+  if(r && !sm) params <- paste(params, "-r")
   if(v) params <- paste(params, "-v")
   
   cmd <- paste0(kmc(), params)
