@@ -8,5 +8,5 @@
 #' @return logical
 #' @export
 kmr_write_rds <- function(db, to = db) {
-  kmr_saveas(db, to, "rds")
+  return(kmr_saveas(db, to, "rds"))
 }

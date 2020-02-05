@@ -75,7 +75,8 @@ kmr_count <- function(in_files,
   
   # if more than input file use a temp archive to store the list and change in_files to pointer
   tmp <- file.path(tempdir(), "_kmer")
-  unlink(tmp)
+  # unlink(tmp, recursive = TRUE, force = TRUE)
+  if (!dir.exists(tmp)) dir.create(tmp, recursive = TRUE)
 
   params <- " -k%i -m%i -p%i -f%s -ci%i -cx%i -cs%i -n%i -t%i -sf%i -sp%i -sr%i"
   params <- sprintf(params, k, m, p, f, ci, cx, cs, n, t, sf, sp, sr)
@@ -93,7 +94,7 @@ kmr_count <- function(in_files,
   cmd <- paste0(cmd, " ", in_files[1], " ", out_file, " ", tmp)
   # TODO cat(cmd)  
   system(cmd)
-  unlink(tmp)
+  unlink(tmp, recursive = TRUE, force = TRUE)
   
   return(path.expand(out_file))
 }
