@@ -4,12 +4,12 @@
 #'
 #' @param res result from genomic response scan
 #' @param ref_k a reference k value to include
-#' @param limit a numeric value between 0 and 1. If 0 no line will be displayed
+#' @param limit a numeric value between 0 and 1. If 0 no line will be displayed. Default is 0. A recommended value is 0.95.
 #'
 #' @return plot
 #' @import ggplot2 
 #' @export
-kmr_plot_response  <- function(res, ref_k = NULL, limit = .95) {
+kmr_plot_response  <- function(res, ref_k = NULL, limit = 0) {
   stopifnot(is.data.frame(res))
   stopifnot(nrow(res) > 2)
   res_org <- res

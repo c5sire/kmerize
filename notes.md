@@ -15,6 +15,8 @@ fully replace calc_k_half with calc_k_limit
 - deduplicate
 - subsample only up to a total of 10 Mio per genotype!
 - prepare some examples for potato on spark!
+- map kmers
+
 
 - simple web site for phenotypic data
 - simple BrAPI server
