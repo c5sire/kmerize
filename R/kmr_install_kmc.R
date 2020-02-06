@@ -46,6 +46,8 @@ kmr_install_kmc <- function(download_file = NULL) {
     
     # unpack into known location
     utils::untar(tgt, exdir = kmc_dir)
+  } else {
+    message("KMC3 already installed locally.")
   }
   
   # check if program files present and works

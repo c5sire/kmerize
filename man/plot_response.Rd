@@ -4,12 +4,14 @@
 \alias{plot_response}
 \title{plot_response}
 \usage{
-plot_response(res, ref_k = NULL)
+plot_response(res, ref_k = NULL, show_k_opt = FALSE)
 }
 \arguments{
 \item{res}{result from genomic response scan}
 
 \item{ref_k}{a reference k value to include}
+
+\item{show_k_opt}{a k derived from the}
 }
 \value{
 plot
