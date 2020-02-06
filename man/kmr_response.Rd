@@ -18,6 +18,6 @@ data.frame with results
 }
 \description{
 k should be an odd number.
-In case of fastq files the file can also be in compressted format (e.g. *.fastq.tar.gz).
+In case of fastq files the file can also be in compressed format (e.g. *.fastq.tar.gz).
 This parameter will be inferred from the file name, if not set.
 }

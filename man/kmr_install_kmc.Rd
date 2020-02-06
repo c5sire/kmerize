@@ -7,7 +7,7 @@
 kmr_install_kmc(download_file = NULL)
 }
 \arguments{
-\item{download_file}{ignored currently. Downloads file from original site.}
+\item{download_file}{If provided, kmc3 is provided from a local archive. User makes sure it is the appropriate version for the local OS.}
 }
 \value{
 logical

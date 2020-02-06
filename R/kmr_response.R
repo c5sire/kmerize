@@ -1,7 +1,7 @@
 #' kmr_response
 #' 
 #' k should be an odd number.
-#' In case of fastq files the file can also be in compressted format (e.g. *.fastq.tar.gz).
+#' In case of fastq files the file can also be in compressed format (e.g. *.fastq.tar.gz).
 #' This parameter will be inferred from the file name, if not set.
 #'
 #' @param fastx a fastq or fasta formatted file
@@ -11,9 +11,21 @@
 #' @return data.frame with results
 #' @export
 kmr_response <- function(fastx, k = seq(5, 11, 2), fmt = NULL) {
+  if (!file.exists(fastx)) stop("Data file path does not exist!")
+  
+  msg <- "k must be a positive integer > 0 and < 256"
+  if (any(is.null(k))) stop(msg)
+  if (any(is.na(k))) stop(msg)
+  if (any(is.character(k))) stop(msg)
+  if (any(is.logical(k))) stop(msg)
+  if (any(is.double(k))) stop(msg)
+  if (any(k <= 0)) stop(msg)
+  if (any(k > 255)) stop(msg)
+  
   if (is.null(fmt)) {
     fmt <- ifelse(detect_str(fastx, "f[ast]*[q\\.]{1}"), "q", "m")
   }
+  if (!fmt %in% c("a", "m", "q")) stop("fmt must be one of NULL, a, m, q!")
   
   res <- calc_kmer_summary(fastx, k = k[1],  f = fmt)
   

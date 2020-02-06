@@ -93,4 +93,20 @@ test_that("kmer counter runs ok with multiple files", {
 })
 
 
+context("Kmer counter special parameter combination")
+
+test_that("kmer counter converts parameter correctly", {
+  fa <-  system.file("testdata/phix174.fasta", 
+                     package = "kmerize")
+  out_file <- file.path(tempdir(), "phi174")
+  k <- 6
+  
+  expect_true(length(
+    capture.output(
+      kmr_count(fa, out_file, k = k, f = "m", ci = 0, r = TRUE, sm = FALSE)
+    )
+  ) == 1
+  
+  )
+})
 
