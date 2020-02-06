@@ -135,8 +135,9 @@ phix_response[phix_response$k >= (k_9 - 2), "unique"] / phix_response[phix_respo
 
 
 ```{r warning=FALSE, fig.width=7}
- p <- p +
-      geom_vline(xintercept = k_9, linetype = "dashed", color = "darkgreen", lwd = .6)
- p
+k_lim = 9
+yk = 2000
+p <- plot_response(phix_response, limit = lim)
+p 
 ```
 

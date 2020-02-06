@@ -4,14 +4,14 @@
 \alias{plot_response}
 \title{plot_response}
 \usage{
-plot_response(res, ref_k = NULL, show_k_opt = FALSE)
+plot_response(res, ref_k = NULL, limit = 0.95)
 }
 \arguments{
 \item{res}{result from genomic response scan}
 
 \item{ref_k}{a reference k value to include}
 
-\item{show_k_opt}{a k derived from the}
+\item{limit}{a numeric value between 0 and 1. If 0 no line will be displayed}
 }
 \value{
 plot

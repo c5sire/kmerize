@@ -4,18 +4,18 @@
 #'
 #' @param res result from genomic response scan
 #' @param ref_k a reference k value to include
-#' @param show_k_opt a k derived from the 
+#' @param limit a numeric value between 0 and 1. If 0 no line will be displayed
 #'
 #' @return plot
 #' @import ggplot2 
 #' @export
-plot_response  <- function(res, ref_k = NULL, show_k_opt = FALSE) {
+plot_response  <- function(res, ref_k = NULL, limit = .95) {
   stopifnot(is.data.frame(res))
   stopifnot(nrow(res) > 2)
   res_org <- res
   
   #half_k <- kmr_calc_k_half(res)
-  k_lim <- kmerize:::kmr_calc_k_limit
+  k_lim <- ifelse(limit > 0, kmr_calc_k_limit(res, limit)$k, 0)
   
   y_max <- max(res$total)
   
@@ -43,9 +43,12 @@ plot_response  <- function(res, ref_k = NULL, show_k_opt = FALSE) {
       geom_vline(xintercept = ref_k, linetype = "dashed", color = "darkgreen", lwd = .6)
   }
   
-  if (show_k_opt) {
+  if (limit > 0) {
+    yk <- y_max / 2
     p <- p +
-      geom_vline(xintercept = k_lim, color = "darkgreen", lwd = .6)
+      geom_vline(xintercept = k_lim, color = "darkgreen", lwd = .6) +
+      annotate(geom = "text", x = (k_lim + 1), y = yk, 
+               label = paste0("k = ", k_lim, "\nlimit = ", limit), color = "red")
   }
   
   p
