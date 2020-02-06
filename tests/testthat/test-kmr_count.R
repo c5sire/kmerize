@@ -17,7 +17,7 @@ test_that("kmer counter runs without error", {
       x = kmr_count(fa, out_file, k = k, f = "q")
     )
   ) == 1
-    
+  
   )
 })
 
@@ -65,7 +65,7 @@ fa_e <- c(fa, errf)
 
 test_that("kmer counter with non-exist filename returns error", {
   expect_error(
-      kmr_count(fa_e, out_file, k = k, f = "q")
+    kmr_count(fa_e, out_file, k = k, f = "q")
   )
 })
 
@@ -109,4 +109,3 @@ test_that("kmer counter converts parameter correctly", {
   
   )
 })
-

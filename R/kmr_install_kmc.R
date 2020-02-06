@@ -26,7 +26,7 @@ kmr_install_kmc <- function(download_file = NULL) {
     # get local kmc3 path reference
     kmc_dir <- get_kmc_dir() 
     
-    if (is.null(download_file) && !file.exists(download_file)) {
+    if (is.null(download_file)) {
     
     url_base <- "https://github.com/refresh-bio/KMC/releases/download/v3.0.0/"
     url_app <- switch(los,
@@ -41,6 +41,7 @@ kmr_install_kmc <- function(download_file = NULL) {
     utils::download.file(url, tgt)
     } else {
       tgt <- download_file
+      if (!file.exists(tgt)) {stop("Path to archive does not exist!")}
     }
     
     # unpack into known location
