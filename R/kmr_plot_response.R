@@ -1,4 +1,4 @@
-#' plot_response
+#' kmr_plot_response
 #'
 #' Plots genomics response object.
 #'
@@ -9,7 +9,7 @@
 #' @return plot
 #' @import ggplot2 
 #' @export
-plot_response  <- function(res, ref_k = NULL, limit = .95) {
+kmr_plot_response  <- function(res, ref_k = NULL, limit = .95) {
   stopifnot(is.data.frame(res))
   stopifnot(nrow(res) > 2)
   res_org <- res

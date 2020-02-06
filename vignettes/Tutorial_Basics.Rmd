@@ -91,7 +91,7 @@ knitr::kable(phix_response)
 Plotting this table shows the following response curve:
 
 ```{r warning=FALSE, fig.width=7}
-p <- plot_response(phix_response)
+p <- kmr_plot_response(phix_response)
 p
 ```
 ### Chosing a cutoff value
@@ -137,7 +137,7 @@ phix_response[phix_response$k >= (k_9 - 2), "unique"] / phix_response[phix_respo
 ```{r warning=FALSE, fig.width=7}
 k_lim = 9
 yk = 2000
-p <- plot_response(phix_response, limit = lim)
+p <- kmr_plot_response(phix_response, limit = lim)
 p 
 ```
 
