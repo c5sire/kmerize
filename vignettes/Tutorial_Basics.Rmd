@@ -19,27 +19,6 @@ library(kmerize)
 library(ggplot2)
 ```
 
-## Installation
-
-### This package
-
-```{r eval=FALSE}
-install.packages("devtools")
-devtools::install_github("c5sire/kmerize")
-```
-
-
-### Supporting tools
-
-This package uses 3rd party tools for basic optimized k-mer creation. Currently, this is the KMC3 set of tools (REF).
-The toolkit needs to be installed via the provided function. If no reference to a local file is provided,
-the appropriate version for your local operating sytem (OS) will automatically be chosen as shown below.
-
-```{r eval=FALSE}
-kmerize::kmr_install_kmc()
-```
-
-
 
 ## What Are K-mers?
 
@@ -135,7 +114,8 @@ phix_response[phix_response$k >= (k_9 - 2), "unique"] / phix_response[phix_respo
 
 
 ```{r warning=FALSE, fig.width=7}
-
+k_lim = 9
+yk = 2000
 p <- kmr_plot_response(phix_response, limit = lim)
 p 
 ```

@@ -16,6 +16,20 @@ fully replace calc_k_half with calc_k_limit
 - subsample only up to a total of 10 Mio per genotype!
 - prepare some examples for potato on spark!
 - map kmers
+- screen kmers for min k
+- add f guess to kmer count
+
+- add file directory as input to kmer count
+
+- add plot functions for kmers
+
+- evaluate effect of indels! can it detect?
+
+- convenience function get kmer table from database
+
+- rmd website for tutorials!
+- put specifici tutorials on other web site: netlify
+- add tutorial for installation of platform also on other website
 
 
 - simple web site for phenotypic data

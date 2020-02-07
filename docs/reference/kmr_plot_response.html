@@ -94,6 +94,9 @@
     <li>
       <a href="../articles/Tutorial_Basics.html">Tutorial_Basics</a>
     </li>
+    <li>
+      <a href="../articles/Tutorial_install.html">Tutorial_install</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -121,7 +124,7 @@
     <p>Plots genomics response object.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kmr_plot_response</span>(<span class='no'>res</span>, <span class='kw'>ref_k</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
+    <pre class="usage"><span class='fu'>kmr_plot_response</span>(<span class='no'>res</span>, <span class='kw'>ref_k</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>max_y</span> <span class='kw'>=</span> -<span class='fl'>1</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -137,6 +140,10 @@
     <tr>
       <th>limit</th>
       <td><p>a numeric value between 0 and 1. If 0 no line will be displayed. Default is 0. A recommended value is 0.95.</p></td>
+    </tr>
+    <tr>
+      <th>max_y</th>
+      <td><p>a maximum y value. Default 0 indicates automatic selection.</p></td>
     </tr>
     </table>
 

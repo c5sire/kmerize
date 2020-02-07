@@ -96,6 +96,9 @@ This parameter will be inferred from the file name, if not set." />
     <li>
       <a href="../articles/Tutorial_Basics.html">Tutorial_Basics</a>
     </li>
+    <li>
+      <a href="../articles/Tutorial_install.html">Tutorial_install</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -125,7 +128,7 @@ In case of fastq files the file can also be in compressed format (e.g. *.fastq.t
 This parameter will be inferred from the file name, if not set.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kmr_response</span>(<span class='no'>fastx</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>5</span>, <span class='fl'>11</span>, <span class='fl'>2</span>), <span class='kw'>fmt</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>kmr_response</span>(<span class='no'>fastx</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>5</span>, <span class='fl'>11</span>, <span class='fl'>2</span>), <span class='kw'>fmt</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ci</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -141,6 +144,10 @@ This parameter will be inferred from the file name, if not set.</p>
     <tr>
       <th>fmt</th>
       <td><p>type of input file, fasta = f, fasta with multiple lines = m, fastq = q</p></td>
+    </tr>
+    <tr>
+      <th>ci</th>
+      <td><p>cutoff value for min k</p></td>
     </tr>
     </table>
 
