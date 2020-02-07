@@ -5,11 +5,11 @@
 #' @param res result from genomic response scan
 #' @param ref_k a reference k value to include
 #' @param limit a numeric value between 0 and 1. If 0 no line will be displayed. Default is 0. A recommended value is 0.95.
-#'
+#' @param max_y a maximum y value. Default 0 indicates automatic selection.
 #' @return plot
 #' @import ggplot2 
 #' @export
-kmr_plot_response  <- function(res, ref_k = NULL, limit = 0) {
+kmr_plot_response  <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
   stopifnot(is.data.frame(res))
   stopifnot(nrow(res) > 2)
   res_org <- res
@@ -17,7 +17,7 @@ kmr_plot_response  <- function(res, ref_k = NULL, limit = 0) {
   #half_k <- kmr_calc_k_half(res)
   k_lim <- ifelse(limit > 0, kmr_calc_k_limit(res, limit)$k, 0)
   
-  y_max <- max(res$total)
+  y_max <- ifelse(max_y == 0, max(res$total), max_y)
   
   res[res$universe > y_max, "universe"] <- y_max 
   rn <- row.names(res[res$universe == y_max, ])

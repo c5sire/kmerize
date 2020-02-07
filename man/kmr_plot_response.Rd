@@ -4,7 +4,7 @@
 \alias{kmr_plot_response}
 \title{kmr_plot_response}
 \usage{
-kmr_plot_response(res, ref_k = NULL, limit = 0)
+kmr_plot_response(res, ref_k = NULL, limit = 0, max_y = -1)
 }
 \arguments{
 \item{res}{result from genomic response scan}
@@ -12,6 +12,8 @@ kmr_plot_response(res, ref_k = NULL, limit = 0)
 \item{ref_k}{a reference k value to include}
 
 \item{limit}{a numeric value between 0 and 1. If 0 no line will be displayed. Default is 0. A recommended value is 0.95.}
+
+\item{max_y}{a maximum y value. Default 0 indicates automatic selection.}
 }
 \value{
 plot

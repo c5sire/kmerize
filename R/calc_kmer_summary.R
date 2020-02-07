@@ -1,9 +1,9 @@
-calc_kmer_summary <- function(fasta, out_file = NULL, k = 3, f = "m") {
+calc_kmer_summary <- function(fasta, out_file = NULL, k = 3, f = "m", ci = 0) {
   # extract kmers
   if (is.null(out_file)) {
     out_file <- file.path(tempdir(), corename(fasta))
   }
-  k_cnt <- kmr_count(fasta, out_file, k = k[1], f = f, ci = 0)
+  k_cnt <- kmr_count(fasta, out_file, k = k[1], f = f, ci = ci)
   
   # dump kmers
   rds <- kmr_write_rds(k_cnt)

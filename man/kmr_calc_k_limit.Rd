@@ -15,5 +15,5 @@ kmr_calc_k_limit(res, limit = 0.95)
 list k and limit values
 }
 \description{
-Calculates the k corresponding to a limit relative to the maximum number of k-mers.
+Calculates the k corresponding to a limit relative to the distinct number of k-mers.
 }

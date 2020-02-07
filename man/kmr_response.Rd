@@ -4,7 +4,7 @@
 \alias{kmr_response}
 \title{kmr_response}
 \usage{
-kmr_response(fastx, k = seq(5, 11, 2), fmt = NULL)
+kmr_response(fastx, k = seq(5, 11, 2), fmt = NULL, ci = 0)
 }
 \arguments{
 \item{fastx}{a fastq or fasta formatted file}
@@ -12,6 +12,8 @@ kmr_response(fastx, k = seq(5, 11, 2), fmt = NULL)
 \item{k}{kmer size. One value or a sequence of values}
 
 \item{fmt}{type of input file, fasta = f, fasta with multiple lines = m, fastq = q}
+
+\item{ci}{cutoff value for min k}
 }
 \value{
 data.frame with results

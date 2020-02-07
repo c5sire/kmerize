@@ -7,10 +7,11 @@
 #' @param fastx a fastq or fasta formatted file
 #' @param k kmer size. One value or a sequence of values
 #' @param fmt type of input file, fasta = f, fasta with multiple lines = m, fastq = q
+#' @param ci cutoff value for min k
 #'
 #' @return data.frame with results
 #' @export
-kmr_response <- function(fastx, k = seq(5, 11, 2), fmt = NULL) {
+kmr_response <- function(fastx, k = seq(5, 11, 2), fmt = NULL, ci = 0) {
   if (!file.exists(fastx)) stop("Data file path does not exist!")
   
   msg <- "k must be a positive integer > 0 and < 256"
@@ -27,7 +28,7 @@ kmr_response <- function(fastx, k = seq(5, 11, 2), fmt = NULL) {
   }
   if (!fmt %in% c("a", "m", "q")) stop("fmt must be one of NULL, a, m, q!")
   
-  res <- calc_kmer_summary(fastx, k = k[1],  f = fmt)
+  res <- calc_kmer_summary(fastx, k = k[1],  f = fmt, ci = ci)
   
   if (length(k) < 2) return(res)
 
@@ -36,7 +37,7 @@ kmr_response <- function(fastx, k = seq(5, 11, 2), fmt = NULL) {
   for (i in 2:n) {
     cat(paste0(k[i], "\n"))
     
-    res <- rbind(res, calc_kmer_summary(fastx, k =  k[i], f = fmt))
+    res <- rbind(res, calc_kmer_summary(fastx, k =  k[i], f = fmt, ci = ci))
     chk <- res$unique[i] / res$total[i]
     if(chk > 0.9999) break
   }
