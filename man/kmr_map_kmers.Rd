@@ -4,14 +4,14 @@
 \alias{kmr_map_kmers}
 \title{kmr_map_kmers}
 \usage{
-kmr_map_kmers(k, genome, seqname = "phix")
+kmr_map_kmers(kmers, genome, seqname = "phix")
 }
 \arguments{
+\item{kmers}{kmer table}
+
 \item{genome}{a fasta sequence}
 
 \item{seqname}{name of the sequence}
-
-\item{kmers}{kmer table}
 }
 \value{
 GRange object of mapped kmers

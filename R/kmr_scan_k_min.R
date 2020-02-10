@@ -53,7 +53,7 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
     
   }
   # cleanup tmp dir
-  write.csv(atbl, "kmer_scan_results.csv")
+  utils::write.csv(atbl, "kmer_scan_results.csv")
   if (cleanup) {
     unlink(tmd, recursive = TRUE, force = TRUE)
     unlink("result_kmerize*.*")
