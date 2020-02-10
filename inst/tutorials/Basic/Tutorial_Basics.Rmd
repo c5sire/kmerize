@@ -2,24 +2,25 @@
 title: "K-mer Basics"
 description: A brief review of k-mers and their relevant properties.
 tutorial:
-  id: "nl.wur.pbg.kmerize"
+  id: "kmerize.basic"
   version: 0.9
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
 
-```{r, include = FALSE}
+```{r setup}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-```
 
-```{r setup}
 library(kmerize)
 library(ggplot2)
 library(magrittr)
+library(shiny)
+library(DT)
 ```
+
 
 
 ## What Are K-mers?
@@ -40,42 +41,56 @@ In principle, it is possible to heuristically estimate the total number of k-mer
 
 Here, the example of the virus phix174 (the first sequenced organism) shows the principle following a blogpost here(x). Another wording is, to evaluate the genomic response to changes in k.
 
-### Genomic Response of Phi x 174 
+## Genomic Response of Phi x 174 
 
 This package contains the full sequende of PhiX174 from NCBI. 
 
-```{r echo=FALSE}
+```{r data)
   # Getting a genome
   fa <-  system.file("testdata/phix174.fasta", 
                      package = "kmerize")
+                     
+  phix_length <- kmr_length_fasta(fa)                   
 
   # Setting an output file in a temporary directory since this is for demo
-  out_file <- file.path(tempdir(), "phi174")
+  out_file <- file.path(tempdir(), "phix174")
   
   # here we create a sequence of k in steps of 2
-  step <- 2
-  k <- seq(5, 21, step) %>% as.integer()
+
+  k <- as.integer(seq(3, 21, 2))
+  
+  phix_response <- kmr_response(fa, k)
+  
+  k_cutoff <- kmr_calc_k_limit(phix_response, k_lim)
+
 ```
 
-These k values are: `r paste(k, sep = ", ")`.
+
+
+## Genomic Response Table
 
 The convenience method for the genomic response returns a summary table. This includes also the theoretical maximum number of k-mers (the k-mer universe) for each value of k.
-```{r message=FALSE}
-phix_response <- kmr_response(fa, k)
-```
 
 The resulting table shows only values up to 13. This is because currently, it stops once the number of unique k-mers equals (exactly more than .9999) the distinct k-mers. This means, at and after this k value all k-mers have become unique.
 
-```{r}
-knitr::kable(phix_response)
+```{r dt, context="server"}
+
+output$tbl <- renderDataTable({
+  phix_response
+})
 ```
 Plotting this table shows the following response curve:
 
-```{r warning=FALSE, fig.width=7}
-p <- kmr_plot_response(phix_response)
-p
+```{r grplot, context="server"}
+output$plot <- renderPlot({
+   kmr_plot_response(phix_response, max_y = phix_length)
+
+})
+
 ```
-### Chosing a cutoff value
+
+## Genomic Response Graph
+
 
 Now the curves for the unique and distinct k-mers follow an S curve or power law curve with diminishing response in variability (distinct / unique) as k increases. At around 95% there seems to be a distinct land mark.
 
@@ -84,41 +99,46 @@ He argued that 95% of an organization’s performance depends on the quality of 
 In analogy, one could expect that most of an organisms makeup is needed for basic house keeping and maybe 5% are interesting 'diversity'.
 
 
-```{r}
-
-lim <- .95
-kc_9 <- max(phix_response$total) * lim
-
-kc_9
+```{r, echo=FALSE}
+sliderInput("lim", "Value of relative limit to maximum distinct k-mers", min = 0, max = 1, value = .95)
+plotOutput("genomeResponse")
 ```
+
+```{r, context="server"}
+k_lim <- max(phix_response$total) * input$lim
+
+k_lim
+```
+
 
 So, this cutoff value can be added to the graph as follows:
 
 
-```{r warning=FALSE, fig.width=7}
- p <- p +
-      geom_hline(yintercept = kc_9, linetype = "dashed", color = "darkgreen", lwd = .6)
+```{r, eval=FALSE, context="server"}
+output$plot2 <- renderPlot({
+  p <- p +
+      geom_hline(yintercept = k_lim, linetype = "dashed", color = "darkgreen", lwd = .6)
+ p 
+})
+
+```
+
+```{r gr2, context="server"}
+output$genomeResponse <- renderPlot({
+  p <- p +
+      geom_hline(yintercept = k_lim, linetype = "dashed", color = "darkgreen", lwd = .6)
  p
+})
 ```
-And the corresponding k value can be extracted as follows adding a correction of the step size value (2).
+And the corresponding k value can be extracted with the following function:
 
-```{r warning=FALSE, fig.width=7}
-k_9 <- max(phix_response[phix_response$distinct < kc_9, "k"]) + step
+## Convencience Graph Options
 
-k_9
-```
-This gives a k-value that captures the k value in the genomic response of phix174 after which diversity decreases rapidly.
+The plot function includes options to automatically show a k cutoff corresponding to a certain limit and also to set a maximum limit for y axis.
 
-```{r}
-phix_response[phix_response$k >= (k_9 - 2), "unique"] / phix_response[phix_response$k >= (k_9 - 2), "distinct"]
-```
+```{ plot3r, context="server"}
 
-
-
-```{r warning=FALSE, fig.width=7}
-k_lim = 9
-yk = 2000
-p <- kmr_plot_response(phix_response, limit = lim)
+p <- kmr_plot_response(phix_response, limit = lim, max_y = phix_length)
 p 
 ```
 
