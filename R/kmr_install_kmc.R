@@ -32,7 +32,7 @@ kmr_install_kmc <- function(download_file = NULL) {
     url_app <- switch(los,
                 Windows = "KMC3.windows.tar.gz",
                 Linux = "KMC3.linux.tar.gz",
-                Mac = "KMC3.mac.tar.gz"
+                "KMC3.mac.tar.gz"
            )
     url <- file.path(url_base, url_app)
     

@@ -14,7 +14,7 @@ kmr_map_kmers(k, genome, seqname = "phix")
 \item{kmers}{kmer table}
 }
 \value{
-
+GRange object of mapped kmers
 }
 \description{
 kmr_map_kmers

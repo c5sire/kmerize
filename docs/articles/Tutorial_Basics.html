@@ -59,6 +59,9 @@
     <li>
       <a href="../articles/Tutorial_install.html">Tutorial_install</a>
     </li>
+    <li>
+      <a href="../articles/Tutorial_potato_1.html">Tutorial_potato_1</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -86,7 +89,8 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(kmerize)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(magrittr)</span></code></pre></div>
 <div id="what-are-k-mers" class="section level2">
 <h2 class="hasAnchor">
 <a href="#what-are-k-mers" class="anchor"></a>What Are K-mers?</h2>
@@ -108,15 +112,13 @@
 <h3 class="hasAnchor">
 <a href="#genomic-response-of-phi-x-174" class="anchor"></a>Genomic Response of Phi x 174</h3>
 <p>This package contains the full sequende of PhiX174 from NCBI.</p>
-<p>These k values are: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21.</p>
+<p>These k values are: 5, 7, 9, 11, 13, 15, 17, 19, 21.</p>
 <p>The convenience method for the genomic response returns a summary table. This includes also the theoretical maximum number of k-mers (the k-mer universe) for each value of k.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>phix_response &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kmr_response.html">kmr_response</a></span>(fa, k)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#&gt; 3</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; 5</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co">#&gt; 7</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#&gt; 9</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="co">#&gt; 11</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co">#&gt; 13</span></span></code></pre></div>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#&gt; 7</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; 9</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">#&gt; 11</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#&gt; 13</span></span></code></pre></div>
 <p>The resulting table shows only values up to 13. This is because currently, it stops once the number of unique k-mers equals (exactly more than .9999) the distinct k-mers. This means, at and after this k value all k-mers have become unique.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>knitr<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(phix_response)</span></code></pre></div>
 <table class="table">
@@ -128,20 +130,6 @@
 <th align="right">universe</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">2</td>
-<td align="right">510</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">32</td>
-<td align="right">5328</td>
-<td align="right">32</td>
-</tr>
 <tr class="odd">
 <td align="right">5</td>
 <td align="right">10</td>

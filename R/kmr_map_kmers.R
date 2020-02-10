@@ -4,7 +4,7 @@
 #' @param genome a fasta sequence
 #' @param seqname name of the sequence
 #'
-#' @return
+#' @return GRange object of mapped kmers
 kmr_map_kmers <- function(k, genome, seqname = "phix") {
   if (!"kmer" %in% names(kmers)) stop("Kmer table does not contain column named kmer.")
   dict <- DNAStringSet(kmers$kmer)

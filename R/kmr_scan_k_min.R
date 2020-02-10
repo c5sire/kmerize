@@ -1,9 +1,11 @@
 
-kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100, min_kmers = 10, f = "q") {
+kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100, 
+                           min_kmers = 10, f = "q",
+                           cleanup = TRUE) {
   
   tmd <- tempdir()
-  a_out <- file.path(tmd, kmerize:::corename(a))
-  b_out <- file.path(tmd, kmerize:::corename(b))
+  a_out <- file.path(tmd, corename(a))
+  b_out <- file.path(tmd, corename(b))
   atbl <- as.data.frame(cbind(k = NA, n_kmer = NA))
   
   # result table
@@ -52,10 +54,11 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100, min_kmers 
   }
   # cleanup tmp dir
   write.csv(atbl, "kmer_scan_results.csv")
-  #unlink(tmd, recursive = TRUE, force = TRUE)
-  #unlink("result_kmerize*.*")
-  
-  
+  if (cleanup) {
+    unlink(tmd, recursive = TRUE, force = TRUE)
+    unlink("result_kmerize*.*")
+  }
+
   atbl <- atbl[-c(1), ]
   # get min k
   atbl <- atbl[atbl$n_kmer >= min_kmers, ]
@@ -64,6 +67,8 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100, min_kmers 
   # return list object with k_min and table
   return(list(k_min = k_min, res = atbl))
 }
+
+
 
 # a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
 # b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
