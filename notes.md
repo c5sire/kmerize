@@ -14,6 +14,8 @@ fully replace calc_k_half with calc_k_limit
 - prefilitering with shortreads being strict on quality and information content
 - deduplicate
 - subsample only up to a total of 10 Mio per genotype!
+- or consider removing the 95% most common kmers!
+  - check on 
 - prepare some examples for potato on spark!
 - map kmers
 - screen kmers for min k
@@ -21,7 +23,8 @@ fully replace calc_k_half with calc_k_limit
 
 - add file directory as input to kmer count
 
-- add plot functions for kmers
+- add map plot functions for kmers
+- a spectra plot functions
 
 - evaluate effect of indels! can it detect?
 

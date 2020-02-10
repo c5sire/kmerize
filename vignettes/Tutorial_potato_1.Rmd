@@ -1,0 +1,43 @@
+---
+title: "Tutorial_potato_1"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Tutorial_potato_1}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(kmerize)
+library(kmerize)
+library(ggplot2)
+```
+
+
+
+```{r echo=FALSE}
+  # Getting a genome
+  # fa <-  system.file("testdata/potato_JQ619511.fasta", 
+  #                    package = "kmerize")
+  fa <- "../inst/testdata/potato_JQ619511m.fasta"
+  file.exists(fa)
+  # Setting an output file in a temporary directory since this is for demo
+  out_file <- file.path(tempdir(), "potato")
+  
+  # here we create a sequence of k in steps of 2
+  step <- 2
+  k <- as.integer(seq(1, 51, step))
+```
+
+```{r message=FALSE}
+response <- kmr_response(fa, k)
+p <- kmr_plot_response(response, max_y = 128821, ref_k = 31, limit = .95)
+p
+```

@@ -1,4 +1,3 @@
-library(kmerize)
 
 kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100, min_kmers = 10, f = "q") {
   
@@ -66,9 +65,9 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100, min_kmers 
   return(list(k_min = k_min, res = atbl))
 }
 
-a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
-b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
-
-x <- kmr_scan_k_min(a, b, k = seq(7, 21, 2), min_kmers = 5)
-saveRDS(x, "krun3")
-x
+# a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
+# b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
+# 
+# x <- kmr_scan_k_min(a, b, k = seq(7, 21, 2), min_kmers = 5)
+# saveRDS(x, "krun3")
+# x
