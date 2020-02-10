@@ -5,3 +5,5 @@
 ^doc$
 ^docs$
 ^Meta$
+.*\.git
+.*\.gitignore
