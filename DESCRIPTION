@@ -6,6 +6,8 @@ Authors@R: person("Reinhard", "Simon", email = "rsimon64@gmail.com",
                   role = c("aut", "cre"),
                   comment = c(ORCID = "0000-0002-4608-9077")
                   )
+Author: Reinhard Simon [aut, cre]
+Maintainer: Reinhard Simon <rsimon64@gmail.com>                  
 Description: Kmerize provides convenience tools for creating and analyzing k-mers.
 Imports: arrow, Biostrings, GenomicRanges, ggbio, ggplot2, magrittr, parallel, rappdirs, 
   seqinr, stringr, utils
