@@ -1,5 +1,3 @@
-
-
 #' kmr_install_kmc
 #' 
 #' Installs a local version of kmc3.
