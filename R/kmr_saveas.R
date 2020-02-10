@@ -1,7 +1,7 @@
 
 kmr_saveas <- function(db, to = db, format = c("tab", "parquet",  "rds")) {
   
-  of <- paste(to, ".tab")
+  of <- paste0(to, ".tab")
   cmd <- dump(db, of)
   system(cmd)
   

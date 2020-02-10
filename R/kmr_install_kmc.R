@@ -35,7 +35,7 @@ kmr_install_kmc <- function(download_file = NULL) {
       url <- file.path(url_base, url_app)
       
       # download from official URL the appropriate version
-      tgt <- file.path(tempdir(), url_app)
+      tgt <- file.path(tempdir(), url_app) %>% get_safe_path()
       utils::download.file(url, tgt)
     } else {
       tgt <- download_file

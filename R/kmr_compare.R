@@ -40,7 +40,7 @@ kmr_compare <- function(in_files, cmp, ci = 2, cx = 1e9, cs = 255) {
   lines <- character()
   lines[1] <- "INPUT:"
   for (i in 1:length(in_files)) {
-    l <- paste0(names(in_files)[i], " = ", in_files[[i]])
+    l <- paste0(names(in_files)[i], " = ", get_safe_path(in_files[[i]]))
     lines[i + 1] <- l
   }
   
@@ -52,11 +52,11 @@ kmr_compare <- function(in_files, cmp, ci = 2, cx = 1e9, cs = 255) {
   lines[n + 5] <- paste0("-cx", cx)
   lines[n + 6] <- paste0("-cs", cs)
   
-  tmp_cmp <- file.path(tempdir(), "tmp_cmp.txt")
+  tmp_cmp <- file.path(tempdir(), "tmp_cmp.txt") %>% get_safe_path()
   writeLines(lines, tmp_cmp)
   
   cmd <- paste(cmp(), tmp_cmp)
   
-  system(cmd)
+  system(cmd, wait = TRUE)
 
 }

@@ -3,7 +3,7 @@ context("Kmer response")
 fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", 
                   package = "kmerize")
 k <- as.integer(seq(1, 3, 2))
-res <- kmr_response(fa, k)
+res <- kmr_response(fa, k, fmt = "q")
 
 test_that("Response on fastq works", {
   expect_true(

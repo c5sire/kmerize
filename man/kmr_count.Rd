@@ -10,7 +10,7 @@ kmr_count(
   k = 11,
   m = 12,
   sm = FALSE,
-  p = 9,
+  p = FALSE,
   f = "a",
   ci = 2,
   cx = 1e+09,
@@ -19,9 +19,9 @@ kmr_count(
   r = FALSE,
   n = 255,
   t = parallel::detectCores(),
-  sf = 4,
-  sp = 4,
-  sr = 4,
+  sf = FALSE,
+  sp = FALSE,
+  sr = FALSE,
   v = FALSE
 )
 }
