@@ -5,7 +5,7 @@
 #' @param fasta path to a file
 #'
 #' @return integer length of the sequence in the file
-#' @import seqinr
+#' @import Biostrings
 #' @export
 #'
 #' @examples
@@ -19,7 +19,7 @@ kmr_length_fasta <- function(fasta = NULL) {
   if (is.null(fasta)) stop(msg)
   if (!file.exists(fasta)) stop(msg)
   
-  flen <- seqinr::read.fasta(fasta) %>% seqinr::getLength()
+  flen <- Biostrings::readDNAStringSet(fasta) %>% width
                                 
   return(flen)
 }

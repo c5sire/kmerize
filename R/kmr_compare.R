@@ -25,6 +25,7 @@
 #' @return out_file
 #' @author Reinhard Simon
 #' @references Kokot M, Długosz M, Deorowicz S. KMC 3: counting and manipulating k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
+#' @importFrom magrittr %>%
 #' @export
 #'
 #' @examples
@@ -46,7 +47,7 @@ kmr_compare <- function(in_files, cmp, ci = 2, cx = 1e9, cs = 255) {
   
   n <- length(lines)
   lines[n + 1] <- "OUTPUT:"
-  lines[n + 2] <- paste0(names(cmp), " = ", as.character(cmp))
+  lines[n + 2] <- paste0(cmp[[1]], " = ", cmp[[2]])
   lines[n + 3] <- "OUTPUT_PARAMS:"
   lines[n + 4] <- paste0("-ci", ci)
   lines[n + 5] <- paste0("-cx", cx)
@@ -58,5 +59,5 @@ kmr_compare <- function(in_files, cmp, ci = 2, cx = 1e9, cs = 255) {
   cmd <- paste(cmp(), tmp_cmp)
   
   system(cmd, wait = TRUE)
-
+  return(cmp[[1]])
 }

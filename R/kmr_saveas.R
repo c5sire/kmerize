@@ -2,10 +2,10 @@
 kmr_saveas <- function(db, to = db, format = c("tab", "parquet",  "rds")) {
   
   of <- paste0(to, ".tab")
-  cmd <- dump(db, of)
-  system(cmd)
+  cmd <- dmp(db, of)
+  system(cmd, wait = TRUE)
   
-  tbl <- utils::read.csv(to, header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+  tbl <- utils::read.csv(of, header = FALSE, sep = "\t", stringsAsFactors = FALSE)
   names(tbl
   ) <- c("kmer", "count")
   

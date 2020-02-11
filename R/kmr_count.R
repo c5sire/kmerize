@@ -102,7 +102,9 @@ kmr_count <- function(in_files,
   cmd <- paste0(kmc(), params)
   cmd <- paste0(cmd, " ", in_files[1], " ", out_file, " ", tmp)
 
-  sys_mes <- system(cmd, intern = TRUE, wait = TRUE)
+  cat(cmd)
+  cat("\n")
+  system(cmd,  wait = TRUE)
 
   #unlink(tmp, recursive = TRUE, force = TRUE)
   return(path.expand(out_file))
