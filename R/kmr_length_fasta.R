@@ -10,7 +10,7 @@
 #'
 #' @examples
 #' 
-#' fasta <- system.file("int/testdata/phix174.fasta)
+#' fasta <- system.file("testdata/phix174.fasta", package = "kmerize")
 #' 
 #' kmr_length_fasta(fasta)
 #' 

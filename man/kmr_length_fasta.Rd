@@ -15,3 +15,10 @@ integer length of the sequence in the file
 \description{
 Get the length of a sequnce in a fasta formatted file.
 }
+\examples{
+
+fasta <- system.file("testdata/phix174.fasta", package = "kmerize")
+
+kmr_length_fasta(fasta)
+
+}
