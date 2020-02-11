@@ -1,4 +1,7 @@
 context("K limit")
+
+skip_if_not(kmerize:::get_os() == "Windows", "Skipping image creation on Mac.")
+
 fa <- system.file("testdata/phix174.fasta", 
                   package = "kmerize")
 k <- as.integer(seq(5, 17, 2))
