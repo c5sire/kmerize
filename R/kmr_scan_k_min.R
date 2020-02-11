@@ -24,20 +24,27 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
     if (k[i] > 12) Sys.sleep(2)
     if (file.exists(paste0(a_cnt, ".kmc_pre")) && file.exists(paste0(b_cnt, ".kmc_pre"))) {
       res_kmr <- file.path(tmd, "result__kmerize")
-    c_res <-
+      c_res <-
       kmr_compare(list(a = a_cnt, b = b_cnt), cmp = list(
         res_kmr,  "a - b"),
                          ci = ci, cx = cx)
    
-    
-    # convert result of comparison to rds table
-    cat("\n")
-    cat("\n")
-    cat(k[i])
-    cat("\n")
-    if (file.size(paste0(res_kmr, ".kmc_suf")) > 10) {
-      c_tbl <- 
-        kmr_write_rds(file.path(res_kmr))
+    #   cat(res_kmr)
+    #   cat("\n")
+    #   
+    #   cat(c_res)
+    #   cat("\n")
+    # # convert result of comparison to rds table
+    # cat("\n")
+    # cat("\n")
+    # cat(k[i])
+    # cat("\n")
+    if (file.size(paste0(res_kmr, ".kmc_pre")) > 10) {
+      # cat("\nw\n")
+      c_tbl <- kmr_write_rds(file.path(res_kmr))
+      # 
+      # cat(c_tbl)
+      # cat("\nx\n")
       
       # read rds table, get n of rows == n of distinct kmers
       if (file.size(c_tbl) > 0) {

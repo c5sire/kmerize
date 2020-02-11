@@ -96,8 +96,8 @@ kmr_count <- function(in_files,
   cmd <- paste0(kmc(), params)
   cmd <- paste0(cmd, " ", in_files[1], " ", out_file, " ", tmp)
 
-  cat(cmd)
-  cat("\n")
+  # cat(cmd)
+  # cat("\n")
   system(cmd,  wait = TRUE)
 
   #unlink(tmp, recursive = TRUE, force = TRUE)
