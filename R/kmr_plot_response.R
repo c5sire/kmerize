@@ -11,7 +11,7 @@
 #' @export
 kmr_plot_response  <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
   stopifnot(is.data.frame(res))
-  stopifnot(nrow(res) > 2)
+  stopifnot(nrow(res) > 1)
   res_org <- res
   
   #half_k <- kmr_calc_k_half(res)

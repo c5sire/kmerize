@@ -5,6 +5,24 @@ fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
 k <- as.integer(seq(1, 3, 2))
 res <- kmr_response(fa, k, fmt = "q")
 
+test_that("Response detects non-numeric k", {
+  expect_error(
+    kmr_response(fa, k = "x", fmt = "q")
+  )
+}
+)
+
+test_that("Response plot creates a plotl", {
+  p <- kmr_plot_response(res, limit = .95)
+  expect_true(
+    ggplot2::is.ggplot(p)
+  )
+}
+)
+
+
+
+
 test_that("Response on fastq works", {
   expect_true(
     nrow(res) == 2
@@ -16,11 +34,11 @@ fm <- system.file("testdata/phix174.fasta",
                   package = "kmerize")
 
 k <- as.integer(1)
-res <- kmr_response(fm, k)
+res2 <- kmr_response(fm, k)
 
 test_that("Response on fasta works", {
   expect_true(
-    nrow(res) == 1
+    nrow(res2) == 1
   )
 }
 )
@@ -127,5 +145,4 @@ test_that("Response raises error if k = logical", {
   )
 }
 )
-
 

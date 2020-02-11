@@ -1,10 +1,8 @@
 kmc <- function() {
-  if (get_os() == "Windows") {
-    fp <- paste0( file.path(get_kmc_base(), "kmer_counter.exe"))  
-  } else {
-    fp <- file.path(get_kmc_base(), "kmc") 
-  }
-  # fp <- get_safe_path(fp)
+  los <- get_os()
+  wp <- paste0( file.path(get_kmc_base(), "kmer_counter.exe"))
+  op <- file.path(get_kmc_base(), "kmc")
+  fp <- ifelse (los == "Windows", wp, op)
   
   return(fp)
 }
