@@ -2,6 +2,12 @@
 #' 
 #' Count kmers.
 #' 
+#' A few parameters of the kmc3 counting program are not supported:
+#'   p signature length; default is 9.
+#'  sf Number of threads for FASTQ reading. Default is 4.
+#'  sp Number of threads for splitting. Default is 4.
+#'  sr Number of threads for second stage. Default is 4
+#' 
 #' @note Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the backend on Windows, Linux, and
 #' Mac. The parameter lists corresponds to the list of options of kmc3.
 #'
@@ -10,7 +16,6 @@
 #' @param k kmer size; default is 11.
 #' @param m RAM memory size; default is 12.
 #' @param sm strict memory mode; default is FALSE.
-#' @param p signature length; default is 9.
 #' @param f format of input files; options: a fasta, m multiple fasta, q fastq. Default is a.
 #' @param ci minimum occurrence of kmers; default is 2.
 #' @param cx maximum occurrence of kmers: default is 1e9.
@@ -19,9 +24,6 @@
 #' @param r turn on RAM only. Default is FALSE.
 #' @param n Number of bins. Default is 255.
 #' @param t Number of threads. Default is all available number of CPUs.
-#' @param sf Number of threads for FASTQ reading. Default is 4.
-#' @param sp Number of threads for splitting. Default is 4.
-#' @param sr Number of threads for second stage. Default is 4
 #' @param v Use verbose mode. Default is FALSE.
 #'
 #' @return out_file
@@ -44,7 +46,6 @@ kmr_count <- function(in_files,
                     k = 11, 
                     m = 12, # RAM
                     sm = FALSE, # strict memory mode
-                    p = FALSE, # signature length: 5:11
                     f = "a", # format: fa, fm , fq
                     ci = 2, #minim k occurrence
                     cx = 1e9, # max k occ
@@ -53,9 +54,6 @@ kmr_count <- function(in_files,
                     r = FALSE, # turn on RAM only
                     n = 255, # number of bins
                     t = parallel::detectCores(), # number of cores
-                    sf = FALSE, # number of threads for FASTQ reading
-                    sp = FALSE, # number of splitting threads
-                    sr = FALSE, # number of threads for second stage
                     v = FALSE # verbose mode; use to turn off 
 ) {
   # check if files exists
@@ -89,11 +87,7 @@ kmr_count <- function(in_files,
   params <- sprintf(params, k, m, f, ci, cx, cs, n, t)
   
   if(sm) params <- paste0(params, " -sm", sm)
-  if(p) params <- paste0(params, "-p", p)
-  if(sf) params <- paste0(params, "-sf", sf)
-  if(sp) params <- paste0(params, "-sp", sp)
-  if(sr) params <- paste0(params, "-sr", sr)
-  
+
   if(sm) params <- paste(params, "-sm")
   if(b) params <- paste(params, "-b")
   if(r && !sm) params <- paste(params, "-r")

@@ -19,7 +19,6 @@ kmr_response <- function(fastx, k = seq(5, 11, 2), fmt = NULL, ci = 0) {
   if (any(is.na(k))) stop(msg)
   if (any(is.character(k))) stop(msg)
   if (any(is.logical(k))) stop(msg)
-  if (!is.numeric(k)) stop(msg)
   if (any(is.double(k))) stop(msg)
   if (any(k <= 0)) stop(msg)
   if (any(k > 255)) stop(msg)

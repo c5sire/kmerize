@@ -29,33 +29,33 @@ test_that("kmer counter runs without error", {
 #file.exists(pr)
 context("Plot the genomic response")
 
-# test_that("Plot exists", {
-#   expect_true(
-#     file.exists(pr) == TRUE
-#   )
-# })
-# 
-# 
-# test_that("Plot has expected size", {
-#   expect_true(
-#     file.size(pr)[1] >= 300
-#   )
-# })
-# 
-# 
-# 
-# #file.exists(pr)
-# context("Plot the genomic response with ref k")
-# 
-# test_that("Plot exists", {
-#   expect_true(
-#     file.exists(pr2)
-#   )
-# })
-# 
-# 
-# test_that("Plot has expected size", {
-#   expect_true(
-#     file.size(pr2)[1] >= 300
-#   )
-# })
+test_that("Plot exists", {
+  expect_true(
+    file.exists(pr) == TRUE
+  )
+})
+
+
+test_that("Plot has expected size", {
+  expect_true(
+    file.size(pr)[1] >= 300
+  )
+})
+
+
+
+#file.exists(pr)
+context("Plot the genomic response with ref k")
+
+test_that("Plot exists", {
+  expect_true(
+    file.exists(pr2)
+  )
+})
+
+
+test_that("Plot has expected size", {
+  expect_true(
+    file.size(pr2)[1] >= 300
+  )
+})

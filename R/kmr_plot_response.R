@@ -26,7 +26,7 @@ kmr_plot_response  <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
   
  
  
-  p = ggplot() + 
+  p = ggplot2::ggplot() + 
     ylim(0, y_max) +
     geom_line(data = res[, c(1, 2)], aes(x = .data$k, y = .data$unique,  color = "unique")) +
     geom_line(data = res[, c(1, 3)], aes(x = .data$k, y = .data$distinct, color = "distinct")) +

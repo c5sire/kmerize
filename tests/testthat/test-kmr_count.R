@@ -109,3 +109,18 @@ test_that("kmer counter converts parameter correctly", {
   
   )
 })
+
+
+test_that("kmer counter produces output files with size > 0 when out dir not exists", {
+  out_file <-  file.path(tempdir(), "subdir", "phwei11")
+  expect_true(
+    expect_true(length(
+      capture.output(
+        x = kmr_count(fa, out_file, k = k, f = "q")
+      )
+    ) > 0
+    )
+  )
+})
+
+
