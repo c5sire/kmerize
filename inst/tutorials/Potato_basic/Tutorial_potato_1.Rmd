@@ -17,8 +17,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(kmerize)
-library(kmerize)
-library(ggplot2)
+
 ```
 
 

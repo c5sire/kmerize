@@ -4,12 +4,12 @@
 \alias{kmr_map_kmers}
 \title{kmr_map_kmers}
 \usage{
-kmr_map_kmers(kmers, genome, seqname = "phix")
+kmr_map_kmers(kmers, genome, seqname = NULL)
 }
 \arguments{
 \item{kmers}{kmer table}
 
-\item{genome}{a fasta sequence}
+\item{genome}{a path to a fasta sequence}
 
 \item{seqname}{name of the sequence}
 }

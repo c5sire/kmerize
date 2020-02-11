@@ -15,9 +15,7 @@ knitr::opts_chunk$set(
 )
 
 library(kmerize)
-library(ggplot2)
-library(magrittr)
-
+library(ggbio)
 ```
 
 
@@ -46,8 +44,6 @@ This package contains the full sequende of PhiX174 from NCBI.
 
 ```{r eval=FALSE}
 library(kmerize)
-library(ggplot2)
-library(magrittr)
 
 ```
 

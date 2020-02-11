@@ -15,7 +15,7 @@ test_that("Response detects non-numeric k", {
 test_that("Response plot creates a plotl", {
   p <- kmr_plot_response(res, limit = .95)
   expect_true(
-    ggplot2::is.ggplot(p)
+    class(p)[[1]] == "GGbio"
   )
 }
 )

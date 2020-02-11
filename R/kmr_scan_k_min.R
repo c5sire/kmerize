@@ -23,8 +23,10 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
     
     if (k[i] > 12) Sys.sleep(2)
     if (file.exists(paste0(a_cnt, ".kmc_pre")) && file.exists(paste0(b_cnt, ".kmc_pre"))) {
+      res_kmr <- file.path(tmd, "result__kmerize")
     c_res <-
-      kmr_compare(list(a = a_cnt, b = b_cnt), cmp = list(result__kmerize = "a - b"),
+      kmr_compare(list(a = a_cnt, b = b_cnt), cmp = list(
+        res_kmr,  "a - b"),
                          ci = ci, cx = cx)
    
     
@@ -33,19 +35,21 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
     cat("\n")
     cat(k[i])
     cat("\n")
-    if (file.size("result__kmerize.kmc_suf") > 10) {
+    if (file.size(paste0(res_kmr, ".kmc_suf")) > 10) {
       c_tbl <- 
-        kmr_write_rds("result__kmerize")
+        kmr_write_rds(file.path(res_kmr))
       
       # read rds table, get n of rows == n of distinct kmers
-      if (file.size("result__kmerize") > 0) {
+      if (file.size(c_tbl) > 0) {
         tbl <- kmr_read_rds(c_tbl)
         n_kmer <- nrow(tbl)
         
         # add new row to result table
         arow <- as.data.frame(cbind(k = k[i], n_kmer = n_kmer))
         atbl <- rbind(atbl, arow)
-        
+  
+        # if use again point to a tmp dir!
+        #utils::write.csv(atbl, "kmer_scan_results.csv")       
       }
     }
     } # kmer count files exist
@@ -53,10 +57,10 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
     
   }
   # cleanup tmp dir
-  utils::write.csv(atbl, "kmer_scan_results.csv")
+ 
   if (cleanup) {
     unlink(tmd, recursive = TRUE, force = TRUE)
-    unlink("result_kmerize*.*")
+    unlink(file.path(tmd, ".*"))
   }
 
   atbl <- atbl[-c(1), ]
@@ -65,7 +69,7 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
   k_min <- min(atbl$k)
   
   # return list object with k_min and table
-  return(list(k_min = k_min, res = atbl))
+  return(list(k_min = k_min, res = atbl, kmer_tbl = paste0(res_kmr, ".rds")))
 }
 
 

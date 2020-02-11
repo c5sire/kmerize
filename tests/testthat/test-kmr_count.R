@@ -124,3 +124,29 @@ test_that("kmer counter produces output files with size > 0 when out dir not exi
 })
 
 
+context("kmer counter accepts more than one file")
+
+test_that("kmer counter accepts two files", {
+  out_file <-  file.path(tempdir(), "subdir", "phwei11")
+  expect_true(
+    expect_true(length(
+      capture.output(
+        x = kmr_count(c(fa, fa), out_file, k = k, f = "q")
+      )
+    ) > 0
+    )
+  )
+})
+
+test_that("kmer counter deletes internal temp file", {
+  out_file <-  file.path(tempdir(), "subdir", "phwei11")
+  x = kmr_count(c(fa, fa), out_file, k = k, f = "q")
+  expect_true(
+    expect_true(length(
+      capture.output(
+        x = kmr_count(c(fa, fa), out_file, k = k, f = "q")
+      )
+    ) > 0
+    )
+  )
+})
