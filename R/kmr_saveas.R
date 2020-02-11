@@ -6,8 +6,7 @@ kmr_saveas <- function(db, to = db, format = c("tab", "parquet",  "rds")) {
   system(cmd)
   
   tbl <- utils::read.csv(to, header = FALSE, sep = "\t", stringsAsFactors = FALSE)
-  names(tbl
-  ) <- c("kmer", "count")
+  names(tbl) <- c("kmer", "count")
   
   
   if (format == "tab") {
