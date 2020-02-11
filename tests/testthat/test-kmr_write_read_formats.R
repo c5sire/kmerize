@@ -6,11 +6,15 @@ k <- 7
 
 out_file <- file.path(tempdir(), "phwei11")
 kmr_count(fa, out_file, k = k, f = "q")
+
+fo <- kmr_write_tab(out_file)
+
+dat <- kmr_read_tab(out_file)
 #out_db <- paste0(out_file, c(".kmc_pre", ".kmc_suf"))
 
 test_that("Can write file: .tab", {
   expect_true(
-    kmr_write_tab(out_file) == paste0(out_file, ".tab")
+   fo  == paste0(out_file, ".tab")
   )
 })
 
@@ -28,7 +32,7 @@ test_that("Can write file: .parquet", {
 
 
 test_that("Can read tab file", {
-  dat <- kmr_read_tab(out_file)
+  
   expect_true(
     all(names(dat) == c("kmer", "count"))
   )

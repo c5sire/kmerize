@@ -1,10 +1,11 @@
 ---
-title: "Tutorial_potato_1"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Tutorial_potato_1}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+title: "Kmerize Potato"
+description: A brief intro to k-mer properties of potato genomes.
+tutorial:
+  id: "kmerize.potato_1"
+  version: 0.9
+output: learnr::tutorial
+runtime: shiny_prerendered
 ---
 
 ```{r, include = FALSE}
@@ -16,8 +17,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(kmerize)
-library(kmerize)
-library(ggplot2)
+
 ```
 
 

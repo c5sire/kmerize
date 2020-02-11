@@ -6,8 +6,11 @@ Authors@R: person("Reinhard", "Simon", email = "rsimon64@gmail.com",
                   role = c("aut", "cre"),
                   comment = c(ORCID = "0000-0002-4608-9077")
                   )
+Author: Reinhard Simon [aut, cre]
+Maintainer: Reinhard Simon <rsimon64@gmail.com>                  
 Description: Kmerize provides convenience tools for creating and analyzing k-mers.
-Imports: arrow, Biostrings, GenomicRanges, ggbio, ggplot2, magrittr, parallel, rappdirs, stringr, utils
+Imports: arrow, Biostrings, IRanges, GenomicRanges, ggplot2, ggbio, magrittr, rappdirs, 
+  utils
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -16,5 +19,6 @@ Suggests:
     testthat (>= 2.1.0),
     knitr,
     rmarkdown,
-    covr
+    covr,
+    shiny
 VignetteBuilder: knitr

@@ -16,7 +16,7 @@ test_that("kmer counter runs without error", {
     capture.output(
       x = kmr_count(fa, out_file, k = k, f = "q")
     )
-  ) == 1
+  ) > 0
   
   )
 })
@@ -42,7 +42,7 @@ test_that("kmer counter runs without error", {
     capture.output(
       kmr_count(fa, out_file, k = k, f = "q", sm = TRUE, b = TRUE, r = FALSE, v = TRUE)
     )
-  ) == 1
+  ) > 0
   
   )
 })
@@ -52,7 +52,7 @@ test_that("kmer counter runs without error & invalid param comb", {
     capture.output(
       kmr_count(fa, out_file, k = k, f = "q", sm = TRUE, b = TRUE, r = TRUE, v = TRUE)
     )
-  ) == 1
+  ) > 0
   
   )
 })
@@ -87,7 +87,7 @@ test_that("kmer counter runs ok with multiple files", {
     capture.output(
       kmr_count(fa, out_file, k = k, f = "m", ci = 0)
     )
-  ) == 1
+  ) > 0
   
   )
 })
@@ -105,7 +105,48 @@ test_that("kmer counter converts parameter correctly", {
     capture.output(
       kmr_count(fa, out_file, k = k, f = "m", ci = 0, r = TRUE, sm = FALSE)
     )
-  ) == 1
+  ) == 2
   
+  )
+})
+
+
+test_that("kmer counter produces output files with size > 0 when out dir not exists", {
+  out_file <-  file.path(tempdir(), "subdir", "phwei11")
+  expect_true(
+    expect_true(length(
+      capture.output(
+        x = kmr_count(fa, out_file, k = k, f = "q")
+      )
+    ) > 0
+    )
+  )
+})
+
+
+context("kmer counter accepts more than one file")
+
+test_that("kmer counter accepts two files", {
+  out_file <-  file.path(tempdir(), "subdir", "phwei11")
+  expect_true(
+    expect_true(length(
+      capture.output(
+        x = kmr_count(c(fa, fa), out_file, k = k, f = "q")
+      )
+    ) > 0
+    )
+  )
+})
+
+test_that("kmer counter deletes internal temp file", {
+  out_file <-  file.path(tempdir(), "subdir", "phwei11")
+  x = kmr_count(c(fa, fa), out_file, k = k, f = "q")
+  expect_true(
+    expect_true(length(
+      capture.output(
+        x = kmr_count(c(fa, fa), out_file, k = k, f = "q")
+      )
+    ) > 0
+    )
   )
 })

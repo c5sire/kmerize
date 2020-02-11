@@ -7,11 +7,11 @@
 #' @param limit a numeric value between 0 and 1. If 0 no line will be displayed. Default is 0. A recommended value is 0.95.
 #' @param max_y a maximum y value. Default 0 indicates automatic selection.
 #' @return plot
-#' @import ggplot2 
+#' @importFrom ggplot2 geom_line aes .data xlab ylab guides guide_legend geom_vline annotate ylim
 #' @export
 kmr_plot_response  <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
   stopifnot(is.data.frame(res))
-  stopifnot(nrow(res) > 2)
+  stopifnot(nrow(res) > 1)
   res_org <- res
   
   #half_k <- kmr_calc_k_half(res)
@@ -26,8 +26,8 @@ kmr_plot_response  <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
   
  
  
-  p = ggplot() + 
-    ylim(0, y_max) +
+  p = ggbio() + 
+    ggplot2::ylim(0, y_max) +
     geom_line(data = res[, c(1, 2)], aes(x = .data$k, y = .data$unique,  color = "unique")) +
     geom_line(data = res[, c(1, 3)], aes(x = .data$k, y = .data$distinct, color = "distinct")) +
     geom_line(data = res[, c(1, 4)], aes(x = .data$k, y = .data$total, color = "total")) +

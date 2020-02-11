@@ -10,7 +10,6 @@ kmr_count(
   k = 11,
   m = 12,
   sm = FALSE,
-  p = 9,
   f = "a",
   ci = 2,
   cx = 1e+09,
@@ -19,9 +18,6 @@ kmr_count(
   r = FALSE,
   n = 255,
   t = parallel::detectCores(),
-  sf = 4,
-  sp = 4,
-  sr = 4,
   v = FALSE
 )
 }
@@ -35,8 +31,6 @@ kmr_count(
 \item{m}{RAM memory size; default is 12.}
 
 \item{sm}{strict memory mode; default is FALSE.}
-
-\item{p}{signature length; default is 9.}
 
 \item{f}{format of input files; options: a fasta, m multiple fasta, q fastq. Default is a.}
 
@@ -54,12 +48,6 @@ kmr_count(
 
 \item{t}{Number of threads. Default is all available number of CPUs.}
 
-\item{sf}{Number of threads for FASTQ reading. Default is 4.}
-
-\item{sp}{Number of threads for splitting. Default is 4.}
-
-\item{sr}{Number of threads for second stage. Default is 4}
-
 \item{v}{Use verbose mode. Default is FALSE.}
 }
 \value{
@@ -67,6 +55,13 @@ out_file
 }
 \description{
 Count kmers.
+}
+\details{
+A few parameters of the kmc3 counting program are not supported:
+  p signature length; default is 9.
+ sf Number of threads for FASTQ reading. Default is 4.
+ sp Number of threads for splitting. Default is 4.
+ sr Number of threads for second stage. Default is 4
 }
 \note{
 Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the backend on Windows, Linux, and
