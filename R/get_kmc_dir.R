@@ -1,7 +1,13 @@
 get_kmc_dir <- function() {
-  kud <- rappdirs::user_config_dir(appname = "kmerize", appauthor =  "WUR")
+  kud_win <- rappdirs::user_config_dir(appname = "kmerize", appauthor =  "WUR")
+  kud_osx <- file.path("/usr", "local", "bin", "WUR", "kmerize")
+  
+  # Intentionally for Linux: This will just install kmc into the local directory where the user
+  # should have write rights
+  kud_lin <- file.path( "usr", "local", "bin", "WUR", "kmerize")
+  
   os <- get_os()
-  kud <- ifelse (os == "Windows", kud, file.path("/usr", "local", "bin", "WUR", "kmerize"))
+  kud <- ifelse (os == "Windows", kud_win, ifelse(os == "Linux", kud_lin, kud_osx) )
   
   
   kud <- gsub("\\\\", "/", kud)
