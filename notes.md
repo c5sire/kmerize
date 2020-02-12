@@ -20,6 +20,7 @@ fully replace calc_k_half with calc_k_limit
 - map kmers
 - screen kmers for min k
 - add f guess to kmer count
+- 
 
 - add file directory as input to kmer count
 
@@ -42,4 +43,32 @@ fully replace calc_k_half with calc_k_limit
 - do with potato! Present some preliminary results
 - additional package with project oriented data and tutorials: kmore
 
-# 
+# Feb 12
+- finish kmer position coverage
+- test_that
+- check on mac and linux
+- transfer potato sample to new package
+- new package kmore
+- tutorials in kmore 
+- include preprocessing to filter only high quality and highly informative sequences
+- add spectrum plot
+- elaborate in tutorial
+- function to query kmers as a set of GenomicRanges?
+- save?
+- add coverage plot
+
+- add more package safety net as in ace2fastq
+- CI, etc
+- Readme
+- web page
+
+- website with precompiled binaries for easier download
+- examples with genomes
+- 
+
+- send instructions
+
+- transfer atlas files to Amsterdam cloud
+- run
+
+
