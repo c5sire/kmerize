@@ -5,6 +5,9 @@ get_position_coverage <- function(kmers = NULL, pos = NULL, min_cov = 5) {
   stopifnot(!is.null(pos))
   stopifnot(min_cov > 0)
   
+  fa <- 0
+  x <- 0
+  
   i <- 3
   
   rr <- kmr_read_rds(kmers$kmer_tbl[i])

@@ -73,7 +73,7 @@ if( interactive()) {
  fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
  k <- 13
  out_file <- file.path(tempdir(), "phwei11")
- kmerize:::kmr_kmc(fa, out_file, k = k, f = "q")
+ kmerize:::kmr_count(fa, out_file, k = k, f = "q")
 
 }
 }
