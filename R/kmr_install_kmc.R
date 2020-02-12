@@ -14,6 +14,11 @@
 #' }
 kmr_install_kmc <- function(download_file = NULL) {
   # check if installed locally on known path
+  if (!is.null(download_file)) {
+    tgt <- download_file
+    if (!file.exists(tgt)) {stop("Path to archive does not exist!")}
+  }
+  
   kmc_ok <- check_install_ok()  
   
   # if not installed and no package given
@@ -37,10 +42,7 @@ kmr_install_kmc <- function(download_file = NULL) {
       # download from official URL the appropriate version
       tgt <- file.path(tempdir(), url_app) %>% get_safe_path()
       utils::download.file(url, tgt)
-    } else {
-      tgt <- download_file
-      if (!file.exists(tgt)) {stop("Path to archive does not exist!")}
-    }
+    } 
     
     # unpack into known location
     utils::untar(tgt, exdir = kmc_dir)

@@ -1,4 +1,17 @@
 
+#' kmr_scan_k_min
+#'
+#' @param a sequence file path
+#' @param b sequence file path
+#' @param k k-mer size
+#' @param ci minimum cutoff; default 2
+#' @param cx maximum cutoff; default 100
+#' @param min_kmers coverage 10
+#' @param f format of files; q fastq; a fasta, m multiple fasta
+#' @param cleanup delete k-mer count files
+#'
+#' @return list k_min identified minimal k; table of coverage for each k
+#' @export
 kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100, 
                            min_kmers = 10, f = "q",
                            cleanup = TRUE) {
@@ -7,10 +20,6 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
   a_out <- file.path(tmd, corename(a))
   b_out <- file.path(tmd, corename(b))
   atbl <- as.data.frame(cbind(k = NA, n_kmer = NA))
-  
-  # result table
-  # k, n kmers
-  # return (list object: min k where n of distinct kmers >= min_kmers)
   
   # for a given k count k-mers
   for (i in seq_along(k)) {
@@ -29,22 +38,8 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
         res_kmr,  "a - b"),
                          ci = ci, cx = cx)
    
-    #   cat(res_kmr)
-    #   cat("\n")
-    #   
-    #   cat(c_res)
-    #   cat("\n")
-    # # convert result of comparison to rds table
-    # cat("\n")
-    # cat("\n")
-    # cat(k[i])
-    # cat("\n")
     if (file.size(paste0(res_kmr, ".kmc_pre")) > 10) {
-      # cat("\nw\n")
       c_tbl <- kmr_write_rds(file.path(res_kmr))
-      # 
-      # cat(c_tbl)
-      # cat("\nx\n")
       
       # read rds table, get n of rows == n of distinct kmers
       if (file.size(c_tbl) > 0) {
@@ -54,9 +49,6 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
         # add new row to result table
         arow <- as.data.frame(cbind(k = k[i], n_kmer = n_kmer))
         atbl <- rbind(atbl, arow)
-  
-        # if use again point to a tmp dir!
-        #utils::write.csv(atbl, "kmer_scan_results.csv")       
       }
     }
     } # kmer count files exist
@@ -79,11 +71,3 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
   return(list(k_min = k_min, res = atbl, kmer_tbl = paste0(res_kmr, ".rds")))
 }
 
-
-
-# a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
-# b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
-# 
-# x <- kmr_scan_k_min(a, b, k = seq(7, 21, 2), min_kmers = 5)
-# saveRDS(x, "krun3")
-# x
