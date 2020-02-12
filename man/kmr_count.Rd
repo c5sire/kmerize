@@ -22,7 +22,7 @@ kmr_count(
 )
 }
 \arguments{
-\item{in_files}{a name of a single file or a vector of file names.}
+\item{in_files}{a name of a single file, a vector of file names, or a directory containing files.}
 
 \item{out_file}{name of the output file}
 
