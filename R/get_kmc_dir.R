@@ -4,7 +4,7 @@ get_kmc_dir <- function() {
   
   # Intentionally for Linux: This will just install kmc into the local directory where the user
   # should have write rights
-  kud_lin <- file.path("usr/local", "bin", "kmerize")
+  kud_lin <- paste0("usr", file.path("local", "bin", "kmerize"))
   
   os <- get_os()
   kud <- ifelse (os == "Windows", kud_win, ifelse(os == "Linux", kud_lin, kud_osx) )
