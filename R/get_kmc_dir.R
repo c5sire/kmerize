@@ -8,7 +8,7 @@ get_kmc_dir <- function() {
   
   os <- get_os()
   kud <- ifelse (os == "Windows", kud_win, ifelse(os == "Linux", kud_lin, kud_osx) )
-  
+  if (os != "Windows") return(kud)
   
   kud <- gsub("\\\\", "/", kud)
   kud <- file.path(kud, "tools", "kmc3")
