@@ -19,6 +19,5 @@ Suggests:
     testthat (>= 2.1.0),
     knitr,
     rmarkdown,
-    covr,
-    shiny
+    covr
 VignetteBuilder: knitr
