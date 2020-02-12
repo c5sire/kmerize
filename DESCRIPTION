@@ -9,7 +9,8 @@ Authors@R: person("Reinhard", "Simon", email = "rsimon64@gmail.com",
 Author: Reinhard Simon [aut, cre]
 Maintainer: Reinhard Simon <rsimon64@gmail.com>                  
 Description: Kmerize provides convenience tools for creating and analyzing k-mers.
-Imports: Biostrings, IRanges, GenomicRanges, ggplot2, ggbio, magrittr, rappdirs, 
+biocViews:
+Depends: Biostrings, IRanges, GenomicRanges, ggplot2, ggbio, magrittr, rappdirs, 
   utils
 License: GPL-3
 Encoding: UTF-8
