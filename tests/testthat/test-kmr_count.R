@@ -105,7 +105,7 @@ test_that("kmer counter converts parameter correctly", {
     capture.output(
       kmr_count(fa, out_file, k = k, f = "m", ci = 0, r = TRUE, sm = FALSE)
     )
-  ) == 2
+  ) > 0
   
   )
 })
@@ -149,4 +149,25 @@ test_that("kmer counter deletes internal temp file", {
     ) > 0
     )
   )
+})
+
+
+test_that("kmer counter accepts a directory containing seq files", {
+  a <- system.file("testdata/phix174.fasta", 
+                   package = "kmerize")
+  b <- system.file("testdata/phix174_m.fasta", 
+                   package = "kmerize")
+  dir_fa <- file.path(tempdir(), "_fasta")
+  if (!dir.exists(dir_fa)) dir.create(dir_fa)
+  
+  x <- file.copy(c(a, b), dir_fa, overwrite = TRUE)
+  
+  expect_true(length(
+    capture.output(
+      x = kmr_count(dir_fa, out_file, k = 1, f = "m")
+    )
+  ) > 0
+  )
+  
+  
 })

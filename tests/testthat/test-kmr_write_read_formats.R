@@ -24,11 +24,6 @@ test_that("Can write file: .rds", {
   )
 })
 
-test_that("Can write file: .parquet", {
-  expect_true(
-    kmr_write_parquet(out_file) == paste0(out_file, ".parquet")
-  )
-})
 
 
 test_that("Can read tab file", {
@@ -58,6 +53,15 @@ test_that("Can NOT read tab file raises error", {
   )
 })
 
+skip("Until arrow package back on CRAN")
+
+test_that("Can write file: .parquet", {
+  expect_true(
+    kmr_write_parquet(out_file) == paste0(out_file, ".parquet")
+  )
+})
+
+skip("Until arrow package back on CRAN")
 test_that("Can read parquet file", {
   dat <- kmr_read_parquet(out_file)
   expect_true(
@@ -65,6 +69,7 @@ test_that("Can read parquet file", {
   )
 })
 
+skip("Until arrow package back on CRAN")
 test_that("Can NOT read parquet file raises error", {
   expect_error(
     kmr_read_parquet("___xxx___")

@@ -8,6 +8,8 @@
 #' @import GenomicRanges
 #' @import IRanges
 #' @import ggbio
+#' @export
+#' 
 #' @importFrom magrittr %>%
 #'
 #' @return GRange object of mapped kmers
@@ -37,36 +39,3 @@ kmr_map_kmers <- function(kmers, genome, seqname = NULL) {
   kmers <- GenomicRanges::makeGRangesFromDataFrame(kmer_tbl)
   return(kmers)
 }
-
-
-# fa <- system.file("testdata/phix174.fasta", package = "kmerize")
-# a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
-# b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
-# 
-# x <- kmr_scan_k_min(a, b, k = 7, min_kmers = 5)
-# rr <- kmr_read_rds("result__kmerize.rds")
-# 
-# ref <- seqinr::read.fasta(fa)
-# 
-# k7map <- kmr_map_kmers(rr, genome = ref, "PhiX174")
-# plot.kmers(k7map, 911)
-# 
-# 
-# 
-# x <- kmr_scan_k_min(a, b, k = 9, min_kmers = 5)
-# rr <- kmr_read_rds("result__kmerize.rds")
-# ref <- seqinr::read.fasta(fa)
-# k9map <- kmr_map_kmers(rr, genome = ref, "PhiX174")
-# plot.kmers(k9map, 911)
-# 
-# x <- kmr_scan_k_min(a, b, k = 11, min_kmers = 5)
-# rr <- kmr_read_rds("result__kmerize.rds")
-# ref <- seqinr::read.fasta(fa)
-# k11map <- kmr_map_kmers(rr, genome = ref, "PhiX174")
-# plot.kmers(k11map, 911)
-# 
-# x <- kmr_scan_k_min(a, b, k = 13, min_kmers = 5)
-# rr <- kmr_read_rds("result__kmerize.rds")
-# ref <- seqinr::read.fasta(fa)
-# k13map <- kmr_map_kmers(rr, genome = ref, "PhiX174")
-# plot.kmers(k13map, 911)

@@ -11,7 +11,7 @@
 #' @note Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the backend on Windows, Linux, and
 #' Mac. The parameter lists corresponds to the list of options of kmc3.
 #'
-#' @param in_files a name of a single file or a vector of file names.
+#' @param in_files a name of a single file, a vector of file names, or a directory containing files.
 #' @param out_file name of the output file
 #' @param k kmer size; default is 11.
 #' @param m RAM memory size; default is 12.
@@ -56,6 +56,11 @@ kmr_count <- function(in_files,
                     t = parallel::detectCores(), # number of cores
                     v = FALSE # verbose mode; use to turn off 
 ) {
+  # first check if in_files are in a directory
+  if (is_dir(in_files)) {
+    in_files <- list.files(in_files, full.names = TRUE)
+  }
+  
   # check if files exists
   
   in_files <- sapply(in_files, get_safe_path)
@@ -96,8 +101,8 @@ kmr_count <- function(in_files,
   cmd <- paste0(kmc(), params)
   cmd <- paste0(cmd, " ", in_files[1], " ", out_file, " ", tmp)
 
-  cat(cmd)
-  cat("\n")
+  # cat(cmd)
+  # cat("\n")
   system(cmd,  wait = TRUE)
 
   #unlink(tmp, recursive = TRUE, force = TRUE)

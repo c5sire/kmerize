@@ -14,33 +14,34 @@
 #' }
 kmr_install_kmc <- function(download_file = NULL) {
   # check if installed locally on known path
+  if (!is.null(download_file)) {
+    tgt <- download_file
+    if (!file.exists(tgt)) {stop("Path to archive does not exist!")}
+  }
+  
   kmc_ok <- check_install_ok()  
   
+  # get local OS ref
+  los <- get_os()
+  
+  # get local kmc3 path reference
+  kmc_dir <- get_kmc_dir() 
+  
+  url_base <- "https://github.com/refresh-bio/KMC/releases/download/v3.0.0/"
+  url_app <- switch(los,
+                    Windows = "KMC3.windows.tar.gz",
+                    Linux = "KMC3.linux.tar.gz",
+                    "KMC3.mac.tar.gz"
+  )
+  url <- file.path(url_base, url_app)
+  # download from official URL the appropriate version
+  tgt <- file.path(tempdir(), url_app) %>% get_safe_path()
+
   # if not installed and no package given
   if (!kmc_ok) {
-    # get local OS ref
-    los <- get_os()
-    
-    # get local kmc3 path reference
-    kmc_dir <- get_kmc_dir() 
-    
     if (is.null(download_file)) {
-    
-      url_base <- "https://github.com/refresh-bio/KMC/releases/download/v3.0.0/"
-      url_app <- switch(los,
-                  Windows = "KMC3.windows.tar.gz",
-                  Linux = "KMC3.linux.tar.gz",
-                  "KMC3.mac.tar.gz"
-             )
-      url <- file.path(url_base, url_app)
-      
-      # download from official URL the appropriate version
-      tgt <- file.path(tempdir(), url_app) %>% get_safe_path()
       utils::download.file(url, tgt)
-    } else {
-      tgt <- download_file
-      if (!file.exists(tgt)) {stop("Path to archive does not exist!")}
-    }
+    } 
     
     # unpack into known location
     utils::untar(tgt, exdir = kmc_dir)

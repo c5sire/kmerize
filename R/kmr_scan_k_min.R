@@ -1,4 +1,17 @@
 
+#' kmr_scan_k_min
+#'
+#' @param a sequence file path
+#' @param b sequence file path
+#' @param k k-mer size
+#' @param ci minimum cutoff; default 2
+#' @param cx maximum cutoff; default 100
+#' @param min_kmers coverage 10
+#' @param f format of files; q fastq; a fasta, m multiple fasta
+#' @param cleanup delete k-mer count files
+#'
+#' @return list k_min identified minimal k; table of coverage for each k
+#' @export
 kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100, 
                            min_kmers = 10, f = "q",
                            cleanup = TRUE) {
@@ -8,11 +21,8 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
   b_out <- file.path(tmd, corename(b))
   atbl <- as.data.frame(cbind(k = NA, n_kmer = NA))
   
-  # result table
-  # k, n kmers
-  # return (list object: min k where n of distinct kmers >= min_kmers)
-  
   # for a given k count k-mers
+  res_kmr <- character(length(k))
   for (i in seq_along(k)) {
     # count kmers
     a_cnt <- kmr_count(a, a_out, k = k[i], ci = ci, cx = cx, f = f)
@@ -21,23 +31,18 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
     # compare reads
     n_kmer <- NA
     
+    
     if (k[i] > 12) Sys.sleep(2)
     if (file.exists(paste0(a_cnt, ".kmc_pre")) && file.exists(paste0(b_cnt, ".kmc_pre"))) {
-      res_kmr <- file.path(tmd, "result__kmerize")
-    c_res <-
+      res_kmr[i] <- file.path(tmd, paste0("result__kmerize_", k[i]))
+      c_res <-
       kmr_compare(list(a = a_cnt, b = b_cnt), cmp = list(
-        res_kmr,  "a - b"),
+        res_kmr[i],  "a - b"),
                          ci = ci, cx = cx)
    
-    
-    # convert result of comparison to rds table
-    cat("\n")
-    cat("\n")
-    cat(k[i])
-    cat("\n")
-    if (file.size(paste0(res_kmr, ".kmc_suf")) > 10) {
-      c_tbl <- 
-        kmr_write_rds(file.path(res_kmr))
+    fn <- paste0(res_kmr[i], ".kmc_pre")
+    if (file.exists(fn) && file.size(fn) > 4) {
+      c_tbl <- kmr_write_rds(file.path(res_kmr[i]))
       
       # read rds table, get n of rows == n of distinct kmers
       if (file.size(c_tbl) > 0) {
@@ -47,10 +52,9 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
         # add new row to result table
         arow <- as.data.frame(cbind(k = k[i], n_kmer = n_kmer))
         atbl <- rbind(atbl, arow)
-  
-        # if use again point to a tmp dir!
-        #utils::write.csv(atbl, "kmer_scan_results.csv")       
       }
+    } else {
+      res_kmr[i] <- NA
     }
     } # kmer count files exist
    
@@ -69,14 +73,8 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
   k_min <- min(atbl$k)
   
   # return list object with k_min and table
-  return(list(k_min = k_min, res = atbl, kmer_tbl = paste0(res_kmr, ".rds")))
+  tbl <- paste0(res_kmr, ".rds")
+  tbl <- tbl[tbl != "NA.rds"]
+  return(list(k_min = k_min, res = atbl, kmer_tbl = tbl))
 }
 
-
-
-# a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
-# b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
-# 
-# x <- kmr_scan_k_min(a, b, k = seq(7, 21, 2), min_kmers = 5)
-# saveRDS(x, "krun3")
-# x

@@ -40,5 +40,6 @@ fully replace calc_k_half with calc_k_limit
 
 # Missing genome scans
 - do with potato! Present some preliminary results
+- additional package with project oriented data and tutorials: kmore
 
 # 
