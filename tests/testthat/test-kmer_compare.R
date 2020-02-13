@@ -26,4 +26,12 @@ test_that("Test data exists", {
 }
 )
 
+
+faa <- system.file("testdata/phix174.fasta", 
+                  package = "kmerize")
+
+file.exists(faa)
+kmr_count(faa, out_fm, k = 15, f = "a")
+
+
 #unlink(tempdir())
