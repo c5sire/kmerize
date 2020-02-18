@@ -2,8 +2,8 @@
 ^\.Rproj\.user$
 ^notes.md
 ^lines.txt
-^doc$
 ^docs$
 ^Meta$
 .*\.git
 .*\.gitignore
+^doc$
