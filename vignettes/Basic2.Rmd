@@ -1,0 +1,155 @@
+---
+title: "Basic2"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basic2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Creating some data
+
+```{r setup}
+library(kmerize)
+```
+
+Comparing two sets from simulated NGS data of the phi genome. One of which has a 'mutation' as position 911.
+
+```{r}
+td <- tempdir()
+
+fq_ref <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", 
+                  package = "kmerize")
+fq_mut <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", 
+                  package = "kmerize")
+
+out_ref <- file.path(td, "ref")
+out_mut <- file.path(td, "mut")
+k <- 9
+
+ofr <- kmr_count(in_files = fq_ref, out_file = out_ref, k = k, f = "q")
+ofm <- kmr_count(in_files = fq_mut, out_file = out_mut, k = k, f = "q")
+
+```
+
+Now we convert the data into a simpler tab file format.
+```{r}
+ofr_tab <- kmr_write_tab(db = ofr)
+ofm_tab <- kmr_write_tab(db = ofm)
+```
+
+Now lets check the file content.
+```{r}
+tbl_ref <- kmr_read_tab(ofr_tab)
+tbl_mut <- kmr_read_tab(ofm_tab)
+
+tbl_ref
+
+```
+
+
+# Identifying the Different Set of K-mers within R
+
+Set operations can also conveniently written in R.
+
+```{r}
+library(dplyr)
+
+kmr_diff <- setdiff(tbl_ref$kmer, tbl_mut$kmer)
+kmr_diff
+
+```
+Mapping those k-mers against the reference sequence
+
+```{r}
+suppressPackageStartupMessages(
+  library(BSgenome.phix174.NCBI.NC001422)
+)
+phi <- BSgenome.phix174.NCBI.NC001422::BSgenome.phix174.NCBI.NC001422
+ref_genome <- phi$NC_001422.1
+
+hits <- kmertools::match_kmers(kmr_diff, ref_genome, "phiX174")
+
+hits
+```
+Mapping the hits:
+```{r fig.width=9}
+kmertools::plot_kmer_matches(hits, 911)
+```
+
+The above works well for small datasets. However, for large datasets we need to consider other options. The Apache Spark platform is meant to facilitate solutions for big data problems. The platform can be installed on local laptops and PCs. 
+
+The R user has access to it via the sparklyr library,
+
+# Working with Spark
+
+
+## Initiating Spark Analysis Platform
+
+```{r}
+library(sparklyr)
+sc <- spark_connect(master = "local")
+# We later need to disconnect!
+```
+
+Checking how many local CPUs (cores) are available.
+
+```{r}
+spark_config(sc)$sparklyr.connect.cores.local
+```
+
+
+## Reading in the kmer counting data in compressed tab format
+
+```{r}
+
+kmr_ref <- spark_read_csv(sc, ofr_tab, delimiter = "\t") %>% select(kmer)
+kmr_mut <- spark_read_csv(sc, ofm_tab, delimiter = "\t") %>% select(kmer)
+
+```
+
+These are now distributed data objects on the local spark platform as we can see from the output.
+
+```{r}
+kmr_ref
+```
+
+
+
+## Comparing
+
+We can re-use the knowledge from above to continue to comparing.
+
+```{r}
+
+kmr_diff2 <- dplyr::setdiff(kmr_ref, kmr_mut) %>% collect
+kmr_diff2
+
+
+```
+
+```{r}
+kmr_diff2 <- kmr_diff2$kmer %>% as.character() 
+hits2 <- kmertools::match_kmers(kmr_diff2, ref_genome, "phiX174")
+hits2
+```
+
+
+```{r  fig.width=7}
+kmertools::plot_kmer_matches(hits2, 911)
+```
+
+```{r}
+spark_disconnect(sc)
+```
+
+
+
+
