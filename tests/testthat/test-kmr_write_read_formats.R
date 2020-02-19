@@ -12,9 +12,9 @@ fo <- kmr_write_tab(out_file)
 dat <- kmr_read_tab(out_file)
 #out_db <- paste0(out_file, c(".kmc_pre", ".kmc_suf"))
 
-test_that("Can write file: .tab", {
+test_that("Can write file: .tab.gz", {
   expect_true(
-   fo  == paste0(out_file, ".tab")
+   fo  == paste0(out_file, ".tab.gz")
   )
 })
 

@@ -10,7 +10,7 @@ kmr_read_tab(afile)
 \item{afile}{file name (obligatory extension .tab)}
 }
 \value{
-data.frame
+data.frame with kmers as DNAStringSet
 }
 \description{
 Read a file in tab format.

@@ -12,7 +12,7 @@ Description: Kmerize provides convenience tools for creating and analyzing k-mer
 biocViews:
 Depends: R (>= 3.5.0)
 Imports: Biostrings, IRanges, GenomicRanges, ggplot2, ggbio, magrittr, rappdirs, 
-  utils
+  utils, vroom
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
