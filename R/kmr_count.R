@@ -103,7 +103,7 @@ kmr_count <- function(in_files,
 
   # cat(cmd)
   # cat("\n")
-  system(cmd,  wait = TRUE)
+  system(cmd,  wait = TRUE, intern = FALSE, show.output.on.console = FALSE)
 
   #unlink(tmp, recursive = TRUE, force = TRUE)
   return(path.expand(out_file))
