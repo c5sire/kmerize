@@ -10,7 +10,7 @@ sudo: required
 
 env: 
   - _R_CHECK_CRAN_INCOMING_=FALSE
-  - TRAVIS=true
+  - CODECOV_TOKEN="05ad7f6d-d1b0-4da9-8977-f00c2f18699d"
 
 r_packages:
   - covr

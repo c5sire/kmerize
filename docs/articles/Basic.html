@@ -93,34 +93,32 @@
 <a href="#count-k-mers-in-fastq-files" class="anchor"></a>Count K-mers in FASTQ Files</h1>
 <p>We are using simulated k-mer data from the phi-X174 genome.</p>
 <p>Getting the data and setting parameters:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb1-2"><a href="#cb1-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="kw"><a href="https://rdrr.io/r/base/message.html">suppressPackageStartupMessages</a></span>(</span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(kmerize)</span>
-<span id="cb1-6"><a href="#cb1-6"></a>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a>fq &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"testdata/phix174-pe_w_err_5k_30q.fastq.gz"</span>, </span>
-<span id="cb1-10"><a href="#cb1-10"></a>                  <span class="dt">package =</span> <span class="st">"kmerize"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11"></a>k &lt;-<span class="st"> </span><span class="dv">9</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a>out_file &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span>(), <span class="st">"phwei11"</span>)</span>
-<span id="cb1-14"><a href="#cb1-14"></a>out_db &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(out_file, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">".kmc_pre"</span>, <span class="st">".kmc_suf"</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/base/message.html">suppressPackageStartupMessages</a></span>(</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(kmerize)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>fq &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"testdata/phix174-pe_w_err_5k_30q.fastq.gz"</span>, </span>
+<span id="cb1-8"><a href="#cb1-8"></a>                  <span class="dt">package =</span> <span class="st">"kmerize"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a>k &lt;-<span class="st"> </span><span class="dv">9</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>out_file &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span>(), <span class="st">"phwei11"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12"></a>out_db &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(out_file, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">".kmc_pre"</span>, <span class="st">".kmc_suf"</span>))</span></code></pre></div>
 <p>Counting:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb2-2"><a href="#cb2-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
-<span id="cb2-3"><a href="#cb2-3"></a>kmer_path =<span class="st"> </span><span class="kw"><a href="../reference/kmr_count.html">kmr_count</a></span>(fq, out_file, </span>
-<span id="cb2-4"><a href="#cb2-4"></a>                  <span class="dt">k =</span> k, </span>
-<span id="cb2-5"><a href="#cb2-5"></a>                  <span class="dt">f =</span> <span class="st">"q"</span> <span class="co"># file input format is fastq</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>                  )</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="cf">if</span> (kmerize<span class="op">:::</span><span class="kw">check_install_ok</span>()) {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>kmer_path =<span class="st"> </span><span class="kw"><a href="../reference/kmr_count.html">kmr_count</a></span>(fq, out_file, </span>
+<span id="cb2-3"><a href="#cb2-3"></a>                  <span class="dt">k =</span> k, </span>
+<span id="cb2-4"><a href="#cb2-4"></a>                  <span class="dt">f =</span> <span class="st">"q"</span> <span class="co"># file input format is fastq</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>                  )  </span>
+<span id="cb2-6"><a href="#cb2-6"></a>}</span></code></pre></div>
 <p>Convert to readable tabulated database:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb3-2"><a href="#cb3-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
-<span id="cb3-3"><a href="#cb3-3"></a>kp &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kmr_write_tab.html">kmr_write_tab</a></span>(kmer_path)</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a>kmers &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kmr_read_tab.html">kmr_read_tab</a></span>(kp)</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(kmers)</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">if</span> (kmerize<span class="op">:::</span><span class="kw">check_install_ok</span>()) {</span>
+<span id="cb3-2"><a href="#cb3-2"></a>kp &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kmr_write_tab.html">kmr_write_tab</a></span>(kmer_path)</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>kmers &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kmr_read_tab.html">kmr_read_tab</a></span>(kp)</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(kmers)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>}</span>
 <span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; # A tibble: 6 x 2</span></span>
 <span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt;   kmer      count</span></span>
 <span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
@@ -135,34 +133,32 @@
 <h1 class="hasAnchor">
 <a href="#genomic-response" class="anchor"></a>Genomic Response</h1>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Getting the DNA</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb4-3"><a href="#cb4-3"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a>fp &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"testdata/phix174.fasta"</span>, </span>
-<span id="cb4-6"><a href="#cb4-6"></a>                  <span class="dt">package =</span> <span class="st">"kmerize"</span>)</span>
-<span id="cb4-7"><a href="#cb4-7"></a>dna &lt;-<span class="st"> </span>Biostrings<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/Biostrings/man/XStringSet-io.html">readDNAStringSet</a></span>(fp)</span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a>k &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="dv">3</span>, <span class="dv">25</span>, <span class="dv">2</span>)) <span class="co"># currently k explicitly as integer sequence</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kmr_response.html">kmr_response</a></span>(fp, k, <span class="dt">fmt =</span> <span class="st">"m"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="cf">if</span> (kmerize<span class="op">:::</span><span class="kw">check_install_ok</span>()) {</span>
+<span id="cb4-3"><a href="#cb4-3"></a>fp &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"testdata/phix174.fasta"</span>, </span>
+<span id="cb4-4"><a href="#cb4-4"></a>                  <span class="dt">package =</span> <span class="st">"kmerize"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>dna &lt;-<span class="st"> </span>Biostrings<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/Biostrings/man/XStringSet-io.html">readDNAStringSet</a></span>(fp)</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>k &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="dv">3</span>, <span class="dv">25</span>, <span class="dv">2</span>)) <span class="co"># currently k explicitly as integer sequence</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kmr_response.html">kmr_response</a></span>(fp, k, <span class="dt">fmt =</span> <span class="st">"m"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9"></a>res</span>
+<span id="cb4-10"><a href="#cb4-10"></a>}</span>
 <span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt; 5</span></span>
 <span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt; 7</span></span>
 <span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; 9</span></span>
 <span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt; 11</span></span>
 <span id="cb4-15"><a href="#cb4-15"></a><span class="co">#&gt; 13</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a>res</span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="co">#&gt;    k unique distinct total universe</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="co">#&gt; 1  3      0       32  5328       32</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a><span class="co">#&gt; 2  5     10      506  5382      512</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a><span class="co">#&gt; 3  7   2295     3547  5380     8192</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a><span class="co">#&gt; 4  9   4972     5170  5378   131072</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a><span class="co">#&gt; 5 11   5346     5361  5376  2097152</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a><span class="co">#&gt; 6 13   5374     5374  5374 33554432</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb5-2"><a href="#cb5-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="kw"><a href="../reference/kmr_plot_response.html">kmr_plot_response</a></span>(res, <span class="dt">ref_k =</span> <span class="dv">9</span>, <span class="dt">max_y =</span> Biostrings<span class="op">::</span><span class="kw">width</span>(dna))</span></code></pre></div>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt;    k unique distinct total universe</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="co">#&gt; 1  3      0       32  5328       32</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="co">#&gt; 2  5     10      506  5382      512</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="co">#&gt; 3  7   2295     3547  5380     8192</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="co">#&gt; 4  9   4972     5170  5378   131072</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="co">#&gt; 5 11   5346     5361  5376  2097152</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="co">#&gt; 6 13   5374     5374  5374 33554432</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">if</span> (kmerize<span class="op">:::</span><span class="kw">check_install_ok</span>()) {</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw"><a href="../reference/kmr_plot_response.html">kmr_plot_response</a></span>(res, <span class="dt">ref_k =</span> <span class="dv">9</span>, <span class="dt">max_y =</span> Biostrings<span class="op">::</span><span class="kw">width</span>(dna))</span>
+<span id="cb5-4"><a href="#cb5-4"></a>}</span></code></pre></div>
 <p><img src="Basic_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
-<p>tbl &lt;- table(kmers$count)</p>
 </div>
   </div>
 
