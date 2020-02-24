@@ -7,3 +7,4 @@
 .*\.git
 .*\.gitignore
 ^doc$
+^README\.Rmd$

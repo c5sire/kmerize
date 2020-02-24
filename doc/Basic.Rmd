@@ -15,7 +15,81 @@ knitr::opts_chunk$set(
 ```
 
 
+# Count K-mers in FASTQ Files
+
+We are using simulated k-mer data from the phi-X174 genome.
+
+
+Getting the data and setting parameters:
+
 ```{r setup}
-library(kmerize)
+suppressPackageStartupMessages(
+  library(kmerize)
+)
+
+
+fq <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", 
+                  package = "kmerize")
+k <- 9
+
+out_file <- file.path(tempdir(), "phwei11")
+out_db <- paste0(out_file, c(".kmc_pre", ".kmc_suf"))
 
 ```
+
+
+Counting:
+
+```{r}
+kmer_path = kmr_count(fq, out_file, 
+                  k = k, 
+                  f = "q" # file input format is fastq
+                  )
+
+```
+
+Convert to readable tabulated database:
+
+```{r}
+kp <- kmr_write_tab(kmer_path)
+```
+```{r}
+kmers <- kmr_read_tab(kp)
+head(kmers)
+```
+
+# Genomic Response
+
+```{r}
+# Getting the DNA
+suppressPackageStartupMessages(
+  library(BSgenome.phix174.NCBI.NC001422)
+)
+
+phi <- BSgenome.phix174.NCBI.NC001422::BSgenome.phix174.NCBI.NC001422
+dna <- phi$NC_001422.1
+
+# DNA has to be available in a FASTA file for the kmer_response function.
+# So it needs to be converted and stored.
+fp <- file.path(tempdir(), "dna.fasta")
+
+Biostrings::writeXStringSet(DNAStringSet(dna), fp)
+
+k <- as.integer(seq(3, 25, 2)) # currently k explicitly as integer sequence
+res <- kmr_response(fp, k, fmt = "m")
+res
+
+
+```
+```{r fig.width=7}
+kmr_plot_response(res, ref_k = 9, max_y = length(dna))
+```
+
+
+
+
+
+
+
+
+tbl <- table(kmers$count)
