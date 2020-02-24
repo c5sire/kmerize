@@ -307,69 +307,73 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1>Count K-mers in FASTQ Files</h1>
 <p>We are using simulated k-mer data from the phi-X174 genome.</p>
 <p>Getting the data and setting parameters:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">suppressPackageStartupMessages</span>(</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="kw">library</span>(kmerize)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a>fq &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;testdata/phix174-pe_w_err_5k_30q.fastq.gz&quot;</span>, </span>
-<span id="cb1-7"><a href="#cb1-7"></a>                  <span class="dt">package =</span> <span class="st">&quot;kmerize&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a>k &lt;-<span class="st"> </span><span class="dv">9</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a>out_file &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="kw">tempdir</span>(), <span class="st">&quot;phwei11&quot;</span>)</span>
-<span id="cb1-11"><a href="#cb1-11"></a>out_db &lt;-<span class="st"> </span><span class="kw">paste0</span>(out_file, <span class="kw">c</span>(<span class="st">&quot;.kmc_pre&quot;</span>, <span class="st">&quot;.kmc_suf&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>testthat<span class="op">::</span><span class="kw">skip_on_cran</span>()</span>
+<span id="cb1-2"><a href="#cb1-2"></a>testthat<span class="op">::</span><span class="kw">skip_on_ci</span>()</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">suppressPackageStartupMessages</span>(</span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="kw">library</span>(kmerize)</span>
+<span id="cb1-6"><a href="#cb1-6"></a>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>fq &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;testdata/phix174-pe_w_err_5k_30q.fastq.gz&quot;</span>, </span>
+<span id="cb1-10"><a href="#cb1-10"></a>                  <span class="dt">package =</span> <span class="st">&quot;kmerize&quot;</span>)</span>
+<span id="cb1-11"><a href="#cb1-11"></a>k &lt;-<span class="st"> </span><span class="dv">9</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a>out_file &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="kw">tempdir</span>(), <span class="st">&quot;phwei11&quot;</span>)</span>
+<span id="cb1-14"><a href="#cb1-14"></a>out_db &lt;-<span class="st"> </span><span class="kw">paste0</span>(out_file, <span class="kw">c</span>(<span class="st">&quot;.kmc_pre&quot;</span>, <span class="st">&quot;.kmc_suf&quot;</span>))</span></code></pre></div>
 <p>Counting:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>kmer_path =<span class="st"> </span><span class="kw">kmr_count</span>(fq, out_file, </span>
-<span id="cb2-2"><a href="#cb2-2"></a>                  <span class="dt">k =</span> k, </span>
-<span id="cb2-3"><a href="#cb2-3"></a>                  <span class="dt">f =</span> <span class="st">&quot;q&quot;</span> <span class="co"># file input format is fastq</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>                  )</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>testthat<span class="op">::</span><span class="kw">skip_on_cran</span>()</span>
+<span id="cb2-2"><a href="#cb2-2"></a>testthat<span class="op">::</span><span class="kw">skip_on_ci</span>()</span>
+<span id="cb2-3"><a href="#cb2-3"></a>kmer_path =<span class="st"> </span><span class="kw">kmr_count</span>(fq, out_file, </span>
+<span id="cb2-4"><a href="#cb2-4"></a>                  <span class="dt">k =</span> k, </span>
+<span id="cb2-5"><a href="#cb2-5"></a>                  <span class="dt">f =</span> <span class="st">&quot;q&quot;</span> <span class="co"># file input format is fastq</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>                  )</span></code></pre></div>
 <p>Convert to readable tabulated database:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>kp &lt;-<span class="st"> </span><span class="kw">kmr_write_tab</span>(kmer_path)</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>kmers &lt;-<span class="st"> </span><span class="kw">kmr_read_tab</span>(kp)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">head</span>(kmers)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt; # A tibble: 6 x 2</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co">#&gt;   kmer      count</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#&gt; 1 AAAAAAAGT    27</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt; 2 AAAAAACGT    37</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="co">#&gt; 3 AAAAAAGCC    38</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; 4 AAAAAAGTT    27</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt; 5 AAAAAATTT    52</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt; 6 AAAAACATT    25</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>testthat<span class="op">::</span><span class="kw">skip_on_cran</span>()</span>
+<span id="cb3-2"><a href="#cb3-2"></a>testthat<span class="op">::</span><span class="kw">skip_on_ci</span>()</span>
+<span id="cb3-3"><a href="#cb3-3"></a>kp &lt;-<span class="st"> </span><span class="kw">kmr_write_tab</span>(kmer_path)</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a>kmers &lt;-<span class="st"> </span><span class="kw">kmr_read_tab</span>(kp)</span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="kw">head</span>(kmers)</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; # A tibble: 6 x 2</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt;   kmer      count</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; 1 AAAAAAAGT    27</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; 2 AAAAAACGT    37</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; 3 AAAAAAGCC    38</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; 4 AAAAAAGTT    27</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt; 5 AAAAAATTT    52</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; 6 AAAAACATT    25</span></span></code></pre></div>
 </div>
 <div id="genomic-response" class="section level1">
 <h1>Genomic Response</h1>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Getting the DNA</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">suppressPackageStartupMessages</span>(</span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="kw">library</span>(BSgenome.phix174.NCBI.NC001422)</span>
-<span id="cb5-4"><a href="#cb5-4"></a>)</span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a>phi &lt;-<span class="st"> </span>BSgenome.phix174.NCBI.NC001422<span class="op">::</span>BSgenome.phix174.NCBI.NC001422</span>
-<span id="cb5-7"><a href="#cb5-7"></a>dna &lt;-<span class="st"> </span>phi<span class="op">$</span>NC_<span class="fl">001422.1</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co"># DNA has to be available in a FASTA file for the kmer_response function.</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># So it needs to be converted and stored.</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a>fp &lt;-<span class="st"> </span><span class="kw">file.path</span>(<span class="kw">tempdir</span>(), <span class="st">&quot;dna.fasta&quot;</span>)</span>
-<span id="cb5-12"><a href="#cb5-12"></a></span>
-<span id="cb5-13"><a href="#cb5-13"></a>Biostrings<span class="op">::</span><span class="kw">writeXStringSet</span>(<span class="kw">DNAStringSet</span>(dna), fp)</span>
-<span id="cb5-14"><a href="#cb5-14"></a></span>
-<span id="cb5-15"><a href="#cb5-15"></a>k &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="kw">seq</span>(<span class="dv">3</span>, <span class="dv">25</span>, <span class="dv">2</span>)) <span class="co"># currently k explicitly as integer sequence</span></span>
-<span id="cb5-16"><a href="#cb5-16"></a>res &lt;-<span class="st"> </span><span class="kw">kmr_response</span>(fp, k, <span class="dt">fmt =</span> <span class="st">&quot;m&quot;</span>)</span>
-<span id="cb5-17"><a href="#cb5-17"></a><span class="co">#&gt; 5</span></span>
-<span id="cb5-18"><a href="#cb5-18"></a><span class="co">#&gt; 7</span></span>
-<span id="cb5-19"><a href="#cb5-19"></a><span class="co">#&gt; 9</span></span>
-<span id="cb5-20"><a href="#cb5-20"></a><span class="co">#&gt; 11</span></span>
-<span id="cb5-21"><a href="#cb5-21"></a><span class="co">#&gt; 13</span></span>
-<span id="cb5-22"><a href="#cb5-22"></a>res</span>
-<span id="cb5-23"><a href="#cb5-23"></a><span class="co">#&gt;    k unique distinct total universe</span></span>
-<span id="cb5-24"><a href="#cb5-24"></a><span class="co">#&gt; 1  3      0       32  5328       32</span></span>
-<span id="cb5-25"><a href="#cb5-25"></a><span class="co">#&gt; 2  5     10      506  5382      512</span></span>
-<span id="cb5-26"><a href="#cb5-26"></a><span class="co">#&gt; 3  7   2295     3547  5380     8192</span></span>
-<span id="cb5-27"><a href="#cb5-27"></a><span class="co">#&gt; 4  9   4972     5170  5378   131072</span></span>
-<span id="cb5-28"><a href="#cb5-28"></a><span class="co">#&gt; 5 11   5346     5361  5376  2097152</span></span>
-<span id="cb5-29"><a href="#cb5-29"></a><span class="co">#&gt; 6 13   5374     5374  5374 33554432</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">kmr_plot_response</span>(res, <span class="dt">ref_k =</span> <span class="dv">9</span>, <span class="dt">max_y =</span> <span class="kw">length</span>(dna))</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt; Warning: Removed 3 rows containing missing values (geom_path).</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Getting the DNA</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>testthat<span class="op">::</span><span class="kw">skip_on_cran</span>()</span>
+<span id="cb4-3"><a href="#cb4-3"></a>testthat<span class="op">::</span><span class="kw">skip_on_ci</span>()</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>fp &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;testdata/phix174.fasta&quot;</span>, </span>
+<span id="cb4-6"><a href="#cb4-6"></a>                  <span class="dt">package =</span> <span class="st">&quot;kmerize&quot;</span>)</span>
+<span id="cb4-7"><a href="#cb4-7"></a>dna &lt;-<span class="st"> </span>Biostrings<span class="op">::</span><span class="kw">readDNAStringSet</span>(fp)</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>k &lt;-<span class="st"> </span><span class="kw">as.integer</span>(<span class="kw">seq</span>(<span class="dv">3</span>, <span class="dv">25</span>, <span class="dv">2</span>)) <span class="co"># currently k explicitly as integer sequence</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>res &lt;-<span class="st"> </span><span class="kw">kmr_response</span>(fp, k, <span class="dt">fmt =</span> <span class="st">&quot;m&quot;</span>)</span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt; 5</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt; 7</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; 9</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt; 11</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="co">#&gt; 13</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>res</span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="co">#&gt;    k unique distinct total universe</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="co">#&gt; 1  3      0       32  5328       32</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="co">#&gt; 2  5     10      506  5382      512</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="co">#&gt; 3  7   2295     3547  5380     8192</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="co">#&gt; 4  9   4972     5170  5378   131072</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="co">#&gt; 5 11   5346     5361  5376  2097152</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="co">#&gt; 6 13   5374     5374  5374 33554432</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>testthat<span class="op">::</span><span class="kw">skip_on_cran</span>()</span>
+<span id="cb5-2"><a href="#cb5-2"></a>testthat<span class="op">::</span><span class="kw">skip_on_ci</span>()</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">kmr_plot_response</span>(res, <span class="dt">ref_k =</span> <span class="dv">9</span>, <span class="dt">max_y =</span> Biostrings<span class="op">::</span><span class="kw">width</span>(dna))</span></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 <p>tbl &lt;- table(kmers$count)</p>
 </div>
