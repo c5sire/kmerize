@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/kmerize)](https://CRAN.R-project.org/package=kmerize)
 <!-- badges: end -->
 
 Kmerize provides convenience tools for creating and analyzing k-mers.
