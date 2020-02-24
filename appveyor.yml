@@ -9,7 +9,6 @@ init:
 
 install:
   ps: Bootstrap
-  - R-3.6.1-win.exe /silent
 
 cache:
   - C:\RLibrary
