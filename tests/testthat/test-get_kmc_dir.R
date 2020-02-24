@@ -1,5 +1,7 @@
 context("Get kmc dir")
-
+testthat::skip_on_appveyor()
+testthat::skip_on_travis()
+testthat::skip_on_cran()
 
 kud <- kmerize:::get_kmc_dir()
 
@@ -8,6 +10,9 @@ file.rename(kud, to)
 
 
 test_that("Dir is not found", {
+  testthat::skip_on_appveyor()
+  testthat::skip_on_travis()
+  testthat::skip_on_cran()
   expect_true(
     kmerize:::get_kmc_dir() == kud
   )
@@ -16,6 +21,9 @@ test_that("Dir is not found", {
 context("Get kmc base")
 
 test_that("Dir is found but not program", {
+  testthat::skip_on_appveyor()
+  testthat::skip_on_travis()
+  testthat::skip_on_cran()
   expect_error(
     kmerize:::get_kmc_base()
   )

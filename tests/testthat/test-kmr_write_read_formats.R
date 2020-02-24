@@ -1,5 +1,10 @@
 context("Read a kmer database from another file format")
 
+testthat::skip_on_appveyor()
+testthat::skip_on_travis()
+testthat::skip_on_cran()
+
+
 fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", 
                   package = "kmerize")
 k <- 7

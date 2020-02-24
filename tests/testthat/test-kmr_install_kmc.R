@@ -1,4 +1,7 @@
 context("kmr_install_kmc")
+testthat::skip_on_appveyor()
+testthat::skip_on_travis()
+testthat::skip_on_cran()
 
 test_that("It does not attempt to install on dev system", {
   expect_message(
