@@ -8,7 +8,9 @@ cache: packages
 
 sudo: required
 
-env: _R_CHECK_CRAN_INCOMING_=FALSE
+env: 
+  - _R_CHECK_CRAN_INCOMING_=FALSE
+  - TRAVIS=true
 
 r_packages:
   - covr
