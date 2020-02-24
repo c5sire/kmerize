@@ -74,6 +74,6 @@ kmr_compare <- function(in_files, cmp, ci = 2, cx = 1e9, cs = 255) {
   
   cmd <- paste(cmp(), tmp_cmp)
   
-  system(cmd, wait = TRUE)
+  system(cmd, wait = TRUE, show.output.on.console = FALSE)
   return(cmp[[1]])
 }
