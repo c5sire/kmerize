@@ -8,3 +8,5 @@
 .*\.gitignore
 ^doc$
 ^README\.Rmd$
+^\.travis\.yml$
+^appveyor\.yml$
