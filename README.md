@@ -7,8 +7,6 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/kmerize)](https://CRAN.R-project.org/package=kmerize)
 [![Travis build
 status](https://travis-ci.org/c5sire/kmerize.svg?branch=master)](https://travis-ci.org/c5sire/kmerize)
 [![AppVeyor build

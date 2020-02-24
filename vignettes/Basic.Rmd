@@ -26,7 +26,7 @@ Getting the data and setting parameters:
 
 ```{r setup}
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 
 suppressPackageStartupMessages(
   library(kmerize)
@@ -47,7 +47,7 @@ Counting:
 
 ```{r}
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 kmer_path = kmr_count(fq, out_file, 
                   k = k, 
                   f = "q" # file input format is fastq
@@ -59,7 +59,7 @@ Convert to readable tabulated database:
 
 ```{r}
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 kp <- kmr_write_tab(kmer_path)
 
 kmers <- kmr_read_tab(kp)
@@ -71,7 +71,7 @@ head(kmers)
 ```{r}
 # Getting the DNA
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 
 fp <- system.file("testdata/phix174.fasta", 
                   package = "kmerize")
@@ -85,7 +85,7 @@ res
 ```
 ```{r fig.width=7, warning=FALSE}
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 
 kmr_plot_response(res, ref_k = 9, max_y = Biostrings::width(dna))
 ```

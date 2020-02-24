@@ -8,7 +8,7 @@ Sys.setenv("NOT_CRAN" = "true")
 
 ## ----setup--------------------------------------------------------------------
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 
 suppressPackageStartupMessages(
   library(kmerize)
@@ -25,7 +25,7 @@ out_db <- paste0(out_file, c(".kmc_pre", ".kmc_suf"))
 
 ## -----------------------------------------------------------------------------
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 kmer_path = kmr_count(fq, out_file, 
                   k = k, 
                   f = "q" # file input format is fastq
@@ -34,7 +34,7 @@ kmer_path = kmr_count(fq, out_file,
 
 ## -----------------------------------------------------------------------------
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 kp <- kmr_write_tab(kmer_path)
 
 kmers <- kmr_read_tab(kp)
@@ -43,7 +43,7 @@ head(kmers)
 ## -----------------------------------------------------------------------------
 # Getting the DNA
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 
 fp <- system.file("testdata/phix174.fasta", 
                   package = "kmerize")
@@ -57,7 +57,7 @@ res
 
 ## ----fig.width=7, warning=FALSE-----------------------------------------------
 testthat::skip_on_cran()
-testthat::skip_on_ci()
+testthat::skip_on_travis()
 
 kmr_plot_response(res, ref_k = 9, max_y = Biostrings::width(dna))
 

@@ -94,7 +94,7 @@
 <p>We are using simulated k-mer data from the phi-X174 genome.</p>
 <p>Getting the data and setting parameters:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb1-2"><a href="#cb1-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_ci</a></span>()</span>
+<span id="cb1-2"><a href="#cb1-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="kw"><a href="https://rdrr.io/r/base/message.html">suppressPackageStartupMessages</a></span>(</span>
 <span id="cb1-5"><a href="#cb1-5"></a>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(kmerize)</span>
@@ -109,14 +109,14 @@
 <span id="cb1-14"><a href="#cb1-14"></a>out_db &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(out_file, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">".kmc_pre"</span>, <span class="st">".kmc_suf"</span>))</span></code></pre></div>
 <p>Counting:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb2-2"><a href="#cb2-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_ci</a></span>()</span>
+<span id="cb2-2"><a href="#cb2-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
 <span id="cb2-3"><a href="#cb2-3"></a>kmer_path =<span class="st"> </span><span class="kw"><a href="../reference/kmr_count.html">kmr_count</a></span>(fq, out_file, </span>
 <span id="cb2-4"><a href="#cb2-4"></a>                  <span class="dt">k =</span> k, </span>
 <span id="cb2-5"><a href="#cb2-5"></a>                  <span class="dt">f =</span> <span class="st">"q"</span> <span class="co"># file input format is fastq</span></span>
 <span id="cb2-6"><a href="#cb2-6"></a>                  )</span></code></pre></div>
 <p>Convert to readable tabulated database:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb3-2"><a href="#cb3-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_ci</a></span>()</span>
+<span id="cb3-2"><a href="#cb3-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
 <span id="cb3-3"><a href="#cb3-3"></a>kp &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kmr_write_tab.html">kmr_write_tab</a></span>(kmer_path)</span>
 <span id="cb3-4"><a href="#cb3-4"></a></span>
 <span id="cb3-5"><a href="#cb3-5"></a>kmers &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kmr_read_tab.html">kmr_read_tab</a></span>(kp)</span>
@@ -136,7 +136,7 @@
 <a href="#genomic-response" class="anchor"></a>Genomic Response</h1>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Getting the DNA</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb4-3"><a href="#cb4-3"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_ci</a></span>()</span>
+<span id="cb4-3"><a href="#cb4-3"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
 <span id="cb4-4"><a href="#cb4-4"></a></span>
 <span id="cb4-5"><a href="#cb4-5"></a>fp &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"testdata/phix174.fasta"</span>, </span>
 <span id="cb4-6"><a href="#cb4-6"></a>                  <span class="dt">package =</span> <span class="st">"kmerize"</span>)</span>
@@ -158,7 +158,7 @@
 <span id="cb4-22"><a href="#cb4-22"></a><span class="co">#&gt; 5 11   5346     5361  5376  2097152</span></span>
 <span id="cb4-23"><a href="#cb4-23"></a><span class="co">#&gt; 6 13   5374     5374  5374 33554432</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_cran</a></span>()</span>
-<span id="cb5-2"><a href="#cb5-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_ci</a></span>()</span>
+<span id="cb5-2"><a href="#cb5-2"></a>testthat<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/testthat/man/skip.html">skip_on_travis</a></span>()</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="kw"><a href="../reference/kmr_plot_response.html">kmr_plot_response</a></span>(res, <span class="dt">ref_k =</span> <span class="dv">9</span>, <span class="dt">max_y =</span> Biostrings<span class="op">::</span><span class="kw">width</span>(dna))</span></code></pre></div>
 <p><img src="Basic_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
