@@ -31,4 +31,5 @@ remotes::install_github("c5sire/kmerize")
 
 ## Example
 
-See the basic tutorial.
+See the basic
+[tutorial](https://c5sire.github.io/kmerize/articles/Basic.html).
