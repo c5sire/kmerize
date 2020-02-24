@@ -5,12 +5,12 @@ kmr_monitor <- function(FUN, ...) {
   x <- args[["x"]]
   
   n <- length(k)
-  pb <- txtProgressBar(title = "Counting", width = n)
+  pb <- utils::txtProgressBar(title = "Counting", width = n)
   for(i in 1:n) {
     cat(FUN(x))
     cat("\n")
     
-    setTxtProgressBar(pb, i)
+    utils::setTxtProgressBar(pb, i)
   }
   
   

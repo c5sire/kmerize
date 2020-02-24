@@ -12,6 +12,7 @@ Description: Kmerize provides convenience tools for creating and analyzing k-mer
 biocViews:
 Depends: R (>= 3.5.0)
 Imports: Biostrings, ggbio, ggplot2, GenomeInfoDb, GenomicRanges, IRanges, 
+    latticeExtra, GenomeInfoDbData,
     magrittr, rappdirs, utils, vroom
 License: GPL-3
 Encoding: UTF-8
@@ -23,3 +24,4 @@ Suggests:
     rmarkdown,
     covr
 VignetteBuilder: knitr
+Remotes: github::CRAN/latticeExtra, github::Bioconductor/GenomeInfoDbData
