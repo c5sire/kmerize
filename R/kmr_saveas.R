@@ -4,7 +4,7 @@ kmr_saveas <- function(db, to = db, format = c("tab", "rds")) {
   
   of <- paste0(to, ".tab")
   cmd <- dmp(db, of)
-  system(cmd, wait = TRUE)
+  system(cmd, wait = TRUE, show.output.on.console = FALSE)
   # cat(cmd)
   # cat("\n")
   tbl <- utils::read.csv(of, header = FALSE, sep = "\t", stringsAsFactors = FALSE)

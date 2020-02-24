@@ -11,8 +11,7 @@ Maintainer: Reinhard Simon <rsimon64@gmail.com>
 Description: Kmerize provides convenience tools for creating and analyzing k-mers.
 biocViews:
 Depends: R (>= 3.5.0)
-Imports: Biostrings, IRanges, GenomicRanges, ggplot2, ggbio, magrittr, rappdirs, 
-  utils, vroom
+Imports: Biostrings, ggbio, ggplot2, GenomicRanges, IRanges, magrittr, rappdirs, utils, vroom
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

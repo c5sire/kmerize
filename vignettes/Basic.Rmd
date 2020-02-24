@@ -62,18 +62,10 @@ head(kmers)
 
 ```{r}
 # Getting the DNA
-suppressPackageStartupMessages(
-  library(BSgenome.phix174.NCBI.NC001422)
-)
 
-phi <- BSgenome.phix174.NCBI.NC001422::BSgenome.phix174.NCBI.NC001422
-dna <- phi$NC_001422.1
-
-# DNA has to be available in a FASTA file for the kmer_response function.
-# So it needs to be converted and stored.
-fp <- file.path(tempdir(), "dna.fasta")
-
-Biostrings::writeXStringSet(DNAStringSet(dna), fp)
+fp <- system.file("testdata/phix174.fasta", 
+                  package = "kmerize")
+dna <- Biostrings::readDNAStringSet(fp)
 
 k <- as.integer(seq(3, 25, 2)) # currently k explicitly as integer sequence
 res <- kmr_response(fp, k, fmt = "m")
