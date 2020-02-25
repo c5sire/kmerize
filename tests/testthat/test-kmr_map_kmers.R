@@ -29,8 +29,8 @@ test_that("An error occurs when table seems incorrect judged by column names", {
 
 test_that("Seq name is given automatically", {
   km <- kmr_map_kmers(rr, genome = fa)
-  
-  expect_true (
+
+  expect_true(
     all(seqnames(km) == "NC_001422.1 Coliphage phi-X174, complete genome")
   )
 })

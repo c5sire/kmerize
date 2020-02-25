@@ -7,10 +7,10 @@
 kmr_compare(in_files, cmp, ci = 2, cx = 1e+09, cs = 255)
 }
 \arguments{
-\item{in_files}{list of named file paths. The names are to be used in the 
+\item{in_files}{list of named file paths. The names are to be used in the
 comparison string.}
 
-\item{cmp}{a list containing a single named string with the kmer operations 
+\item{cmp}{a list containing a single named string with the kmer operations
 using the file short names.}
 
 \item{ci}{integer; min k cutoff value; default 2.}
@@ -34,40 +34,38 @@ Shorthand operator definitions:
  - subtract
  ~ counters_subtract
  + union
- 
+
  Highest priority: *. All other operators have equal priority.
- 
- Counter calculation modes are available for the oerators: *, ~,  +. 
+
+ Counter calculation modes are available for the oerators: *, ~,  +.
  They are:
  min, max, diff, sum, left, right
 }
 \examples{
 
 if (interactive()) {
+  fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
+    package = "kmerize"
+  )
+  fm <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
+    package = "kmerize"
+  )
 
- fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", 
-                 package = "kmerize")
- fm <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", 
-                 package = "kmerize")
+  k <- 9
+  tmd <- tempdir()
+  if (!dir.exists(tmd)) dir.create(tmd)
 
- k <- 9
- tmd <- tempdir()
- if (!dir.exists(tmd)) dir.create(tmd)
+  out_fx <- file.path(tmd, "phx")
+  out_fm <- file.path(tmd, "phm")
 
- out_fx <- file.path(tmd, "phx")
- out_fm <- file.path(tmd, "phm")
+  kmr_count(fa, out_fx, k = k, f = "q")
+  kmr_count(fm, out_fm, k = k, f = "q")
 
- kmr_count(fa, out_fx, k = k, f = "q")
- kmr_count(fm, out_fm, k = k, f = "q")
-
- cmp_xy <- file.path(tmd, "cmp_xy")
-
-
+  cmp_xy <- file.path(tmd, "cmp_xy")
 }
-
 }
 \references{
-Kokot M, Długosz M, Deorowicz S. KMC 3: counting and 
+Kokot M, Dlugosz M, Deorowicz S. KMC 3: counting and
      manipulating
       k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 }

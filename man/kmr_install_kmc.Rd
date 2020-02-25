@@ -7,7 +7,8 @@
 kmr_install_kmc(download_file = NULL)
 }
 \arguments{
-\item{download_file}{If provided, kmc3 is provided from a local archive. User makes sure it is the appropriate version for the local OS.}
+\item{download_file}{If provided, kmc3 is provided from a local archive. 
+User makes sure it is the appropriate version for the local OS.}
 }
 \value{
 logical
@@ -17,7 +18,7 @@ Installs a local version of kmc3.
 }
 \examples{
 
-if(interactive()) {
+if (interactive()) {
   kmr_install_kmc()
 }
 }

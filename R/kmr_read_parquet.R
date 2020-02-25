@@ -12,4 +12,3 @@ kmr_read_parquet <- function(afile) {
   stopifnot(file.exists(afile))
   arrow::read_parquet(afile)
 }
-

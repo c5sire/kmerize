@@ -68,17 +68,15 @@ Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the backend on Win
 Mac. The parameter lists corresponds to the list of options of kmc3.
 }
 \examples{
-if( interactive()) {
-
- fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
- k <- 13
- out_file <- file.path(tempdir(), "phwei11")
- kmerize:::kmr_count(fa, out_file, k = k, f = "q")
-
+if (interactive()) {
+  fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
+  k <- 13
+  out_file <- file.path(tempdir(), "phwei11")
+  kmerize:::kmr_count(fa, out_file, k = k, f = "q")
 }
 }
 \references{
-Kokot M, Długosz M, Deorowicz S. KMC 3: counting and manipulating k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
+Kokot M, Dlugosz M, Deorowicz S. KMC 3: counting and manipulating k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 }
 \author{
 Reinhard Simon

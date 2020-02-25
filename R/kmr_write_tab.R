@@ -1,5 +1,5 @@
 #' kmr_write_tab
-#' 
+#'
 #' Write kmer database as tab format.
 #'
 #' @param db Name of kmer database

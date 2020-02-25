@@ -20,5 +20,4 @@ Get the length of a sequnce in a fasta formatted file.
 fasta <- system.file("testdata/phix174.fasta", package = "kmerize")
 
 kmr_length_fasta(fasta)
-
 }

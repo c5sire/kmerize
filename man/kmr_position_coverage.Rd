@@ -30,25 +30,24 @@ Returns a summary table for each k which includes the coverage and the start and
 \examples{
 if (interactive()) {
 
- # Reference genome 
- fasta <- system.file("testdata/phix174.fasta", package = "kmerize")
- 
- # Simulated NGS files from reference sequence and a modified sequence.
- # The modification is a SNP at position 911.
- 
- a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
- b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
+  # Reference genome
+  fasta <- system.file("testdata/phix174.fasta", package = "kmerize")
 
- # should clarify that the scan uses set difference! in name or so
- kmers <- kmr_scan_k_min(a, b, 
-                         k = seq(5, 15, 2), 
-                         min_kmers = 1, 
-                         cleanup = FALSE, 
-                         ci = 0, 
-                         cx = 1000)
+  # Simulated NGS files from reference sequence and a modified sequence.
+  # The modification is a SNP at position 911.
 
- kmr_position_coverage(kmers, pos = 911, fasta = fasta, min_coverage = 5)
+  a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
+  b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
 
+  # should clarify that the scan uses set difference! in name or so
+  kmers <- kmr_scan_k_min(a, b,
+    k = seq(5, 15, 2),
+    min_kmers = 1,
+    cleanup = FALSE,
+    ci = 0,
+    cx = 1000
+  )
 
+  kmr_position_coverage(kmers, pos = 911, fasta = fasta, min_coverage = 5)
 }
 }

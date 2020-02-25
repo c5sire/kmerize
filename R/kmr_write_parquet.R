@@ -1,5 +1,5 @@
 #' kmr_write_parquet
-#' 
+#'
 #' Write kmer database as parquet format.
 #'
 #' @param db Name of kmer database

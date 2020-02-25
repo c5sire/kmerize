@@ -1,5 +1,5 @@
 #' kmr_write_rds
-#' 
+#'
 #' Write kmer database as rds format.
 #'
 #' @param db Name of kmer database

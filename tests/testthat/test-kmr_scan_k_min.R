@@ -27,7 +27,7 @@ test_that("Time is delayed for k > 12 for more than 2 seconds ", {
   start_time <- Sys.time()
   x <- kmr_scan_k_min(a, b, k = 13, min_kmers = 3, cleanup = TRUE)
   lapse <- Sys.time() - start_time
-  
+
   expect_true(
     lapse > 2
   )

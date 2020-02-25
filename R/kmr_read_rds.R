@@ -11,4 +11,3 @@ kmr_read_rds <- function(afile) {
   stopifnot(file.exists(afile))
   readRDS(afile)
 }
-

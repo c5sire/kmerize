@@ -15,5 +15,6 @@ kmr_plot_map(kmers, snp_pos)
 ggbio plot
 }
 \description{
-Create a quick overview of the kmers mapped to a region around the given position.
+Create a quick overview of the kmers mapped to a region around the given 
+position.
 }
