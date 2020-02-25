@@ -8,15 +8,18 @@
 #'  sp Number of threads for splitting. Default is 4.
 #'  sr Number of threads for second stage. Default is 4
 #'
-#' @note Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the backend on Windows, Linux, and
-#' Mac. The parameter lists corresponds to the list of options of kmc3.
+#' @note Counts kmers up to a maximum of size of k = 255. Uses kmc3 in the
+#'   backend on Windows, Linux, and
+#'  Mac. The parameter lists corresponds to the list of options of kmc3.
 #'
-#' @param in_files a name of a single file, a vector of file names, or a directory containing files.
+#' @param in_files a name of a single file, a vector of file names, or a
+#'   directory containing files.
 #' @param out_file name of the output file
 #' @param k kmer size; default is 11.
 #' @param m RAM memory size; default is 12.
 #' @param sm strict memory mode; default is FALSE.
-#' @param f format of input files; options: a fasta, m multiple fasta, q fastq. Default is a.
+#' @param f format of input files; options: a fasta, m multiple fasta, q fastq.
+#'    Default is a.
 #' @param ci minimum occurrence of kmers; default is 2.
 #' @param cx maximum occurrence of kmers: default is 1e9.
 #' @param cs maximum size of counter; default is 255.
@@ -28,13 +31,16 @@
 #'
 #' @return out_file
 #' @author Reinhard Simon
-#' @references Kokot M, Dlugosz M, Deorowicz S. KMC 3: counting and manipulating k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
+#' @references Kokot M, Dlugosz M, Deorowicz S. KMC 3: counting and manipulating
+#'    k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 #'
 #' @export
 #'
 #' @examples
 #' if (interactive()) {
-#'   fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
+#'   fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
+#'     package = "kmerize"
+#'   )
 #'   k <- 13
 #'   out_file <- file.path(tempdir(), "phwei11")
 #'   kmerize:::kmr_count(fa, out_file, k = k, f = "q")
@@ -81,7 +87,8 @@ kmr_count <- function(in_files,
 
   # TODO check parameter values
 
-  # if more than input file use a temp archive to store the list and change in_files to pointer
+  # if more than input file use a temp archive to store the list and change
+  # in_files to pointer
   tmp <- file.path(tmd, "_kmer") %>% get_safe_path()
 
   if (!dir.exists(tmp)) dir.create(tmp, recursive = TRUE)

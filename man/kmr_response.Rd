@@ -4,14 +4,15 @@
 \alias{kmr_response}
 \title{kmr_response}
 \usage{
-kmr_response(fastx, k = seq(5, 11, 2), fmt = NULL, ci = 0)
+kmr_response(fastx, k = c(5, 7, 9, 11), fmt = NULL, ci = 0)
 }
 \arguments{
 \item{fastx}{a fastq or fasta formatted file}
 
 \item{k}{kmer size. One value or a sequence of values}
 
-\item{fmt}{type of input file, fasta = f, fasta with multiple lines = m, fastq = q}
+\item{fmt}{type of input file, fasta = f, fasta with multiple lines = m,
+fastq = q}
 
 \item{ci}{cutoff value for min k}
 }
@@ -20,6 +21,7 @@ data.frame with results
 }
 \description{
 k should be an odd number.
-In case of fastq files the file can also be in compressed format (e.g. *.fastq.tar.gz).
+In case of fastq files the file can also be in compressed format
+(e.g. *.fastq.tar.gz).
 This parameter will be inferred from the file name, if not set.
 }

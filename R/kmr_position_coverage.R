@@ -1,11 +1,13 @@
 #' kmr_position_coverage
 #'
 #' Scans a set of mapped kmers if they fall around a position.
-#' Returns a summary table for each k which includes the coverage and the start and beginning of the range.
+#' Returns a summary table for each k which includes the coverage and the start
+#' and beginning of the range.
 #'
 #' @param kmers a list object as returned from kmr_scan_k_min
 #' @param pos a position from the reference genome
-#' @param fasta a path to a fasta sequence file (for example a reference chromosome)
+#' @param fasta a path to a fasta sequence file (for example a reference
+#'    chromosome)
 #' @param min_coverage a desirable level of minimum coverage
 #'
 #' @import GenomicRanges
@@ -23,8 +25,12 @@
 #'   # Simulated NGS files from reference sequence and a modified sequence.
 #'   # The modification is a SNP at position 911.
 #'
-#'   a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
-#'   b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz", package = "kmerize")
+#'   a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
+#'     package = "kmerize"
+#'   )
+#'   b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
+#'     package = "kmerize"
+#'   )
 #'
 #'   # should clarify that the scan uses set difference! in name or so
 #'   kmers <- kmr_scan_k_min(a, b,
@@ -60,7 +66,7 @@ kmr_position_coverage <- function(kmers = NULL, pos = NULL,
     IRanges(pos, pos)
   )
 
-  for (i in 1:nrow(res)) {
+  for (i in seq_along(res[, 1])) {
     rr <- kmr_read_rds(kmers$kmer_tbl[i])
     kmap <- kmr_map_kmers(rr, genome = fasta, sn)
 

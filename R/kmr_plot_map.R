@@ -1,7 +1,7 @@
 
 #' kmr_plot_map
 #'
-#' Create a quick overview of the kmers mapped to a region around the given 
+#' Create a quick overview of the kmers mapped to a region around the given
 #' position.
 #'
 #' @param kmers a GenomicRange object

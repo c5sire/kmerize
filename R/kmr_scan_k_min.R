@@ -12,7 +12,8 @@
 #'
 #' @return list k_min identified minimal k; table of coverage for each k
 #' @export
-kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
+kmr_scan_k_min <- function(a, b,
+                           k = seq(3, 13, 2), ci = 2, cx = 100,
                            min_kmers = 10, f = "q",
                            cleanup = TRUE) {
   tmd <- tempdir()

@@ -8,7 +8,7 @@
 #'    Default is 0. A recommended value is 0.95.
 #' @param max_y a maximum y value. Default 0 indicates automatic selection.
 #' @return plot
-#' @importFrom ggplot2 geom_line aes .data xlab ylab guides guide_legend 
+#' @importFrom ggplot2 geom_line aes .data xlab ylab guides guide_legend
 #'    geom_vline annotate ylim
 #' @export
 kmr_plot_response <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
@@ -28,14 +28,22 @@ kmr_plot_response <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
 
   p <- ggbio() +
     ggplot2::ylim(0, y_max) +
-    geom_line(data = res[, c(1, 2)], aes(x = .data$k, y = .data$unique, 
-                                         color = "unique")) +
-    geom_line(data = res[, c(1, 3)], aes(x = .data$k, y = .data$distinct, 
-                                         color = "distinct")) +
-    geom_line(data = res[, c(1, 4)], aes(x = .data$k, y = .data$total, 
-                                         color = "total")) +
-    geom_line(data = res[, c(1, 5)], aes(x = .data$k, y = .data$universe, 
-                                         color = "universe")) +
+    geom_line(data = res[, c(1, 2)], aes(
+      x = .data$k, y = .data$unique,
+      color = "unique"
+    )) +
+    geom_line(data = res[, c(1, 3)], aes(
+      x = .data$k, y = .data$distinct,
+      color = "distinct"
+    )) +
+    geom_line(data = res[, c(1, 4)], aes(
+      x = .data$k, y = .data$total,
+      color = "total"
+    )) +
+    geom_line(data = res[, c(1, 5)], aes(
+      x = .data$k, y = .data$universe,
+      color = "universe"
+    )) +
 
     xlab("k") +
     ylab("counts") +
@@ -44,8 +52,10 @@ kmr_plot_response <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
 
   if (!is.null(ref_k)) {
     p <- p +
-      geom_vline(xintercept = ref_k, linetype = "dashed", color = "darkgreen", 
-                 lwd = .6)
+      geom_vline(
+        xintercept = ref_k, linetype = "dashed", color = "darkgreen",
+        lwd = .6
+      )
   }
 
   if (limit > 0) {

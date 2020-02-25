@@ -16,6 +16,9 @@ status](https://ci.appveyor.com/api/projects/status/github/c5sire/kmerize?branch
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!-- badges: end -->
 
 Kmerize provides convenience tools for creating and analyzing k-mers.

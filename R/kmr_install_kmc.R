@@ -2,7 +2,7 @@
 #'
 #' Installs a local version of kmc3.
 #'
-#' @param download_file If provided, kmc3 is provided from a local archive. 
+#' @param download_file If provided, kmc3 is provided from a local archive.
 #' User makes sure it is the appropriate version for the local OS.
 #'
 #' @return logical
