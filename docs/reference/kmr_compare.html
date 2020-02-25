@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">kmerize</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.1.900</span>
       </span>
     </div>
 
@@ -134,11 +134,13 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>in_files</th>
-      <td><p>list of named file paths. The names are to be used in the comparison string.</p></td>
+      <td><p>list of named file paths. The names are to be used in the 
+comparison string.</p></td>
     </tr>
     <tr>
       <th>cmp</th>
-      <td><p>a list containing a single named string with the kmer operations using the file short names.</p></td>
+      <td><p>a list containing a single named string with the kmer operations 
+using the file short names.</p></td>
     </tr>
     <tr>
       <th>ci</th>
@@ -159,18 +161,22 @@
     <p>out_file</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The in_files list strings may contain parameter values for each in_file after the path.</p>
+    <p>The in_files list strings may contain parameter values for each in_file after
+the path.</p>
 <p>Shorthand operator definitions:
  * intersect
  - subtract
  ~ counters_subtract
  + union</p> 
 <p>Highest priority: *. All other operators have equal priority.</p> 
-<p>Counter calculation modes are available for the oerators: *, ~,  +. They are:
+<p>Counter calculation modes are available for the oerators: *, ~,  +. 
+ They are:
  min, max, diff, sum, left, right</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Kokot M, Długosz M, Deorowicz S. KMC 3: counting and manipulating k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.</p>
+    <p>Kokot M, Długosz M, Deorowicz S. KMC 3: counting and 
+     manipulating
+      k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>

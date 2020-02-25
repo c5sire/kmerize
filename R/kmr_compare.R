@@ -28,7 +28,8 @@
 #'
 #' @return out_file
 #' @author Reinhard Simon
-#' @references Kokot M, Długosz M, Deorowicz S. KMC 3: counting and manipulating
+#' @references Kokot M, Długosz M, Deorowicz S. KMC 3: counting and 
+#'      manipulating
 #'       k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 #' @importFrom magrittr %>%
 #' @export

@@ -1,6 +1,7 @@
 #' kmr_calc_k_limit
 #' 
-#' Calculates the k corresponding to a limit relative to the distinct number of k-mers.
+#' Calculates the k corresponding to a limit relative to the distinct number of 
+#' k-mers.
 #'
 #' @param res a dataframe
 #' @param limit numeric between 0 and 1

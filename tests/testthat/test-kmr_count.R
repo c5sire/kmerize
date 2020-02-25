@@ -145,7 +145,7 @@ test_that("kmer counter accepts two files", {
 
 test_that("kmer counter deletes internal temp file", {
   out_file <-  file.path(tempdir(), "subdir", "phwei11")
-  x = kmr_count(c(fa, fa), out_file, k = k, f = "q")
+  x <- kmr_count(c(fa, fa), out_file, k = k, f = "q")
   expect_true(
     expect_true(length(
       capture.output(
