@@ -13,7 +13,7 @@ kmr_saveas <- function(db, to = db, format = c("tab", "rds")) {
 
   if (format == "tab") {
     of <- paste0(to, ".tab.gz")
-    vroom::vroom_write(tbl, of)
+    vroom::vroom_write(tbl, of, col_names = FALSE)
   } else if (format == "parquet") {
     of <- paste0(to, ".parquet")
     arrow::write_parquet(tbl, of)

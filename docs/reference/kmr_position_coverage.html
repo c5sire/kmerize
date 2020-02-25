@@ -37,7 +37,8 @@
 
 <meta property="og:title" content="kmr_position_coverage — kmr_position_coverage" />
 <meta property="og:description" content="Scans a set of mapped kmers if they fall around a position.
-Returns a summary table for each k which includes the coverage and the start and beginning of the range." />
+Returns a summary table for each k which includes the coverage and the start
+and beginning of the range." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -126,7 +127,8 @@ Returns a summary table for each k which includes the coverage and the start and
 
     <div class="ref-description">
     <p>Scans a set of mapped kmers if they fall around a position.
-Returns a summary table for each k which includes the coverage and the start and beginning of the range.</p>
+Returns a summary table for each k which includes the coverage and the start
+and beginning of the range.</p>
     </div>
 
     <pre class="usage"><span class='fu'>kmr_position_coverage</span>(
@@ -149,7 +151,8 @@ Returns a summary table for each k which includes the coverage and the start and
     </tr>
     <tr>
       <th>fasta</th>
-      <td><p>a path to a fasta sequence file (for example a reference chromosome)</p></td>
+      <td><p>a path to a fasta sequence file (for example a reference
+chromosome)</p></td>
     </tr>
     <tr>
       <th>min_coverage</th>
@@ -164,26 +167,29 @@ Returns a summary table for each k which includes the coverage and the start and
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()) {
 
- <span class='co'># Reference genome </span>
- <span class='no'>fasta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"testdata/phix174.fasta"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"kmerize"</span>)
+  <span class='co'># Reference genome</span>
+  <span class='no'>fasta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"testdata/phix174.fasta"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"kmerize"</span>)
 
- <span class='co'># Simulated NGS files from reference sequence and a modified sequence.</span>
- <span class='co'># The modification is a SNP at position 911.</span>
+  <span class='co'># Simulated NGS files from reference sequence and a modified sequence.</span>
+  <span class='co'># The modification is a SNP at position 911.</span>
 
- <span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"testdata/phix174-pe_w_err_5k_30q.fastq.gz"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"kmerize"</span>)
- <span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"testdata/phix174_m-pe_w_err_5k_30q.fastq.gz"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"kmerize"</span>)
+  <span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"testdata/phix174-pe_w_err_5k_30q.fastq.gz"</span>,
+    <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"kmerize"</span>
+  )
+  <span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"testdata/phix174_m-pe_w_err_5k_30q.fastq.gz"</span>,
+    <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"kmerize"</span>
+  )
 
- <span class='co'># should clarify that the scan uses set difference! in name or so</span>
- <span class='no'>kmers</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='kmr_scan_k_min.html'>kmr_scan_k_min</a></span>(<span class='no'>a</span>, <span class='no'>b</span>,
-                         <span class='kw'>k</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>5</span>, <span class='fl'>15</span>, <span class='fl'>2</span>),
-                         <span class='kw'>min_kmers</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-                         <span class='kw'>cleanup</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-                         <span class='kw'>ci</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-                         <span class='kw'>cx</span> <span class='kw'>=</span> <span class='fl'>1000</span>)
+  <span class='co'># should clarify that the scan uses set difference! in name or so</span>
+  <span class='no'>kmers</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='kmr_scan_k_min.html'>kmr_scan_k_min</a></span>(<span class='no'>a</span>, <span class='no'>b</span>,
+    <span class='kw'>k</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>5</span>, <span class='fl'>15</span>, <span class='fl'>2</span>),
+    <span class='kw'>min_kmers</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+    <span class='kw'>cleanup</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+    <span class='kw'>ci</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+    <span class='kw'>cx</span> <span class='kw'>=</span> <span class='fl'>1000</span>
+  )
 
- <span class='fu'>kmr_position_coverage</span>(<span class='no'>kmers</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>911</span>, <span class='kw'>fasta</span> <span class='kw'>=</span> <span class='no'>fasta</span>, <span class='kw'>min_coverage</span> <span class='kw'>=</span> <span class='fl'>5</span>)
-
-
+  <span class='fu'>kmr_position_coverage</span>(<span class='no'>kmers</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>911</span>, <span class='kw'>fasta</span> <span class='kw'>=</span> <span class='no'>fasta</span>, <span class='kw'>min_coverage</span> <span class='kw'>=</span> <span class='fl'>5</span>)
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
