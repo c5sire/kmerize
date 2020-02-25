@@ -61,7 +61,7 @@ kmr_compare <- function(in_files, cmp, ci = 2, cx = 1e9, cs = 255) {
   
   lines <- character()
   lines[1] <- "INPUT:"
-  for (i in 1:seq_len(in_files)) {
+  for (i in seq_along(in_files)) {
     l <- paste0(names(in_files)[i], " = ", get_safe_path(in_files[[i]]))
     lines[i + 1] <- l
   }
