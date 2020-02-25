@@ -33,7 +33,8 @@ kmr_scan_k_min <- function(a, b, k = seq(3, 13, 2), ci = 2, cx = 100,
     
     
     if (k[i] > 12) Sys.sleep(2)
-    if (file.exists(paste0(a_cnt, ".kmc_pre")) && file.exists(paste0(b_cnt, ".kmc_pre"))) {
+    if (file.exists(paste0(a_cnt, ".kmc_pre")) && 
+        file.exists(paste0(b_cnt, ".kmc_pre"))) {
       res_kmr[i] <- file.path(tmd, paste0("result__kmerize_", k[i]))
       c_res <-
       kmr_compare(list(a = a_cnt, b = b_cnt), cmp = list(

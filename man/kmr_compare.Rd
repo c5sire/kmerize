@@ -7,9 +7,11 @@
 kmr_compare(in_files, cmp, ci = 2, cx = 1e+09, cs = 255)
 }
 \arguments{
-\item{in_files}{list of named file paths. The names are to be used in the comparison string.}
+\item{in_files}{list of named file paths. The names are to be used in the 
+comparison string.}
 
-\item{cmp}{a list containing a single named string with the kmer operations using the file short names.}
+\item{cmp}{a list containing a single named string with the kmer operations 
+using the file short names.}
 
 \item{ci}{integer; min k cutoff value; default 2.}
 
@@ -24,7 +26,8 @@ out_file
 Compare k-mer sets
 }
 \details{
-The in_files list strings may contain parameter values for each in_file after the path.
+The in_files list strings may contain parameter values for each in_file after
+the path.
 
 Shorthand operator definitions:
  * intersect
@@ -34,7 +37,8 @@ Shorthand operator definitions:
  
  Highest priority: *. All other operators have equal priority.
  
- Counter calculation modes are available for the oerators: *, ~,  +. They are:
+ Counter calculation modes are available for the oerators: *, ~,  +. 
+ They are:
  min, max, diff, sum, left, right
 }
 \examples{
@@ -63,7 +67,8 @@ if (interactive()) {
 
 }
 \references{
-Kokot M, Długosz M, Deorowicz S. KMC 3: counting and manipulating k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
+Kokot M, Długosz M, Deorowicz S. KMC 3: counting and manipulating
+      k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 }
 \author{
 Reinhard Simon

@@ -14,9 +14,9 @@
 #'
 #' @return GRange object of mapped kmers
 kmr_map_kmers <- function(kmers, genome, seqname = NULL) {
-  if (!"kmer" %in% names(kmers)) stop("Kmer table does not contain column named kmer.")
+  if (!"kmer" %in% names(kmers)) 
+    stop("Kmer table does not contain column named kmer.")
   dict <- DNAStringSet(kmers$kmer)
-  x <- genome[[1]]
   adna <-Biostrings::readDNAStringSet(genome)
   dna <- DNAString(as.character(adna))
   

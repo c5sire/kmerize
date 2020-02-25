@@ -3,6 +3,7 @@
 #' Read a file in parquet format.
 #'
 #' @param afile file name (obligatory extension .tab)
+#' @importFrom arrow read_parquet
 #'
 #' @return parquet object
 #' @export

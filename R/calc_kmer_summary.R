@@ -14,8 +14,7 @@ calc_kmer_summary <- function(fasta, out_file = NULL, k = 3, f = "m", ci = 0) {
 
   # get summary
   tbl <- table(dat$count)
-  cnt <- as.integer(names(tbl))
-  
+
   uq <- ifelse("1" %in% names(tbl), tbl[[1]], 0)
   universe <- ifelse(k %% 2 != 0, 4^k/2,  (4^k + 4^(k/2) ) / 2)
   

@@ -64,7 +64,6 @@ kmr_position_coverage <- function(kmers = NULL, pos = NULL,
     rr <- kmr_read_rds(kmers$kmer_tbl[i])
     kmap <- kmr_map_kmers(rr, genome = fasta, sn)
     
-    k <- kmap$res$k[i]
     kmap_r <- reduce(kmap)
     
     if(countOverlaps(kmap_r, snp) > 0) {
