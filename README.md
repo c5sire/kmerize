@@ -3,14 +3,17 @@
 
 # kmerize
 
+<!--
+[![Codecov test coverage](https://codecov.io/gh/c5sire/kmerize/branch/master/graph/badge.svg)](https://codecov.io/gh/c5sire/kmerize?branch=master)
+-->
+
 <!-- badges: start -->
 
 [![Travis build
 status](https://travis-ci.org/c5sire/kmerize.svg?branch=master)](https://travis-ci.org/c5sire/kmerize)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/c5sire/kmerize?branch=master&svg=true)](https://ci.appveyor.com/project/c5sire/kmerize)
-[![Codecov test
-coverage](https://codecov.io/gh/c5sire/kmerize/branch/master/graph/badge.svg)](https://codecov.io/gh/c5sire/kmerize?branch=master)
+
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->

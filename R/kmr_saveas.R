@@ -13,9 +13,9 @@ kmr_saveas <- function(db, to = db, format = c("tab", "rds")) {
     of <- paste0(to, ".tab.gz")
     #utils::write.table(tbl, of, row.names = FALSE, sep = "\t", quote = F)
     vroom::vroom_write(tbl, of)
-  # } else if (format == "parquet") {
-  #   of <-  paste0(to, ".parquet") 
-  #   arrow::write_parquet(tbl, of)
+  } else if (format == "parquet") {
+    of <-  paste0(to, ".parquet")
+    arrow::write_parquet(tbl, of)
   } else {
     of <- paste0(to, ".rds")
     saveRDS(tbl,  of)

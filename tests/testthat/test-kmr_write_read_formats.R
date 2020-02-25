@@ -58,7 +58,7 @@ test_that("Can NOT read tab file raises error", {
   )
 })
 
-skip("Until arrow package back on CRAN")
+
 
 test_that("Can write file: .parquet", {
   expect_true(
@@ -66,7 +66,7 @@ test_that("Can write file: .parquet", {
   )
 })
 
-skip("Until arrow package back on CRAN")
+
 test_that("Can read parquet file", {
   dat <- kmr_read_parquet(out_file)
   expect_true(
@@ -74,7 +74,7 @@ test_that("Can read parquet file", {
   )
 })
 
-skip("Until arrow package back on CRAN")
+
 test_that("Can NOT read parquet file raises error", {
   expect_error(
     kmr_read_parquet("___xxx___")
