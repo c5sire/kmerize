@@ -10,7 +10,7 @@ Author: Reinhard Simon [aut, cre]
 Maintainer: Reinhard Simon <rsimon64@gmail.com>                  
 Description: Kmerize provides convenience tools for creating and analyzing 
     k-mers. It aims at supporting the building of databases. Therefore, 
-    here the focus is on convenience tools to routinely process 'fasta' and 
+    here the focus is on tools to routinely process 'fasta' and 
     'fastq' formatted DNA sequence data into efficient file formats for further 
     processing like querying and filtering. It features a tool to check on 
     possible k-mer sizes using a genomic response approach, as well as a 
