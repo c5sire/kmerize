@@ -1,6 +1,6 @@
 Package: kmerize
 Type: Package
-Title: K-mer Tools for Building Databases
+Title: K-Mer Tools for Building Databases
 Version: 0.7.1
 Authors@R: person("Reinhard", "Simon", email = "rsimon64@gmail.com",
                   role = c("aut", "cre"),
