@@ -7,6 +7,7 @@
 #' @return integer length of the sequence in the file
 #' @import Biostrings
 #' @export
+#' @family kmer_help
 #'
 #' @examples
 #'

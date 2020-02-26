@@ -19,3 +19,10 @@ GRange object of mapped kmers
 \description{
 kmr_map_kmers
 }
+\seealso{
+Other kmer_help: 
+\code{\link{kmr_compare}()},
+\code{\link{kmr_length_fasta}()},
+\code{\link{kmr_position_coverage}()}
+}
+\concept{kmer_help}

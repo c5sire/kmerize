@@ -57,3 +57,10 @@ if (interactive()) {
   kmr_position_coverage(kmers, pos = 911, fasta = fasta, min_coverage = 5)
 }
 }
+\seealso{
+Other kmer_help: 
+\code{\link{kmr_compare}()},
+\code{\link{kmr_length_fasta}()},
+\code{\link{kmr_map_kmers}()}
+}
+\concept{kmer_help}

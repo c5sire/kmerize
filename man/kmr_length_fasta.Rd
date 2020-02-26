@@ -21,3 +21,10 @@ fasta <- system.file("testdata/phix174.fasta", package = "kmerize")
 
 kmr_length_fasta(fasta)
 }
+\seealso{
+Other kmer_help: 
+\code{\link{kmr_compare}()},
+\code{\link{kmr_map_kmers}()},
+\code{\link{kmr_position_coverage}()}
+}
+\concept{kmer_help}

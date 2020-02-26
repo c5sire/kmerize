@@ -84,6 +84,13 @@ if (interactive()) {
 Kokot M, Dlugosz M, Deorowicz S. KMC 3: counting and manipulating
    k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 }
+\seealso{
+Other kmer_core: 
+\code{\link{kmr_install_kmc}()},
+\code{\link{kmr_read_parquet}()},
+\code{\link{kmr_write_parquet}()}
+}
 \author{
 Reinhard Simon
 }
+\concept{kmer_core}

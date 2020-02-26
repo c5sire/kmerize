@@ -9,6 +9,7 @@
 #' @import IRanges
 #' @import ggbio
 #' @export
+#' @family kmer_help
 #'
 #' @importFrom magrittr %>%
 #'

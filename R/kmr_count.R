@@ -35,7 +35,7 @@
 #'    k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 #'
 #' @export
-#'
+#' @family kmer_core
 #' @examples
 #' if (interactive()) {
 #'   fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",

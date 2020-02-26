@@ -22,3 +22,10 @@ if (interactive()) {
   kmr_install_kmc()
 }
 }
+\seealso{
+Other kmer_core: 
+\code{\link{kmr_count}()},
+\code{\link{kmr_read_parquet}()},
+\code{\link{kmr_write_parquet}()}
+}
+\concept{kmer_core}

@@ -14,6 +14,7 @@
 #' @importFrom Biostrings readDNAStringSet
 #'
 #' @return data.frame
+#' @family kmer_help
 #' @export
 #'
 #' @examples

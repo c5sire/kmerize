@@ -69,6 +69,13 @@ Kokot M, Dlugosz M, Deorowicz S. KMC 3: counting and
      manipulating
       k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 }
+\seealso{
+Other kmer_help: 
+\code{\link{kmr_length_fasta}()},
+\code{\link{kmr_map_kmers}()},
+\code{\link{kmr_position_coverage}()}
+}
 \author{
 Reinhard Simon
 }
+\concept{kmer_help}

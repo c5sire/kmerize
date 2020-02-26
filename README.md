@@ -9,7 +9,7 @@
 
 <!-- badges: start -->
 
-[![Project Status: Active – The project has reached a stable, usable
+[![Project Status: Active â€“ The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Travis build
@@ -18,7 +18,7 @@ status](https://travis-ci.org/c5sire/kmerize.svg?branch=master)](https://travis-
 status](https://ci.appveyor.com/api/projects/status/github/c5sire/kmerize?branch=master&svg=true)](https://ci.appveyor.com/project/c5sire/kmerize)
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 <!-- badges: end -->
 
 Kmerize provides convenience tools for creating and analyzing k-mers.

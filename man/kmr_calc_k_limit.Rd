@@ -18,3 +18,19 @@ list k and limit values
 Calculates the k corresponding to a limit relative to the distinct number of
 k-mers.
 }
+\examples{
+
+if (interactive()) {
+
+ fa <- system.file("testdata/phix174.fasta",
+   package = "kmerize")
+   
+ k <- as.integer(seq(5, 17, 2))
+
+ res <- kmr_response(fa, k)
+ kmr_calc_k_limit(res)
+ 
+}
+
+}
+\concept{genomic_response}

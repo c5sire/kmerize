@@ -7,6 +7,7 @@
 #'
 #' @return logical
 #' @export
+#' @family kmer_core
 #'
 #' @examples
 #'

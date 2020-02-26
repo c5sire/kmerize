@@ -32,6 +32,7 @@
 #'      manipulating
 #'       k-mer statistics. Bioinformatics. 2017 Sep 1;33(17):2759-61.
 #' @importFrom magrittr %>%
+#' @family kmer_help
 #' @export
 #'
 #' @examples
