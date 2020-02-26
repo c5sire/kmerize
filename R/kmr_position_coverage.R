@@ -33,7 +33,7 @@
 #'     package = "kmerize"
 #'   )
 #'
-#'   # should clarify that the scan uses set difference! in name or so
+#'   
 #'   kmers <- kmr_scan_k_min(a, b,
 #'     k = seq(5, 15, 2),
 #'     min_kmers = 1,

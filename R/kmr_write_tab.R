@@ -9,7 +9,6 @@
 #' @export
 #' @family kmer_core
 #' @examples 
-#' 
 #' if (interactive()) {
 #' 
 #'   fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
@@ -22,7 +21,7 @@
 #'   kmr_write_rds(out_file)
 #' 
 #'   dat <- kmr_read_rds(out_file)
-#'   dat
+#'   head(dat)
 #' 
 #' }
 kmr_write_tab <- function(db, to = db) {

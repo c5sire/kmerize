@@ -157,8 +157,7 @@
 <code><a href='kmr_write_tab.html'>kmr_write_tab</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()) {
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()) {
 
   <span class='no'>fa</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"testdata/phix174_m-pe_w_err_5k_30q.fastq.gz"</span>,
   <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"kmerize"</span>)
@@ -170,7 +169,7 @@
   <span class='fu'>kmr_write_rds</span>(<span class='no'>out_file</span>)
 
   <span class='no'>dat</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='kmr_read_rds.html'>kmr_read_rds</a></span>(<span class='no'>out_file</span>)
-  <span class='no'>dat</span>
+  <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>dat</span>)
 
 }</div></pre>
   </div>

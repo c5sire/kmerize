@@ -16,6 +16,7 @@ kmr_saveas <- function(db, to = db, format = c("tab", "rds")) {
     vroom::vroom_write(tbl, of, col_names = FALSE)
   } else if (format == "parquet") {
     of <- paste0(to, ".parquet")
+    if (file.exists(of)) unlink(of, recursive = TRUE, force = TRUE)
     arrow::write_parquet(tbl, of)
   } else {
     of <- paste0(to, ".rds")

@@ -4,7 +4,7 @@
 ## Enhancements
 
 - Stability improvements
-- Documenting functions with examples
+- Documenting each functions with an example
 
 # kmerize 0.7.0 (2020-02-25)
 

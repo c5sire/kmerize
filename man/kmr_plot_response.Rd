@@ -35,7 +35,7 @@ if (interactive()) {
 
 
   res <- kmr_response(fa, k, fmt = "q")
-  kmr_plot_response(res, ref_k = 9, max_y = Biostrings::width(dna))
+  kmr_plot_response(res, ref_k = 9, max_y = max(res$distinct))
 }
 }
 \seealso{

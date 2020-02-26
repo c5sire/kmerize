@@ -16,7 +16,6 @@ data.fraee
 Read a file in rds format.
 }
 \examples{
-
 if (interactive()) {
 
   fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
@@ -29,7 +28,7 @@ if (interactive()) {
   kmr_write_rds(out_file)
 
   dat <- kmr_read_rds(out_file)
-  dat
+  head(dat)
 
 }
 }

@@ -8,7 +8,7 @@ Authors@R: person("Reinhard", "Simon", email = "rsimon64@gmail.com",
                   )
 Author: Reinhard Simon [aut, cre]
 Maintainer: Reinhard Simon <rsimon64@gmail.com>                  
-Description: Kmerize provides convenience tools for creating and analyzing 
+Description: It provides convenience tools for creating and analyzing 
     k-mers. It aims at supporting the building of databases. Therefore, 
     here the focus is on tools to routinely process 'fasta' and 
     'fastq' formatted DNA sequence data into efficient file formats for further 

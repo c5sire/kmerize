@@ -10,7 +10,7 @@
 #' @param fmt type of input file, fasta = f, fasta with multiple lines = m,
 #'    fastq = q
 #' @param ci cutoff value for min k
-#'
+#' @importFrom utils setTxtProgressBar txtProgressBar
 #' @return data.frame with results
 #' @family kmer_help
 #' @examples 
@@ -53,12 +53,18 @@ kmr_response <- function(fastx,
 
   n <- length(k)
 
+  
+  pb <- txtProgressBar(min = 1, max = n, title = "Scanning Genomic Response:", 
+                       width = n)
   for (i in 2:n) {
-    cat(paste0(k[i], "\n"))
-
-    res <- rbind(res, calc_kmer_summary(fastx, k = k[i], f = fmt, ci = ci))
-    chk <- res$unique[i] / res$total[i]
+    try({
+      res <- rbind(res, calc_kmer_summary(fastx, k = k[i], f = fmt, ci = ci))
+      chk <- res$unique[i] / res$total[i]      
+    })
+    
+    setTxtProgressBar(pb, i)
     if (chk > 0.9999) break
   }
+  close(pb)
   return(res)
 }

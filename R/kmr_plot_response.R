@@ -25,7 +25,7 @@
 #' 
 #' 
 #'   res <- kmr_response(fa, k, fmt = "q")
-#'   kmr_plot_response(res, ref_k = 9, max_y = Biostrings::width(dna))
+#'   kmr_plot_response(res, ref_k = 9, max_y = max(res$distinct))
 #' }
 #' @export
 kmr_plot_response <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
@@ -34,14 +34,15 @@ kmr_plot_response <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
 
   k_lim <- ifelse(limit > 0, kmr_calc_k_limit(res, limit)$k, 0)
 
-  y_max <- ifelse(max_y == 0, max(res$total), max_y)
+  y_max <- ifelse(max_y == 0, max(res$total), max_y) 
 
+  res[res$unique > y_max, "unique"] <- y_max
+  res[res$distinct > y_max, "distinct"] <- y_max
+  res[res$total > y_max, "total"] <- y_max
   res[res$universe > y_max, "universe"] <- y_max
+  
   rn <- row.names(res[res$universe == y_max, ])
   rn <- rn[-c(1)]
-  res[rn, "universe"] <- NA
-
-
 
   p <- ggbio() +
     ggplot2::ylim(0, y_max) +

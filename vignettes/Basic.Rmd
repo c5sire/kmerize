@@ -12,7 +12,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-Sys.setenv("NOT_CRAN" = "true")
 
 ```
 
