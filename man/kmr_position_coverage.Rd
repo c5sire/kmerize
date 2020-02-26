@@ -61,6 +61,10 @@ if (interactive()) {
 Other kmer_help: 
 \code{\link{kmr_compare}()},
 \code{\link{kmr_length_fasta}()},
-\code{\link{kmr_map_kmers}()}
+\code{\link{kmr_map_kmers}()},
+\code{\link{kmr_plot_map}()},
+\code{\link{kmr_plot_response}()},
+\code{\link{kmr_response}()},
+\code{\link{kmr_scan_k_min}()}
 }
 \concept{kmer_help}

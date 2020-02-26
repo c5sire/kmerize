@@ -88,7 +88,11 @@ Kokot M, Dlugosz M, Deorowicz S. KMC 3: counting and manipulating
 Other kmer_core: 
 \code{\link{kmr_install_kmc}()},
 \code{\link{kmr_read_parquet}()},
-\code{\link{kmr_write_parquet}()}
+\code{\link{kmr_read_rds}()},
+\code{\link{kmr_read_tab}()},
+\code{\link{kmr_write_parquet}()},
+\code{\link{kmr_write_rds}()},
+\code{\link{kmr_write_tab}()}
 }
 \author{
 Reinhard Simon

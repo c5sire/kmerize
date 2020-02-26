@@ -25,3 +25,25 @@ In case of fastq files the file can also be in compressed format
 (e.g. *.fastq.tar.gz).
 This parameter will be inferred from the file name, if not set.
 }
+\examples{
+if (interactive()) {
+  fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
+    package = "kmerize"
+  )
+  k <- as.integer(seq(1, 3, 2))
+
+
+  res <- kmr_response(fa, k, fmt = "q")
+}
+}
+\seealso{
+Other kmer_help: 
+\code{\link{kmr_compare}()},
+\code{\link{kmr_length_fasta}()},
+\code{\link{kmr_map_kmers}()},
+\code{\link{kmr_plot_map}()},
+\code{\link{kmr_plot_response}()},
+\code{\link{kmr_position_coverage}()},
+\code{\link{kmr_scan_k_min}()}
+}
+\concept{kmer_help}

@@ -150,11 +150,14 @@
     <div class='dont-index'><p>Other kmer_core: 
 <code><a href='kmr_count.html'>kmr_count</a>()</code>,
 <code><a href='kmr_install_kmc.html'>kmr_install_kmc</a>()</code>,
-<code><a href='kmr_read_parquet.html'>kmr_read_parquet</a>()</code></p></div>
+<code><a href='kmr_read_parquet.html'>kmr_read_parquet</a>()</code>,
+<code><a href='kmr_read_rds.html'>kmr_read_rds</a>()</code>,
+<code><a href='kmr_read_tab.html'>kmr_read_tab</a>()</code>,
+<code><a href='kmr_write_rds.html'>kmr_write_rds</a>()</code>,
+<code><a href='kmr_write_tab.html'>kmr_write_tab</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()) {
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()) {
 
   <span class='no'>fa</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"testdata/phix174_m-pe_w_err_5k_30q.fastq.gz"</span>,
   <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"kmerize"</span>)
@@ -164,9 +167,6 @@
   <span class='fu'><a href='kmr_count.html'>kmr_count</a></span>(<span class='no'>fa</span>, <span class='no'>out_file</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='no'>k</span>, <span class='kw'>f</span> <span class='kw'>=</span> <span class='st'>"q"</span>)
 
   <span class='fu'>kmr_write_parquet</span>(<span class='no'>out_file</span>)
-
-  <span class='no'>dat</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='kmr_read_parquet.html'>kmr_read_parquet</a></span>(<span class='no'>out_file</span>)
-  <span class='no'>dat</span>
 
 }</div></pre>
   </div>

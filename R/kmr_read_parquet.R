@@ -7,10 +7,7 @@
 #' @family kmer_core
 #'
 #' @return parquet object
-#' @export
-#' 
 #' @examples 
-#' 
 #' if (interactive()) {
 #' 
 #'   fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
@@ -18,15 +15,15 @@
 #' 
 #'   out_file <- file.path(tempdir(), "phx")
 #'   k <- 7
-#'   kmr_count(fa, out_file, k = k, f = "q")
+#'   kc <- kmr_count(fa, out_file, k = k, f = "q")
 #'   
-#'   kmr_write_parquet(out_file)
-#' 
+#'   fpq <- kmr_write_parquet(out_file)
+#'   
 #'   dat <- kmr_read_parquet(out_file)
 #'   dat
-#' 
 #' }
 #' 
+#' @export
 kmr_read_parquet <- function(afile) {
   afile <- assure_file_ext(afile, ".parquet")
   stopifnot(file.exists(afile))

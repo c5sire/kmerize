@@ -36,7 +36,6 @@
 #' @export
 #'
 #' @examples
-#'
 #' if (interactive()) {
 #'   fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
 #'     package = "kmerize"

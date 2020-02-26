@@ -36,5 +36,28 @@ kmr_scan_k_min(
 list k_min identified minimal k; table of coverage for each k
 }
 \description{
-kmr_scan_k_min
+Experimental! This function may be removed.
 }
+\examples{
+if (interactive()) {
+  fa <- system.file("testdata/phix174.fasta", package = "kmerize")
+  a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
+                 package = "kmerize")
+  b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
+                 package = "kmerize")
+
+  x <- kmr_scan_k_min(a, b, k = 9, min_kmers = 3, cleanup = FALSE)
+  x
+}
+}
+\seealso{
+Other kmer_help: 
+\code{\link{kmr_compare}()},
+\code{\link{kmr_length_fasta}()},
+\code{\link{kmr_map_kmers}()},
+\code{\link{kmr_plot_map}()},
+\code{\link{kmr_plot_response}()},
+\code{\link{kmr_position_coverage}()},
+\code{\link{kmr_response}()}
+}
+\concept{kmer_help}

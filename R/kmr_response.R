@@ -12,6 +12,17 @@
 #' @param ci cutoff value for min k
 #'
 #' @return data.frame with results
+#' @family kmer_help
+#' @examples 
+#' if (interactive()) {
+#'   fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
+#'     package = "kmerize"
+#'   )
+#'   k <- as.integer(seq(1, 3, 2))
+#' 
+#' 
+#'   res <- kmr_response(fa, k, fmt = "q")
+#' }
 #' @export
 kmr_response <- function(fastx,
                          k = c(5, 7, 9, 11),

@@ -10,6 +10,23 @@
 #' @return plot
 #' @importFrom ggplot2 geom_line aes .data xlab ylab guides guide_legend
 #'    geom_vline annotate ylim
+#'    
+#' @family kmer_help
+#' @examples 
+#' if (interactive()) {
+#'   fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
+#'     package = "kmerize"
+#'   )
+#'   fp <- system.file("testdata/phix174.fasta", 
+#'                      package = "kmerize")
+#'   dna <- Biostrings::readDNAStringSet(fp)
+#'
+#'   k <- as.integer(seq(3, 17, 2))
+#' 
+#' 
+#'   res <- kmr_response(fa, k, fmt = "q")
+#'   kmr_plot_response(res, ref_k = 9, max_y = Biostrings::width(dna))
+#' }
 #' @export
 kmr_plot_response <- function(res, ref_k = NULL, limit = 0, max_y = -1) {
   stopifnot(is.data.frame(res))

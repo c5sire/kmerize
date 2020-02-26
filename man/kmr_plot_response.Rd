@@ -22,3 +22,30 @@ plot
 \description{
 Plots genomics response object.
 }
+\examples{
+if (interactive()) {
+  fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
+    package = "kmerize"
+  )
+  fp <- system.file("testdata/phix174.fasta", 
+                     package = "kmerize")
+  dna <- Biostrings::readDNAStringSet(fp)
+
+  k <- as.integer(seq(3, 17, 2))
+
+
+  res <- kmr_response(fa, k, fmt = "q")
+  kmr_plot_response(res, ref_k = 9, max_y = Biostrings::width(dna))
+}
+}
+\seealso{
+Other kmer_help: 
+\code{\link{kmr_compare}()},
+\code{\link{kmr_length_fasta}()},
+\code{\link{kmr_map_kmers}()},
+\code{\link{kmr_plot_map}()},
+\code{\link{kmr_position_coverage}()},
+\code{\link{kmr_response}()},
+\code{\link{kmr_scan_k_min}()}
+}
+\concept{kmer_help}

@@ -9,7 +9,6 @@
 #' @return list k and limit values
 #' @family genomic_response
 #' @examples 
-#' 
 #' if (interactive()) {
 #' 
 #'  fa <- system.file("testdata/phix174.fasta",

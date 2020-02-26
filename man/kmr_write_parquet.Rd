@@ -18,7 +18,6 @@ logical
 Write kmer database as parquet format.
 }
 \examples{
-
 if (interactive()) {
 
   fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
@@ -30,15 +29,16 @@ if (interactive()) {
   
   kmr_write_parquet(out_file)
 
-  dat <- kmr_read_parquet(out_file)
-  dat
-
 }
 }
 \seealso{
 Other kmer_core: 
 \code{\link{kmr_count}()},
 \code{\link{kmr_install_kmc}()},
-\code{\link{kmr_read_parquet}()}
+\code{\link{kmr_read_parquet}()},
+\code{\link{kmr_read_rds}()},
+\code{\link{kmr_read_tab}()},
+\code{\link{kmr_write_rds}()},
+\code{\link{kmr_write_tab}()}
 }
 \concept{kmer_core}

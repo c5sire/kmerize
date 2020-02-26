@@ -10,7 +10,6 @@
 #' @family kmer_core
 #'
 #' @examples
-#'
 #' if (interactive()) {
 #'   kmr_install_kmc()
 #' }

@@ -17,7 +17,6 @@ logical
 Installs a local version of kmc3.
 }
 \examples{
-
 if (interactive()) {
   kmr_install_kmc()
 }
@@ -26,6 +25,10 @@ if (interactive()) {
 Other kmer_core: 
 \code{\link{kmr_count}()},
 \code{\link{kmr_read_parquet}()},
-\code{\link{kmr_write_parquet}()}
+\code{\link{kmr_read_rds}()},
+\code{\link{kmr_read_tab}()},
+\code{\link{kmr_write_parquet}()},
+\code{\link{kmr_write_rds}()},
+\code{\link{kmr_write_tab}()}
 }
 \concept{kmer_core}

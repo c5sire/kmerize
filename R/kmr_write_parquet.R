@@ -4,13 +4,9 @@
 #'
 #' @param db Name of kmer database
 #' @param to Name of target file (default same as db name)
-#'
-#' @family kmer_core
 #' @return logical
-#' @export
-#' 
+#' @family kmer_core
 #' @examples 
-#' 
 #' if (interactive()) {
 #' 
 #'   fa <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
@@ -22,10 +18,9 @@
 #'   
 #'   kmr_write_parquet(out_file)
 #' 
-#'   dat <- kmr_read_parquet(out_file)
-#'   dat
-#' 
 #' }
+#' @export
+#' 
 kmr_write_parquet <- function(db, to = db) {
   kmr_saveas(db, to, "parquet")
 }

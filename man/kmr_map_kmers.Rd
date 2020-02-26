@@ -19,10 +19,41 @@ GRange object of mapped kmers
 \description{
 kmr_map_kmers
 }
+\examples{
+if (interactive()) {
+
+  fa <- system.file("testdata/phix174.fasta", package = "kmerize")
+  a <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
+                   package = "kmerize")
+  b <- system.file("testdata/phix174_m-pe_w_err_5k_30q.fastq.gz",
+                   package = "kmerize")
+  
+  x <- kmr_scan_k_min(a, b, k = 9, min_kmers = 3, cleanup = FALSE)
+  rr <- kmr_read_rds(x$kmer_tbl)
+  
+  
+  kmap <- kmr_map_kmers(rr, genome = fa, "phi-X174")
+  kmap
+}
+
+}
 \seealso{
 Other kmer_help: 
 \code{\link{kmr_compare}()},
 \code{\link{kmr_length_fasta}()},
-\code{\link{kmr_position_coverage}()}
+\code{\link{kmr_plot_map}()},
+\code{\link{kmr_plot_response}()},
+\code{\link{kmr_position_coverage}()},
+\code{\link{kmr_response}()},
+\code{\link{kmr_scan_k_min}()}
+
+Other kmer_help: 
+\code{\link{kmr_compare}()},
+\code{\link{kmr_length_fasta}()},
+\code{\link{kmr_plot_map}()},
+\code{\link{kmr_plot_response}()},
+\code{\link{kmr_position_coverage}()},
+\code{\link{kmr_response}()},
+\code{\link{kmr_scan_k_min}()}
 }
 \concept{kmer_help}

@@ -16,7 +16,6 @@ integer length of the sequence in the file
 Get the length of a sequnce in a fasta formatted file.
 }
 \examples{
-
 fasta <- system.file("testdata/phix174.fasta", package = "kmerize")
 
 kmr_length_fasta(fasta)
@@ -25,6 +24,10 @@ kmr_length_fasta(fasta)
 Other kmer_help: 
 \code{\link{kmr_compare}()},
 \code{\link{kmr_map_kmers}()},
-\code{\link{kmr_position_coverage}()}
+\code{\link{kmr_plot_map}()},
+\code{\link{kmr_plot_response}()},
+\code{\link{kmr_position_coverage}()},
+\code{\link{kmr_response}()},
+\code{\link{kmr_scan_k_min}()}
 }
 \concept{kmer_help}

@@ -10,7 +10,6 @@
 #' @family kmer_help
 #'
 #' @examples
-#'
 #' fasta <- system.file("testdata/phix174.fasta", package = "kmerize")
 #'
 #' kmr_length_fasta(fasta)

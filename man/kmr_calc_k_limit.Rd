@@ -19,7 +19,6 @@ Calculates the k corresponding to a limit relative to the distinct number of
 k-mers.
 }
 \examples{
-
 if (interactive()) {
 
  fa <- system.file("testdata/phix174.fasta",

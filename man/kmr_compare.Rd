@@ -42,7 +42,6 @@ Shorthand operator definitions:
  min, max, diff, sum, left, right
 }
 \examples{
-
 if (interactive()) {
   fa <- system.file("testdata/phix174-pe_w_err_5k_30q.fastq.gz",
     package = "kmerize"
@@ -73,7 +72,11 @@ Kokot M, Dlugosz M, Deorowicz S. KMC 3: counting and
 Other kmer_help: 
 \code{\link{kmr_length_fasta}()},
 \code{\link{kmr_map_kmers}()},
-\code{\link{kmr_position_coverage}()}
+\code{\link{kmr_plot_map}()},
+\code{\link{kmr_plot_response}()},
+\code{\link{kmr_position_coverage}()},
+\code{\link{kmr_response}()},
+\code{\link{kmr_scan_k_min}()}
 }
 \author{
 Reinhard Simon

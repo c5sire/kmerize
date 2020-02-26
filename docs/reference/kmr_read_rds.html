@@ -141,13 +141,42 @@
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>data.fraee</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
+    <div class='dont-index'><p>Other kmer_core: 
+<code><a href='kmr_count.html'>kmr_count</a>()</code>,
+<code><a href='kmr_install_kmc.html'>kmr_install_kmc</a>()</code>,
+<code><a href='kmr_read_parquet.html'>kmr_read_parquet</a>()</code>,
+<code><a href='kmr_read_tab.html'>kmr_read_tab</a>()</code>,
+<code><a href='kmr_write_parquet.html'>kmr_write_parquet</a>()</code>,
+<code><a href='kmr_write_rds.html'>kmr_write_rds</a>()</code>,
+<code><a href='kmr_write_tab.html'>kmr_write_tab</a>()</code></p></div>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()) {
+
+  <span class='no'>fa</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"testdata/phix174_m-pe_w_err_5k_30q.fastq.gz"</span>,
+  <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"kmerize"</span>)
+
+  <span class='no'>out_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(), <span class='st'>"phx"</span>)
+  <span class='no'>k</span> <span class='kw'>&lt;-</span> <span class='fl'>7</span>
+  <span class='fu'><a href='kmr_count.html'>kmr_count</a></span>(<span class='no'>fa</span>, <span class='no'>out_file</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='no'>k</span>, <span class='kw'>f</span> <span class='kw'>=</span> <span class='st'>"q"</span>)
+
+  <span class='fu'><a href='kmr_write_rds.html'>kmr_write_rds</a></span>(<span class='no'>out_file</span>)
+
+  <span class='no'>dat</span> <span class='kw'>&lt;-</span> <span class='fu'>kmr_read_rds</span>(<span class='no'>out_file</span>)
+  <span class='no'>dat</span>
+
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#see-also">See also</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
