@@ -29,7 +29,7 @@ You can install the released version of kmerize from
 
 ``` r
 install.packages("remotes")
-remotes::install_github("c5sire/kmerize")
+remotes::install_github("c5sire/kmerize", dependencies = TRUE)
 ```
 
 ## Example
