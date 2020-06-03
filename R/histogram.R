@@ -3,7 +3,7 @@ histogram <- function() {
   fp <- assure_kmc3_ext(fp)
   fp <- get_safe_path(fp)
   
-  fp <- paste(fp, "%s transform %s histogram %")
+  fp <- paste(fp, "transform %s histogram %s")
 
   return(fp)
 }
