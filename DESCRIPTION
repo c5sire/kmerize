@@ -23,7 +23,7 @@ Imports: arrow, Biostrings, ggbio, ggplot2, GenomeInfoDb, GenomicRanges, IRanges
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Suggests: 
     testthat (>= 2.1.0),
     knitr,

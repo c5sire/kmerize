@@ -3,6 +3,7 @@
 export(kmr_calc_k_limit)
 export(kmr_compare)
 export(kmr_count)
+export(kmr_histogram)
 export(kmr_install_kmc)
 export(kmr_length_fasta)
 export(kmr_map_kmers)
